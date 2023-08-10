@@ -1,0 +1,115 @@
+﻿<style>
+    .popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 100px auto;
+}
+
+#close-popup {
+  margin-top: 10px;
+}
+
+</style>
+<button id="open-popup">Open Popup</button>
+
+<div id="popup" class="popup">
+    <div  class="modal-dialog">
+<div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="modal-btn btn btn-danger btn-sm pull-right" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i></button>
+            <button type="button" id="modal-fullscreen" class="modal-btn btn btn-primary btn-sm pull-right"><i class="glyphicon glyphicon-fullscreen"></i></button>
+            <h5 class="modal-title">نمایش اطلاعات کاربر </h5>
+          </div>
+          <div class="alert alert-success" style="display:none; margin: 15px;"></div>
+          <div class="alert alert-danger" style="display:none; margin: 15px;"></div>
+          <div class="modal-body" style="overflow:hidden;"><div class="panel panel-default">
+    <div class="panel-body">
+        <div class="text-center">
+            <img src="https://classibartar.com/public/uploads/images/users/default.png" width="200">
+            <h4 class="title">
+                مهدی نوربخش<br>
+                <small>دانش‌آموز</small>
+            </h4>
+        </div>
+        <table class="table table-bordered">
+            <tbody><tr>
+                <td>کدملی</td>
+                <td class="text-left ltr">1275151353</td>
+            </tr>
+            <tr>
+                <td>موبایل</td>
+                <td class="text-left ltr">09019508741</td>
+            </tr>
+            <tr>
+                <td>ایمیل</td>
+                <td class="text-left ltr"></td>
+            </tr>
+            <tr>
+                <td>تلفن</td>
+                <td class="text-left ltr"></td>
+            </tr>
+            <tr>
+                <td>جنسیت</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>تاریخ تولد</td>
+                <td class="text-left ltr"></td>
+            </tr>
+
+                        <tr>
+                <td>مقطع آموزشی</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>رشته تحصیلی</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>آدرس</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>تاریخ ایجاد</td>
+                <td class="text-left ltr">۱۴۰۲/۰۵/۱۰ ۱۵:۰۷</td>
+            </tr>
+            <tr>
+                <td>تاریخ آخرین به‌روزرسانی</td>
+                <td class="text-left ltr">۱۴۰۲/۰۵/۱۰ ۱۵:۰۷</td>
+            </tr>
+            <tr>
+                <td>وضعیت</td>
+                <td><span class="badge badge-success">فعال</span></td>
+            </tr>
+        </tbody></table>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+    document.getElementById('open-popup').addEventListener('click', function() {
+  document.getElementById('popup').style.display = 'block';
+});
+
+document.getElementById('close-popup').addEventListener('click', function() {
+  document.getElementById('popup').style.display = 'none';
+});
+
+</script>

@@ -1,0 +1,208 @@
+@model Document
+<style>
+    td,
+    tr {
+
+        border: 0.5px solid rgb(0, 0, 0);
+        white-space: nowrap;
+        text-align: center;
+    }
+
+     tr:hover {
+        background-color: rgba(93, 35, 35, 0.224);
+        color: rgb(1, 1, 1);
+
+    }
+
+    .selected {
+        background-color: rgba(114, 114, 85, 0.425);
+        color: rgb(0, 0, 0);
+    }
+    .row>* {
+
+        padding-right: 0 !important;
+        padding-left: 2px !important;
+
+    }
+
+    a {
+  color: #892e33;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #892e33;
+  border-color: #892e33;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #892e33;
+  border-color: #892e33;
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 100px auto;
+}
+
+#close-popup {
+  margin-top: 10px;
+}
+
+</style>
+
+
+<div class="card p-4" style="zoom: 90%;">
+
+
+    <div class="row p-4">
+
+        <div class=" ">
+            <div class="row alert alert-primary p-4 ">
+                <p class="text-center alert alert-success fs-large text-black">لیست تایید نشده ها</p>
+
+
+
+
+
+
+
+
+    <form asp-action="Search">
+        <div class="col-12 card mt-5   " style="overflow-x: scroll;">
+            <div class="row justify-content-center text-center">
+                <div class="col-4 mt-4  ">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="برای جستجو متن رو وارد کنید ..."
+                            aria-label="Recipient's username" aria-describedby="button-addon2" name="childname">
+                        <button class="btn btn-primary" type="button" id="basic-text1">جستوجو</button>
+                    </div>
+                </div>
+
+            </div>
+</form>
+            <script>
+                $(function ()
+                {
+                    $("#basic-text1").click(function(){
+                        $("Form").submit();
+                    })
+                })
+            </script>
+            <div class="card-body ">
+
+                <table class="table table-bordered " id="myTable">
+
+                    <tr style="background-color: whitesmoke;">
+                        <th>ردیف</th>
+                        <th>نام شرکت</th>
+                        <th>نام محصول</th>
+                        <th>مبدا حمل</th>
+                        <th>مقدار بارگیری</th>
+                        <th>عملیات</th>
+
+                    </tr>
+
+                   
+                       @{int i = 1;}
+@foreach (var item in ViewBag.Doc)
+{
+                                if (item.St==1)
+                            {
+                            <tr>
+                            <td>@i</td>
+                            <td>@item.NameSherkat</td>
+                             <td>@item.NameMahsol</td>
+                              <td>@item.MabdaHaml</td>
+                               <td>@item.MeghdarBargiri</td>
+                           <td>
+
+                                <a href="/Documentss/StatusReject/@item.Id" onclick="return confirm('آیا از عدم تایید رکورد مورد نظر مطمئن هستید ؟')" class="btn btn-danger ">عدم تایید </a>
+                                <a href="/Documentss/StatusAcsept/@item.Id"   class="btn btn-success " onclick="return confirm('آیا از تایید رکورد مورد نظر مطمئن هستید ؟')">تایید </a>
+                            <button class="btn btn-warning" id="open-popup">جزییات</button>
+                            <div class="popup" id="popup">
+                                <div class="popup-content">
+                                    <h2>جزییات</h2>
+                                    <p>مبدا حمل : @item.MabdaHaml</p>
+                                    <p>نام محصول : @item.NameMahsol</p>
+                                    <p>نام شرکت : @item.NameSherkat</p>
+                                    <p>مقدار بارگیری : @item.MeghdarBargiri</p>
+                                    <button id="close-popup">بستن</button>
+                                </div>
+                            </div>
+
+
+
+                            </td>
+                           
+
+                               </tr> 
+                            
+                            
+                            i++;
+                            }
+
+                            
+}
+
+                       
+                        
+
+<script>
+    document.getElementById('open-popup').addEventListener('click', function() {
+  document.getElementById('popup').style.display = 'block';
+});
+
+document.getElementById('close-popup').addEventListener('click', function() {
+  document.getElementById('popup').style.display = 'none';
+});
+
+</script>
+                      
+
+
+
+                 
+
+
+                </table>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<script>
+    // Get all table rows
+    const rows = document.querySelectorAll("#myTable tr");
+
+    // Add click event listener to each row
+    rows.forEach(row => {
+        row.addEventListener("click", function () {
+            // Remove the 'selected' class from all rows
+            rows.forEach(row => {
+                row.classList.remove("selected");
+            });
+
+            // Add the 'selected' class to the clicked row
+            this.classList.add("selected");
+        });
+    });
+</script>
