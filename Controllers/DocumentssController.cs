@@ -102,6 +102,8 @@ public class DocumentssController : Controller
         return RedirectToAction("MeghdarBargiri");
     }
 
+    
+
     public IActionResult Acsept()
     {
                         ViewBag.Doc = db.Documents
