@@ -16,6 +16,8 @@ public class Documentss
     public int MablaghDaryafti { get; set; }
     public string MojavezBargiri { get; set; }
     public int MeghdarBargiri { get; set; }
+    public string Tonazh { get; set; }
+    public int Ezafat { get; set; }
     public IFormFile Img { get; set; }
     
     

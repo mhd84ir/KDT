@@ -23,6 +23,10 @@ public class Document
     public int MeghdarBargiri { get; set; }
     public int St { get; set; }
     public string ImageName { get; set; }
+        public string Tonazh { get; set; }
+            public int Ezafat { get; set; }
+
+
     
 
     

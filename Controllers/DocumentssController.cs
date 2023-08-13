@@ -147,4 +147,11 @@ public class DocumentssController : Controller
             return RedirectToAction("Acsept");
         }
 
+        public IActionResult print()
+        {
+            return View();
+        }
+
+
+
 }

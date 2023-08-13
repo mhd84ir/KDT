@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 using KDT.Models;
 
 namespace KDT.Controllers;
@@ -8,15 +9,32 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger )
     {
         _logger = logger;
     }
 
     public IActionResult Index()
     {
-        // SendMessage();
+        SendSmsAsync("salam","09016250035");
         return View();
+    }
+
+    public async Task<string> SendSmsAsync(string message, string PhoneNumber)
+    {
+        try
+        {
+           HttpClient httpClient = new HttpClient();
+           var httpResponse = await httpClient.GetAsync($"https://api.kavenegar.com/v1/4E5569537A4C444D316733766E646479717667396153624A7A6D704C5261633967374143694536626B4B513D/sms/send.json?receptor={PhoneNumber}&sender=10008663&message={message}");
+        if (httpResponse.StatusCode == HttpStatusCode.OK)
+              return "Success";
+        else
+              return "Failed";
+        }
+        catch
+        {
+           return "Error";
+        }
     }
 
 

@@ -76,6 +76,10 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "System.Net.Primitives": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
             "kavenegar": {
               "target": "Package",
               "version": "[1.2.4, )"
