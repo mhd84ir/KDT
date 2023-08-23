@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="fa" class="light-style" dir="rtl" data-theme="theme-default" data-assets-path="../../assets/" data-template="horizontal-menu-template-no-customizer">
+<html lang="fa" class="light-style" dir="rtl" data-theme="theme-default" data-assets-path="~/assets/" data-template="horizontal-menu-template-no-customizer">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -7,48 +7,55 @@
     <title>سیستم ثبت سند فولاد خرمدشت تاکستان </title>
 
     <meta name="description" content="">
-
+  <link rel="stylesheet" href="~/css/persian.datepicker.css"/>
+  <script src="~/js/jquery.js"></script>
+  <script src="~/js/persian.date.js"></script>
+  <script src="~/js/persian.datepicker.js"></script>
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../assets/img/icons/brands/KDTLogo.png">
+    <link rel="icon" type="image/x-icon" href="~/assets/img/icons/brands/KDTLogo.png">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css">
-    <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css">
-    <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css">
+    <link rel="stylesheet" href="~/assets/vendor/fonts/boxicons.css">
+    <link rel="stylesheet" href="~/assets/vendor/fonts/fontawesome.css">
+    <link rel="stylesheet" href="~/assets/vendor/fonts/flag-icons.css">
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/css/rtl/core.css">
-    <link rel="stylesheet" href="../../assets/vendor/css/rtl/theme-default.css">
-    <link rel="stylesheet" href="../../assets/css/demo.css">
-    <link rel="stylesheet" href="../../assets/vendor/css/rtl/rtl.css">
+    <link rel="stylesheet" href="~/assets/vendor/css/rtl/core.css">
+    <link rel="stylesheet" href="~/assets/vendor/css/rtl/theme-default.css">
+    <link rel="stylesheet" href="~/assets/css/demo.css">
+    <link rel="stylesheet" href="~/assets/vendor/css/rtl/rtl.css">
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css">
-    <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css">
-     <link rel="stylesheet" href="../../assets/vendor/libs/bs-stepper/bs-stepper.css">
-    <link rel="stylesheet" href="../../assets/vendor/libs/select2/select2.css">
-    <link rel="stylesheet" href="../../assets/vendor/libs/tagify/tagify.css">
-    <link rel="stylesheet" href="../../assets/vendor/libs/flatpickr/flatpickr.css">
-    <link rel="stylesheet" href="../../assets/vendor/libs/formvalidation/dist/css/formValidation.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="~/assets/vendor/libs/typeahead-js/typeahead.css">
+    <link rel="stylesheet" href="~/assets/vendor/libs/apex-charts/apex-charts.css">
+     <link rel="stylesheet" href="~/assets/vendor/libs/bs-stepper/bs-stepper.css">
+    <link rel="stylesheet" href="~/assets/vendor/libs/select2/select2.css">
+    <link rel="stylesheet" href="~/assets/vendor/libs/tagify/tagify.css">
+    <link rel="stylesheet" href="~/assets/vendor/libs/flatpickr/flatpickr.css">
+    <link rel="stylesheet" href="~/assets/vendor/libs/formvalidation/dist/css/formValidation.min.css">
     @* picker *@
        <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="../../assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css">
-    <link rel="stylesheet" href="../../assets/vendor/libs/jquery-timepicker/jquery-timepicker.css">
-    <link rel="stylesheet" href="../../assets/vendor/libs/pickr/pickr-themes.css">
+    <link rel="stylesheet" href="~/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css">
+    <link rel="stylesheet" href="~/assets/vendor/libs/jquery-timepicker/jquery-timepicker.css">
+    <link rel="stylesheet" href="~/assets/vendor/libs/pickr/pickr-themes.css">
 
-
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".example1").pDatepicker();
+  });
+</script>
 
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../../assets/vendor/js/helpers.js"></script>
+    <script src="~/assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../../assets/js/config.js"></script>
+    <script src="~/assets/js/config.js"></script>
     <style>
     aside ul li a {
 
@@ -118,6 +125,8 @@ th{
 
 
                           </style>
+
+
   </head>
 
   <body>
@@ -131,7 +140,7 @@ th{
             <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
               <a href="index.html" class="app-brand-link gap-2">
                
-                 <img src="../assets/img/icons/brands/KDTLogo.png" style="width: 175px;" alt="">
+                 <img src="~/assets/img/icons/brands/KDTLogo.png" style="width: 175px;" alt="">
                
                 <span class=" demo menu-text fw-bolder " style="color:#892e33">سیستم ثبت سند فولاد خرمدشت تاکستان </span>
               </a>
@@ -174,7 +183,7 @@ th{
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online" style="border: 1px solid #892e33 ; border-radius: 50%;">
-                      <img src="../../assets/img/avatars/5.png" alt class="rounded-circle">
+                      <img src="~/assets/img/avatars/5.png" alt class="rounded-circle">
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -183,7 +192,7 @@ th{
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../../assets/img/avatars/1.png" alt class="rounded-circle">
+                              <img src="~/assets/img/avatars/1.png" alt class="rounded-circle">
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -295,6 +304,13 @@ th{
                           <div>ثبت سند جدید</div>
                         </a>
                       </li>
+
+                      <li class="menu-item">
+                        <a href="/Documentss/Dolari" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-food-menu'></i>
+                          <div>ثبت سند جدید صادراتی</div>
+                        </a>
+                      </li>
                      
                       <li class="menu-item">
                         <a href="/Documentss/MeghdarBargiri" class="menu-link">
@@ -315,7 +331,7 @@ th{
                   <!-- Charts & Maps -->
                   <li class="menu-item">
                     <a href="" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons bx bx-bar-chart-square"></i>
+                      <i class="menu-icon tf-icons bx bxs-bank"></i>
                       <div>مرکز آمار</div>
                     </a>
                     <ul class="menu-sub">
@@ -324,6 +340,86 @@ th{
                         
                           <i class='menu-icon tf-icons bx bx-building'></i>
                           <div style="white-space: nowrap;" > نمایش اسناد</div>
+                        </a>
+                      </li>
+
+                        <li class="menu-item">
+                        <a href="/MarkazAmar/Showdolar" class="menu-link">
+                        
+                          <i class='menu-icon tf-icons bx bx-building'></i>
+                          <div style="white-space: nowrap;" > مانده دلاری</div>
+                        </a>
+                      </li>
+
+
+
+
+
+
+
+                    </ul>
+                  </li>
+
+                                    <li class="menu-item">
+                    <a href="" class="menu-link menu-toggle">
+                      <i class="menu-icon tf-icons bx bx-bar-chart-square"></i>
+                      <div>اطلاعات پایه  </div>
+                    </a>
+                    <ul class="menu-sub">
+                    
+                      <li class="menu-item">
+                        <a href="/personel/add" class="menu-link">
+                          <i class='menu-icon tf-icons bx bxs-user-detail'></i>
+                          <div > لیست پرسنل</div>
+                        </a>
+                      </li>
+                       <li class="menu-item">
+                        <a href="/tamin/add" class="menu-link">
+                        
+                          <i class='menu-icon tf-icons bx bxs-user-account'></i>
+                          <div style="white-space: nowrap;" > تامین کنندگان و فروشندگان </div>
+                        </a>
+                      </li>
+                      
+                      <li class="menu-item">
+                        <a href="/MarkazAmar/ShowBuyer" class="menu-link">
+                        
+                          <i class='menu-icon tf-icons bx bx-user-check'></i>
+                          <div style="white-space: nowrap;" >خریداران دلاری</div>
+                        </a>
+                      </li>
+
+                         
+                      <li class="menu-item">
+                        <a href="/MarkazAmar/ShowBank" class="menu-link">
+                        
+                          <i class='menu-icon tf-icons bx bxs-bank'></i>
+                          <div style="white-space: nowrap;" >لیست بانک ها</div>
+                        </a>
+                      </li>
+
+                         
+                      <li class="menu-item">
+                        <a href="/MarkazAmar/ShowSherkat" class="menu-link">
+                        
+                          <i class='menu-icon tf-icons bx bx-building'></i>
+                          <div style="white-space: nowrap;" >  لیست شرکت ها  </div>
+                        </a>
+                      </li>
+
+                      <li class="menu-item">
+                        <a href="/MarkazAmar/ShowMahsol" class="menu-link">
+                        
+                          <i class='menu-icon tf-icons bx bxs-data'></i>
+                          <div style="white-space: nowrap;" >  لیست محصول ها  </div>
+                        </a>
+                      </li>
+
+                      <li class="menu-item">
+                        <a href="/MarkazAmar/ShowMahsolSa" class="menu-link">
+                        
+                          <i class='menu-icon tf-icons bx bxs-data'></i>
+                          <div style="white-space: nowrap;" >  لیست محصول های صادراتی </div>
                         </a>
                       </li>
 
@@ -370,43 +466,43 @@ th{
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../../assets/vendor/js/bootstrap.js"></script>
-    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="~/assets/vendor/libs/popper/popper.js"></script>
+    <script src="~/assets/vendor/js/bootstrap.js"></script>
+    <script src="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+    <script src="~/assets/vendor/libs/hammer/hammer.js"></script>
 
-    <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
-    <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+    <script src="~/assets/vendor/libs/i18n/i18n.js"></script>
+    <script src="~/assets/vendor/libs/typeahead-js/typeahead.js"></script>
 
-    <script src="../../assets/vendor/js/menu.js"></script>
+    <script src="~/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="~/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
     <!-- Main JS -->
-    <script src="../../assets/js/main.js"></script>
+    <script src="~/assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="../../assets/js/dashboards-ecommerce.js"></script>
+    <script src="~/assets/js/dashboards-ecommerce.js"></script>
      @* date picker *@
         <!-- Vendors JS -->
-    <script src="../../assets/vendor/libs/moment/moment.js"></script>
-    <script src="../../assets/vendor/libs/jdate/jdate.js"></script>
-    <script src="../../assets/vendor/libs/flatpickr/flatpickr-jdate.js"></script>
-    <script src="../../assets/vendor/libs/flatpickr/l10n/fa-jdate.js"></script>
-    <script src="../../assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js"></script>
-    <script src="../../assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>
-    <script src="../../assets/vendor/libs/jquery-timepicker/jquery-timepicker.js"></script>
-    <script src="../../assets/vendor/libs/pickr/pickr.js"></script>
+    <script src="~/assets/vendor/libs/moment/moment.js"></script>
+    <script src="~/assets/vendor/libs/jdate/jdate.js"></script>
+    <script src="~/assets/vendor/libs/flatpickr/flatpickr-jdate.js"></script>
+    <script src="~/assets/vendor/libs/flatpickr/l10n/fa-jdate.js"></script>
+    <script src="~/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+    <script src="~/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>
+    <script src="~/assets/vendor/libs/jquery-timepicker/jquery-timepicker.js"></script>
+    <script src="~/assets/vendor/libs/pickr/pickr.js"></script>
       <!-- Page JS -->
-    <script src="../../assets/js/forms-pickers.js"></script>
+    <script src="~/assets/js/forms-pickers.js"></script>
 
 
      <!-- date shamsi -->
-    <script src="../../assets/js/persian-date.js"></script>
+    <script src="~/assets/js/persian-date.js"></script>
     <script>
       var tarikh = new persianDate();
       document.getElementById('t').innerText= tarikh.toLocale('fa').format("YYYY | dddd | DD MMMM")   //example => ۱۴۰۰-۰۴-۱۸ ۱۵:۳۲:۳۲ ب ظ
@@ -417,7 +513,31 @@ th{
 
     </script>
 
-
+<script>
+    var searchBox_3 = document.getElementById("searchBox-3");
+searchBox_3.addEventListener("keyup",function(){
+	var keyword = this.value;
+	keyword = keyword.toUpperCase();
+	var table_3 = document.getElementById("table-3");
+	var all_tr = table_3.getElementsByTagName("tr");
+	for(var i=0; i<all_tr.length; i++){
+			var all_columns = all_tr[i].getElementsByTagName("td");
+		  for(j=0;j<all_columns.length; j++){
+				if(all_columns[j]){
+					var column_value = all_columns[j].textContent || all_columns[j].innerText;
+					
+					column_value = column_value.toUpperCase();
+					if(column_value.indexOf(keyword) > -1){
+						all_tr[i].style.display = ""; // show
+						break;
+					}else{
+						all_tr[i].style.display = "none"; // hide
+					}
+				}
+			}
+		}
+})
+</script>
    
 
 

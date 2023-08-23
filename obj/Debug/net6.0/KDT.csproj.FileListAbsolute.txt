@@ -65,3 +65,13 @@
 /Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/Newtonsoft.Json.dll
 /Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/Kavenegar.dll
 /Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/Kavenegar.Core.dll
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/RestSharp.dll
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/System.Text.Json.dll
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/RedmentCore.Communication.Sms.Abstractions.dll
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/RedmentCore.Communication.Sms.FarazSms.dll
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/RedmentCore.Infrastructure.dll
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/RedmentCore.Net.Http.dll
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/PersianDate.Standard.dll

@@ -134,7 +134,7 @@
 
                                 <a href="/Documentss/Delete/@item.Id" onclick="return confirm('آیا از حذف رکورد مورد نظر مطمئن هستید ؟')" class="btn btn-danger ">حذف </a>
                                 <button type="submit" class="btn btn-success ">ثبت </button>
-                            <button class="btn btn-warning" id="open-popup">جزییات</button>
+                            <a class="btn btn-warning" href="/Documentss/Print/@item.Id" id="open-popup">جزییات</a>
                             <div class="popup" id="popup">
                                 <div class="popup-content">
                                     <h2>جزییات</h2>
@@ -142,7 +142,6 @@
                                     <p>نام محصول : @item.NameMahsol</p>
                                     <p>نام شرکت : @item.NameSherkat</p>
                                     <p>مقدار بارگیری : @item.MeghdarBargiri</p>
-                                    <button id="close-popup">بستن</button>
                                 </div>
                             </div>
 

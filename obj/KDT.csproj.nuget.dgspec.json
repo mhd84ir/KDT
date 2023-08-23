@@ -76,6 +76,18 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "PersianDate": {
+              "target": "Package",
+              "version": "[3.5.5, )"
+            },
+            "RedmentCore.Communication.Sms.FarazSms": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[110.2.0, )"
+            },
             "System.Net.Primitives": {
               "target": "Package",
               "version": "[4.3.1, )"

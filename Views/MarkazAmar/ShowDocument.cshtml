@@ -55,19 +55,17 @@
 
 
 
-    <form asp-action="Search">
+
         <div class="col-12 card mt-5   " style="overflow-x: scroll;">
             <div class="row justify-content-center text-center">
                 <div class="col-4 mt-4  ">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="برای جستجو متن رو وارد کنید ..."
-                            aria-label="Recipient's username" aria-describedby="button-addon2" name="childname">
-                        <button class="btn btn-primary" type="button" id="basic-text1">جستوجو</button>
+                        <input type="text" class="form-control" id="searchBox-3"  placeholder="برای جستجو متن رو وارد کنید ..." >
+                        <button class="btn btn-primary" type="submit" >جستوجو</button>
                     </div>
                 </div>
 
             </div>
-</form>
 
 
 
@@ -76,7 +74,7 @@
 
         <div class="card-body " style="zoom: 90%;">
 
-            <table class="table table-bordered " id="myTable">
+            <table class="table table-bordered " id="table-3">
 
                 <tr style="background-color: whitesmoke;">
                     <th>ردیف</th>
@@ -88,7 +86,6 @@
                     <th>فی قبل از ارزش افزوده</th>
                     <th>تخفیف</th>
                     <th>مبلغ کل</th>
-                    <th>مبلغ دریافتی</th>
                     <th>عملیات</th>
 
                 </tr>
@@ -113,7 +110,6 @@
                                 <td>@item.Takhfif</td>
                                 <td>@item.GheymatNahaei</td>
 
-                                <td>@item.MablaghDaryafti</td>
 
                                  <td style="white-space: nowrap !important;">
                             <a href="/MarkazAmar/Delete/@item.Id" class="btn btn-danger"
@@ -148,45 +144,29 @@
 
 </div>
 
+
 <script>
-    // Get all table rows
-    const rows = document.querySelectorAll("#myTable tr");
-
-    // Add click event listener to each row
-    rows.forEach(row => {
-        row.addEventListener("click", function () {
-            // Remove the 'selected' class from all rows
-            rows.forEach(row => {
-                row.classList.remove("selected");
-            });
-
-            // Add the 'selected' class to the clicked row
-            this.classList.add("selected");
-        });
-    });
-
-
-
-    //
-    function getCodeTotal() {
-        debugger
-    var selectedGroupId = $("#CodeGroup").val();
-    $.ajax({
-        url: "/HesabHa/GetCodeTotal",
-        type: "GET",
-        data: { idGroup: selectedGroupId },
-        success: function (data) {
-            $("#CodeTotal").empty();
-            $.each(data, function (index, item) {
-                var option = '<option value="' + item.value + '">' + item.value +"."+ item.text + "</option>";
-                $("#CodeTotal").append(option);
-
-
-               
-            });
-        }
-    });
-}
-
-
+    var searchBox_3 = document.getElementById("searchBox-3");
+searchBox_3.addEventListener("keyup",function(){
+	var keyword = this.value;
+	keyword = keyword.toUpperCase();
+	var table_3 = document.getElementById("table-3");
+	var all_tr = table_3.getElementsByTagName("tr");
+	for(var i=0; i<all_tr.length; i++){
+			var all_columns = all_tr[i].getElementsByTagName("td");
+		  for(j=0;j<all_columns.length; j++){
+				if(all_columns[j]){
+					var column_value = all_columns[j].textContent || all_columns[j].innerText;
+					
+					column_value = column_value.toUpperCase();
+					if(column_value.indexOf(keyword) > -1){
+						all_tr[i].style.display = ""; // show
+						break;
+					}else{
+						all_tr[i].style.display = "none"; // hide
+					}
+				}
+			}
+		}
+})
 </script>

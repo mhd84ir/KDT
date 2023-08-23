@@ -23,12 +23,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9Eb2N1bWVudFJlZ2lzdHJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mhd84.ir/Desktop/KDT/Views/Documentss/Dolari.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9Eb2xhcmkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/Documentss/Hesab.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9IZXNhYi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/Documentss/KharidarDolari.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9LaGFyaWRhckRvbGFyaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/Documentss/Mahsol.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9NYWhzb2wuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/Documentss/MahsolSa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9NYWhzb2xTYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mhd84.ir/Desktop/KDT/Views/Documentss/MeghdarBargiri.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9NZWdoZGFyQmFyZ2lyaS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mhd84.ir/Desktop/KDT/Views/Documentss/print.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9wcmludC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/Documentss/PrintDolar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9QcmludERvbGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/Documentss/Sherkat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9TaGVya2F0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mhd84.ir/Desktop/KDT/Views/Home/Index.cshtml]
@@ -39,8 +67,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/ShowBank.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9TaG93QmFuay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/ShowBuyer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9TaG93QnV5ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/ShowDocument.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9TaG93RG9jdW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/ShowDolar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9TaG93RG9sYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/ShowMahsol.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9TaG93TWFoc29sLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/ShowMahsolSa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9TaG93TWFoc29sU2EuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/ShowSherkat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9TaG93U2hlcmthdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mhd84.ir/Desktop/KDT/Views/Shared/Error.cshtml]

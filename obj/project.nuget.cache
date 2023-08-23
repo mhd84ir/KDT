@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EVKuBelYgku/01cXp6l9hR5V4rj/hsO28wnlylHU6KWxifBxNfcAr2WpdnNW4bkzzsoBGPiTS5fQgpi5p1TJxA==",
+  "dgSpecHash": "uhi2LmuNV8ArZOH508qGH2ufkMBxa8gWNDQJ5RWVwD522Js1cIegCt4mF80APE6/c7UmK8+XswsRc5juNGoWzQ==",
   "success": true,
   "projectFilePath": "/Users/mhd84.ir/Desktop/KDT/KDT.csproj",
   "expectedPackageFiles": [
@@ -38,7 +38,7 @@
     "/Users/mhd84.ir/.nuget/packages/microsoft.extensions.filesystemglobbing/2.2.0/microsoft.extensions.filesystemglobbing.2.2.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/microsoft.extensions.hosting.abstractions/2.2.0/microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/microsoft.extensions.logging/6.0.0/microsoft.extensions.logging.6.0.0.nupkg.sha512",
-    "/Users/mhd84.ir/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.1/microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/microsoft.extensions.objectpool/2.2.0/microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
@@ -55,6 +55,12 @@
     "/Users/mhd84.ir/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/persiandate/3.5.5/persiandate.3.5.5.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/redmentcore.communication.sms.abstractions/6.1.0.2/redmentcore.communication.sms.abstractions.6.1.0.2.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/redmentcore.communication.sms.farazsms/6.0.1/redmentcore.communication.sms.farazsms.6.0.1.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/redmentcore.infrastructure/6.1.0.7/redmentcore.infrastructure.6.1.0.7.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/redmentcore.net.http/6.1.2.1/redmentcore.net.http.6.1.2.1.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/restsharp/110.2.0/restsharp.110.2.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.configuration.configurationmanager/4.7.0/system.configuration.configurationmanager.4.7.0.nupkg.sha512",
@@ -73,7 +79,8 @@
     "/Users/mhd84.ir/.nuget/packages/system.security.permissions/4.7.0/system.security.permissions.4.7.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.text.encoding.codepages/4.7.0/system.text.encoding.codepages.4.7.0.nupkg.sha512",
-    "/Users/mhd84.ir/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/system.text.json/7.0.2/system.text.json.7.0.2.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []

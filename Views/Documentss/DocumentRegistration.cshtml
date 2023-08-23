@@ -168,7 +168,13 @@ button.accept-policy {
 <script src="/wwwroot/js/drag&upload.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
+<script>
+    $('.observer-example').persianDatepicker({
+    observer: true,
+    format: 'YYYY/MM/DD',
+    altField: '.observer-example-alt'
+});
+</script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <link rel="stylesheet" href="css/persian.datepicker.css"/>
@@ -204,28 +210,32 @@ button.accept-policy {
 
             </div> *@
 
-<input type="text"style="visibility: hidden;" >
             <div class="card-body " style="overflow-x: scroll;">
-                 <p class="text-center btn btn-primary form-control text-center p-1">لیست </p>
-
+                <div style="width: 100%;">
+                 <p class="text-center btn btn-primary form-control text-center p-1" >سند نقدی </p>
+                </div>
                 <table class="table table-bordered " id="myTable">
 
                     <tr style="background-color: whitesmoke;">
                         <th>ردیف</th>
-                        <th>تاریخ صدور</th>
-                        <th>تاریخ اعتبار</th>
-                        <th>نوع فروش</th>
-                        <th>نام شرکت</th>
+                        <th>تاریخ صدور پیش فاکتور</th>
+                        <th>تاریخ اعتبار پیش فاکتور</th>
+                        <th>نام شرکت <a href="/Documentss/Sherkat">+</a></th>
                         <th>واسطه</th>
-                        <th>نام محصول</th>
-
-                        <th>مجوز بارگیری</th>
+                        <th>نام محصول <a href="/Documentss/mahsol">+</a></th>
                         <th>مبدا حمل</th>
-                        <th>مقدار بارگیری (Kg)</th>
-                        <th>تعداد</th>
+                        <th>تناژ</th>
                         <th>فی قبل از ارزش افزوده</th>
+                        <th>تعداد</th>
                         <th>تخفیف</th>
-                        <th>مبلغ دریافتی</th>
+                        <th>نوع فروش</th>
+                        <th>حساب <a href="/Documentss/hesab">+</a></th>
+                        <th>مبلغ قبل ارزش افزوده</th>
+                        <th>ارزش افزوده</th>
+                        <th>مبلغ نهایی
+
+                        </th>
+                        <th>عملیات</th>
 
 
 
@@ -240,13 +250,47 @@ button.accept-policy {
                            -
                         </td>
                         <td>
-                            <input dir="ltr" type="date" class="form-control text-center text-center " placeholder="0" asp-for="TarikhSabt" required>
+                            
+                            <input dir="ltr" type="date" class=" form-control text-center text-center " placeholder="0" asp-for="Tarikhsodor" id="date" required>
 
 
 
                         </td>
                         <td>
                             <input dir="ltr" type="date" class="form-control text-center text-center " placeholder="0" asp-for="TarikhEtebar" required>
+                        </td>
+
+                        <td>
+                            <select  class="form-select select2" placeholder="انتخاب" asp-for="SherkatId" asp-items="@ViewBag.Sherkat" required>
+                                <option value="">انتخاب</option>
+
+
+                            </select>
+                        </td>
+                        <td>
+                            <input  type="text" class="form-control text-center text-center" asp-for="NameVasete" required >
+                        </td>
+                        <td>
+                            <select  class="form-select select2" placeholder="انتخاب" asp-for="NameMahsol" asp-items="@ViewBag.Mahsol" required>
+                                <option value="">انتخاب</option>
+
+
+                            </select>
+                        </td>
+                         <td>
+                            <input type="text" class="form-control text-center text-center" asp-for="MabdaHaml" required >
+                        </td>
+                         <td>
+                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="Tonazh" placeholder="0"  >
+                        </td>
+                         <td>
+                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center"  name="FiGhablArzeshAfzode" asp-for="FiGhablArzeshAfzode" placeholder="0" id="FiGhablArzeshAfzode" required >
+                        </td>
+                         <td>
+                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" name="Tedad" asp-for="Tedad" placeholder="0" id="Tedad" required >
+                        </td>
+                         <td>
+                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center" name="Takhfif" asp-for="Takhfif" id="Takhfif" placeholder="0" >
                         </td>
                         <td>
                             <select  class="form-select select2" placeholder="انتخاب" asp-for="NoeForosh" required>
@@ -261,42 +305,28 @@ button.accept-policy {
 
                             </select>
                         </td>
-
                         <td>
-                            <input  type="text" class="form-control text-center text-center" asp-for="NameSherkat" required>
+                            <select  class="form-select select2" placeholder="انتخاب" asp-for="HesabId" asp-items="@ViewBag.Hesab" required>
+                                <option value="">انتخاب</option>
+
+                            </select>
                         </td>
                         <td>
-                            <input  type="text" class="form-control text-center text-center" asp-for="NameVasete" required >
-                        </td>
-                        <td>
-                            <input  type="text" class="form-control text-center text-center" asp-for="NameMahsol" required >
-                        </td>
-
-                        <td>
-                           <input  type="text" class="form-control text-center text-center" asp-for="MojavezBargiri" required >
-                        </td>
-                         <td>
-                            <input type="text" class="form-control text-center text-center" asp-for="MabdaHaml" required >
+                            <p id="ghablarzesh"></p>
                         </td>
 
                          <td>
-                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="MeghdarBargiri" placeholder="0"  >
-                        </td>
-                         <td>
-                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="Tedad" placeholder="0" required >
-                        </td>
-                         <td>
-                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="FiGhablArzeshAfzode" placeholder="0" required >
-                        </td>
-                         <td>
-                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center" asp-for="Takhfif"placeholder="0" >
+                            <p id="arzeshafzode"></p>
                         </td>
 
                          <td>
-                            <input dir="ltr"  type="number" min="0"  class="form-control text-center text-center" placeholder="0" asp-for="MablaghDaryafti" required>
+                            <p id="nahaie"></p>
+                            
                         </td>
 
-
+                        <td >
+                            <a class="btn btn-warning" onclick="main()" style="zoom: 90%;">محاسبه اولیه
+                        </td> 
 
 
 
@@ -354,6 +384,9 @@ button.accept-policy {
 </div>
 
 <script>
+
+
+
 const dropArea = document.getElementById("drop-area");
 const inputFile = document.getElementById("input-file");
 const imageView = document.getElementById("img-view");
@@ -381,35 +414,60 @@ dropArea.addEventListener("drop", function(e)
     uploadImage();
 });
 
+
 </script>
 
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-            @if (ViewBag.check != "true")
-            {
-                @await Html.PartialAsync("PartialCusrome")
-                ViewBag.check = false;
-            }
-
-  </div>
 
 </div>
 
 </body>
+
+<script>
+            $('.select2').select2();
+    $("#date").persianDatepicker();
+</script>
 </html>
 
 
-
 <script>
-    $('.select2').select2();
-    $("#date").persianDatepicker();
-</script>
+        // Get all table rows
+    const rows = document.querySelectorAll("#myTable tr");
 
+    // Add click event listener to each row
+    rows.forEach(row => {
+      row.addEventListener("click", function() {
+        // Remove the 'selected' class from all rows
+        rows.forEach(row => {
+          row.classList.remove("selected");
+        });
+
+        // Add the 'selected' class to the clicked row
+        this.classList.add("selected");
+      });
+    });
+
+
+
+
+        // Get all table rows
+    const rows = document.querySelectorAll("#myTable tr");
+
+    // Add click event listener to each row
+    rows.forEach(row => {
+        row.addEventListener("click", function () {
+            // Remove the 'selected' class from all rows
+            rows.forEach(row => {
+                row.classList.remove("selected");
+            });
+
+            // Add the 'selected' class to the clicked row
+            this.classList.add("selected");
+        });
+    });
+
+</script>
 
 
 

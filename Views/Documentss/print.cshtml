@@ -1,5 +1,7 @@
+@using System.Globalization;
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,8 +10,29 @@
 
 </head>
 <body >
+                                                 @{
+
+                                                    string PersianDate(DateTime DateTime1)
+{
+	                                                PersianCalendar PersianCalendar1 = new PersianCalendar();
+	                                                return string.Format(@"{0}/{1}/{2}",
+			                                        PersianCalendar1.GetYear(DateTime1), 
+			                                        PersianCalendar1.GetMonth(DateTime1), 
+			                                        PersianCalendar1.GetDayOfMonth(DateTime1));
+}                                                   
+                                                   
+                                               }
+
+                                               @{
+                                                    string date = PersianDate(ViewBag.ts);
+                                                    string date2 = PersianDate(ViewBag.te);
+                                               }
 <div id="print_this"  >
         <style >
+            html,body{
+    height:297mm;
+    width:210mm;
+}
         body{
             background-color: #FCFEFF;
         }
@@ -127,13 +150,13 @@ th{
 
                         <td style="background: #000;"></td>
                         <td colspan="5">
-                        شماره پیش فاکتور: <p style="display:inline;font-weight:bold;">1044-402</p>
+                        شماره پیش فاکتور: <p style="display:inline;font-weight:bold;">@ViewBag.pishfack -402</p>
                         </td>
                         <td colspan="2">
-                        تاریخ صدور: <p style="display:inline;font-weight:bold;">۱۴۰۲/۰۵/۱۹</p>
+                        تاریخ صدور: <p style="display:inline;font-weight:bold;">@date</p>
                         </td>
                         <td colspan="2">
-                        تاریخ اعتبار: <p style="display:inline;font-weight:bold;">1402/05/19</p>
+                        تاریخ اعتبار: <p style="display:inline;font-weight:bold;">@date2</p>
 
                         </td>
                 </tr>
@@ -161,14 +184,14 @@ th{
                         خریدار
                     </th>
                     <td colspan="10" style=" text-align:right;" >
-                        <p style="font-size: large; font-weight:bolder;display:inline; ">شرکت تجارت فولاد آریا تاک</p>
+                        <p style="font-size: large; font-weight:bolder;display:inline; ">@ViewBag.ns</p>
                         <br>
-                        <p style="display:inline;  ">شماره ثبت : <b>2977</b></p>
-                        <p style="display:inline;   margin-right: 75px; ">شناسه ملی : <b>14010746898</b></p>
-                        <p style="display:inline;   margin-right: 75px;"> کد پستی : 1989819964</p>
+                        <p style="display:inline;  ">شماره ثبت : <b>@ViewBag.ss</b></p>
+                        <p style="display:inline;   margin-right: 75px; ">شناسه ملی : <b>@ViewBag.sm</b></p>
+                        <p style="display:inline;   margin-right: 75px;"> کد پستی : @ViewBag.cp</p>
                         <br>
 
-                        <p style="display:inline;">نشانی : تهران میدان تجریش خیابان شهید غلام جعفری برج تندیس پلاک ۱۹ ط ۳ واحد ۳۰۱</p>
+                        <p style="display:inline;">نشانی :@ViewBag.nsh</p>
                     </td>
                 </tr>
 
@@ -185,10 +208,11 @@ th{
                     <th  style="  border: 1px solid black;border-collapse: collapse;text-align: center;"> جمع مالیات ارزش افزوده </th>
                     <th  style="  border: 1px solid black;border-collapse: collapse;text-align: center;"> مانده کل (ریال)</th>
                 </tr>
+
                 <tr>
                     <td>1</td>
-                    <td>شمش سنقر</td>
-                    <td>160,158</td>
+                    <td>@ViewBag.sk</td>
+                    <td>@ViewBag.tn</td>
                     <td>Kg</td>
                     <td>185,322</td>
                     <td>29,680,800,876</td>
@@ -199,19 +223,6 @@ th{
 
                 </tr>
 
-                <tr>
-                    <td>2</td>
-                    <td>شمش کاوه</td>
-                    <td>50,00</td>
-                    <td>Kg</td>
-                    <td>185,322</td>
-                    <td>9,266,100,000</td>
-                    <td>44,954</td>
-                    <td>9,680,733,945</td>
-                    <td>2,671,266,055</td>
-                    <td>19,352,000,000</td>
-
-                </tr>
 
                 <tr>
                     <td colspan="2">
@@ -293,4 +304,6 @@ th{
 
 
 </script>
+<script src="node_modules/persian-date/dist/persian-date.js" type="text/javascript"></script>
+
 </html>

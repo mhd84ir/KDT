@@ -1,9 +1,12 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 using KDT.Models;
+using System.Net;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace KDT.Controllers;
+
 
 public class HomeController : Controller
 {
@@ -16,26 +19,56 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        SendSmsAsync("salam","09016250035");
+        
+		// WebRequest request = WebRequest.Create("http://ippanel.com/services.jspd");
+		// string[] rcpts = new string[] { "+989016250035" };
+		// string json = JsonConvert.SerializeObject(rcpts);
+		// request.Method = "POST";
+		// string postData = "op=send&uname=09123409965&pass=mh123321&message=hello Test&to="+json+"&from=+983000505";
+		// byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+		// request.ContentType = "application/x-www-form-urlencoded";
+		// request.ContentLength = byteArray.Length;
+		// Stream dataStream = request.GetRequestStream();
+		// dataStream.Write(byteArray, 0, byteArray.Length);
+		// dataStream.Close();
+		// WebResponse response = request.GetResponse();
+		// Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+		// dataStream = response.GetResponseStream();
+		// StreamReader reader = new StreamReader(dataStream);
+		// string responseFromServer = reader.ReadToEnd();
+		// Console.WriteLine(responseFromServer);
+		// reader.Close();
+		// dataStream.Close();
+		// response.Close();
+		// System.Diagnostics.Debug.WriteLine(responseFromServer);
+
         return View();
     }
 
-    public async Task<string> SendSmsAsync(string message, string PhoneNumber)
-    {
-        try
-        {
-           HttpClient httpClient = new HttpClient();
-           var httpResponse = await httpClient.GetAsync($"https://api.kavenegar.com/v1/4E5569537A4C444D316733766E646479717667396153624A7A6D704C5261633967374143694536626B4B513D/sms/send.json?receptor={PhoneNumber}&sender=10008663&message={message}");
-        if (httpResponse.StatusCode == HttpStatusCode.OK)
-              return "Success";
-        else
-              return "Failed";
-        }
-        catch
-        {
-           return "Error";
-        }
-    }
+    //         static void Main(string[] args)
+    //     {
+    //         PanelSMS.smsserver client = new PanelSMS.smsserver();
+    //         var username = "";
+    //         var password = "";
+    //         var fromNum = "";
+    //         string[] toNum = { "" };
+
+    //         var patternCode = "119";
+
+
+    //         var data = new PanelSMS.input_data_type[] {
+    //             // key is your parameter name and value is what you want to send to the receiptor 
+    //             new PanelSMS.input_data_type(){ key ="customer-name",value ="21981" } ,
+    //             new PanelSMS.input_data_type(){ key ="number",value ="321233fds" }
+    //         };
+
+    //         var response = client.sendPatternSms(fromNum, toNum, username, password, patternCode, data);
+
+
+    //         Console.WriteLine(response);
+    //     }
+    // }
+
 
 
     public IActionResult Privacy()
@@ -50,12 +83,4 @@ public class HomeController : Controller
     }
 
 
-    // public void SendMessage()
-    // {
-    //     var sender = "1000689696";
-    //     var receptor = "09016250035";
-    //     var message = ".وب سرویس پیام کوتاه کاوه نگار";
-    //     var api = new kavenegar.KavenegarApi("4E5569537A4C444D316733766E646479717667396153624A7A6D704C5261633967374143694536626B4B513D");
-    //     api.Send(sender, receptor, message);
-    // }
 }
