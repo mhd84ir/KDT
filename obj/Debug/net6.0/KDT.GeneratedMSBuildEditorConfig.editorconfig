@@ -19,6 +19,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9BY3NlcHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mhd84.ir/Desktop/KDT/Views/Documentss/AcseptDolar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9BY3NlcHREb2xhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mhd84.ir/Desktop/KDT/Views/Documentss/DocumentRegistration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdW1lbnRzcy9Eb2N1bWVudFJlZ2lzdHJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -65,6 +69,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/mhd84.ir/Desktop/KDT/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/EditBank.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9FZGl0QmFuay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/EditKhDolarr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9FZGl0S2hEb2xhcnIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/EditMa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9FZGl0TWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/EditMas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9FZGl0TWFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/EditSherkat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2F6QW1hci9FZGl0U2hlcmthdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/ShowBank.cshtml]

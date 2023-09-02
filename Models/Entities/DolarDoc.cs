@@ -26,7 +26,8 @@ public class DolarDoc
     public string SherkatId { get; set; }
         
     public string? ShomarePish { get; set; }
-    
+    public int? PishId { get; set; }
+
     public string SharayetTahvil { get; set; }
     
             public int FiMablaghGhabelEzhar { get; set; }

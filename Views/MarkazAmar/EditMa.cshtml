@@ -1,0 +1,99 @@
+@model Mahsol;
+
+<style>
+    td,
+    tr {
+
+        border: 0.5px solid rgb(0, 0, 0);
+       
+        text-align: center;
+    }
+
+    tr:hover {
+        background-color: rgb(188, 189, 182);
+        color: rgb(1, 1, 1);
+
+    }
+
+    .selected {
+        background-color: rgb(170, 174, 164);
+        color: rgb(2, 2, 2);
+    }
+
+    .row>* {
+
+        padding-right: 0 !important;
+        padding-left: 2px !important;
+
+    }
+</style>
+
+
+<div class="card p-4" style="zoom: 90%;">
+
+
+    <div class="row p-4">
+<form action="/MarkazAmar/UpdateMa" method="post">
+<input type="text" asp-for="Id" hidden>
+        <div class=" ">
+            <div class="row alert alert-primary p-4 ">
+                <p class="text-center alert alert-success fs-large text-black">معرفی محصول</p>
+
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 "
+                    style="padding-left: 20px  !important;padding-right: 20px  !important;">
+
+
+
+
+
+
+                <div class="row">
+
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+                        <label class="p-1 text-center "> نام محصول : </label>
+                    </div>
+
+                    <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-12">
+
+                            <input required  type="text" class="form-control" asp-for="NameMahsol">
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+               
+
+
+            </div>
+
+
+
+    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12  ">
+
+
+                    <button type="submit" class="btn btn-warning " style="width:75%;margin-top: 35px;">ثبت</button>
+
+
+                </div>
+               
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+</form>

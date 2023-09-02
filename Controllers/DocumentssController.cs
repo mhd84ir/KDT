@@ -8,19 +8,19 @@ public class DocumentssController : Controller
     {         
                 var sherkat = db.sherkats
                .OrderBy(a => a.Id)
-               .GroupBy(a => a.NameSherkat)
+               .GroupBy(a => a.Id)
                .Select(g => g.FirstOrDefault())
                .ToList();
 
         var hesab = db.hesabs
                .OrderBy(a => a.Id)
-               .GroupBy(a => a.NameBank)
+               .GroupBy(a => a.Id)
                .Select(g => g.FirstOrDefault())
                .ToList();
 
         var mahsol = db.mahsols
                .OrderBy(a => a.Id)
-               .GroupBy(a => a.NameMahsol)
+               .GroupBy(a => a.Id)
                .Select(g => g.FirstOrDefault())
                .ToList();
 
@@ -68,7 +68,7 @@ public class DocumentssController : Controller
         doc.TarikhEtebar = d.TarikhEtebar;
         doc.SherkatId=d.SherkatId;
         List<Sherkat> l = new List<Sherkat>();
-        l=db.sherkats.OrderBy(a=>a.Id).GroupBy(x=>x.NameSherkat).Select(e=>e.FirstOrDefault()).ToList();
+        l=db.sherkats.OrderBy(a=>a.Id).GroupBy(x=>x.Id).Select(e=>e.FirstOrDefault()).ToList();
             foreach (var item in l)
             {
                 if (item.Id==Convert.ToInt32(doc.SherkatId))
@@ -78,7 +78,7 @@ public class DocumentssController : Controller
             }
         doc.Tonazh=d.Tonazh;
         List<Hesab> la = new List<Hesab>();
-        la=db.hesabs.OrderByDescending(a=>a.Id).GroupBy(x=>x.NameBank).Select(e=>e.FirstOrDefault()).ToList();
+        la=db.hesabs.OrderByDescending(a=>a.Id).GroupBy(x=>x.Id).Select(e=>e.FirstOrDefault()).ToList();
             foreach (var item in la)
             {
                 if (item.Id==Convert.ToInt32(doc.SherkatId))
@@ -90,12 +90,12 @@ public class DocumentssController : Controller
         doc.NoeForosh = d.NoeForosh;
         doc.NameVasete = d.NameVasete;
         doc.NameMahsol = d.NameMahsol;
-        doc.Tedad = d.Tedad;
+        // doc.Tedad = d.Tedad;
         doc.FiGhablArzeshAfzode = d.FiGhablArzeshAfzode;
         doc.MabdaHaml = d.MabdaHaml;
         doc.Takhfif = d.Takhfif;
         doc.status=0;
-        int MablaghKol= (d.FiGhablArzeshAfzode * d.Tedad) - d.Takhfif;
+        int MablaghKol= (d.FiGhablArzeshAfzode * Convert.ToInt32(d.Tonazh)) - d.Takhfif;
         //اضافه کردن ۹ درصد ارزش افزوده
         doc.ArzeshAfzode = (MablaghKol * 9) / 100;
         doc.GheymatNahaei = MablaghKol + doc.ArzeshAfzode;
@@ -141,7 +141,7 @@ public class DocumentssController : Controller
     public IActionResult UpdateMeghdarBargiri(Document doc)
     {
         List<Document> l = new List<Document>();
-        l=db.Documents.OrderByDescending(a=>a.Id).GroupBy(x=>x.MeghdarBargiri).Select(e=>e.FirstOrDefault()).ToList();
+        l=db.Documents.OrderByDescending(a=>a.Id).GroupBy(x=>x.Id).Select(e=>e.FirstOrDefault()).ToList();
             foreach (var item in l)
             {
                 if (item.Id==doc.Id)
@@ -170,15 +170,88 @@ public class DocumentssController : Controller
     {
                         ViewBag.Doc = db.Documents
                 .OrderBy(a => a.Id)
-                .GroupBy(a=>a.NameSherkat)
+                .GroupBy(a=>a.Id)
                 .Select(g => g.FirstOrDefault())
                 .ToList();
         return View();
     }
+        public IActionResult AcseptDolar()
+    {
+                        ViewBag.Doc = db.dolarDocs
+                .OrderBy(a => a.Id)
+                .GroupBy(a=>a.Id)
+                .Select(g => g.FirstOrDefault())
+                .ToList();
+        return View();
+    }
+
+            public IActionResult StatusRejectD(int ID)
+        {
+            List<DolarDoc> l = new List<DolarDoc>();
+        l=db.dolarDocs.OrderByDescending(a=>a.Id).GroupBy(x=>x.Id).Select(e=>e.FirstOrDefault()).ToList();
+            foreach (var item in l)
+            {
+                if (item.Id==ID)
+                {
+                    
+                    item.status=2;
+                    db.dolarDocs.Update(item);
+                }
+                db.SaveChanges();
+            }
+            return RedirectToAction("AcseptDolar");
+        }
+
+        public IActionResult StatusAcseptD(int ID)
+        {
+            List<DolarDoc> l = new List<DolarDoc>();
+        l=db.dolarDocs.OrderByDescending(a=>a.Id).GroupBy(x=>x.Id).Select(e=>e.FirstOrDefault()).ToList();
+            foreach (var item in l)
+            {
+                if (item.Id==ID)
+                {
+                    
+                    item.status=3;
+                    var PishIdd=db.dolarDocs.OrderByDescending(a=>a.Id).Select(x=>x.PishId).Max();
+                    if (PishIdd==null)
+                    {
+                        item.PishId=1;
+                    }
+                    else
+                    {
+                        PishIdd++;
+                        item.PishId=PishIdd;
+                    }
+                    if (item.PishId.ToString().Length==1)
+                    {
+                        item.ShomarePish=item.NameMahsol[0]+"02-00"+item.PishId;
+                    }
+                    if (item.PishId.ToString().Length==2)
+                    {
+                        item.ShomarePish=item.NameMahsol[0]+"02-0"+item.PishId;
+                    }
+                    if (item.PishId.ToString().Length==3)
+                    {
+                        item.ShomarePish=item.NameMahsol[0]+"02-"+item.PishId;
+                    
+                    }
+
+
+                    
+                    
+                    db.dolarDocs.Update(item);
+                }
+                
+                db.SaveChanges();
+            }
+            return RedirectToAction("AcseptDolar");
+        }
+
+
         public IActionResult StatusReject(int ID)
         {
             List<Document> l = new List<Document>();
-        l=db.Documents.OrderByDescending(a=>a.Id).GroupBy(x=>x.TarikhSabt).Select(e=>e.FirstOrDefault()).ToList();
+        l=db.Documents.OrderByDescending(a=>a.Id).GroupBy(x=>x.Id).Select(e=>e.FirstOrDefault()).ToList();
             foreach (var item in l)
             {
                 if (item.Id==ID)
@@ -195,15 +268,45 @@ public class DocumentssController : Controller
         public IActionResult StatusAcsept(int ID)
         {
             List<Document> l = new List<Document>();
-        l=db.Documents.OrderByDescending(a=>a.Id).GroupBy(x=>x.MeghdarBargiri).Select(e=>e.FirstOrDefault()).ToList();
+        l=db.Documents.OrderByDescending(a=>a.Id).GroupBy(x=>x.Id).Select(e=>e.FirstOrDefault()).ToList();
             foreach (var item in l)
             {
                 if (item.Id==ID)
                 {
                     
                     item.status=3;
+                    var PishIdd=db.Documents.OrderByDescending(a=>a.Id).Select(x=>x.PishId).Max();
+                    if (PishIdd==null)
+                    {
+                        item.PishId=1;
+                    }
+                    else
+                    {
+                        PishIdd++;
+                        item.PishId=PishIdd;
+                    }
+                    if (item.PishId.ToString().Length==1)
+                    {
+                        item.ShomarePish="402-000"+item.PishId;
+                    }
+                    if (item.PishId.ToString().Length==2)
+                    {
+                        item.ShomarePish="402-00"+item.PishId;
+                    }
+                    if (item.PishId.ToString().Length==3)
+                    {
+                        item.ShomarePish="402-0"+item.PishId;
+                    }
+                    if (item.PishId.ToString().Length==4)
+                    {
+                        item.ShomarePish="402-"+item.PishId;
+                    }
+
+                    
+                    
                     db.Documents.Update(item);
                 }
+                
                 db.SaveChanges();
             }
             return RedirectToAction("Acsept");
@@ -212,7 +315,7 @@ public class DocumentssController : Controller
 
         public IActionResult print(int id)
         {
-            var l = db.Documents.OrderBy(a=>a.Id).GroupBy(b=>b.NameSherkat).Select(c=>c.FirstOrDefault());
+            var l = db.Documents.OrderBy(a=>a.Id).GroupBy(b=>b.Id).Select(c=>c.FirstOrDefault());
             foreach (var item in l)
             {
                 if (item.Id==id)
@@ -220,7 +323,7 @@ public class DocumentssController : Controller
                     ViewBag.pishfack=item.ShomarePish;
                     ViewBag.ts=item.Tarikhsodor;
                     ViewBag.te=item.TarikhEtebar;
-                    var sherkat = db.sherkats.OrderBy(a=>a.Id).GroupBy(a=>a.NameSherkat).Select(a=>a.FirstOrDefault()).ToList();
+                    var sherkat = db.sherkats.OrderBy(a=>a.Id).GroupBy(a=>a.Id).Select(a=>a.FirstOrDefault()).ToList();
                     foreach (var item1 in sherkat)
                     {
                         if (item1.Id==Convert.ToInt32(item.SherkatId))
@@ -285,10 +388,12 @@ public class DocumentssController : Controller
             return RedirectToAction("Mahsol");
         }
 
-                public IActionResult AddDbMahsolSA (Mahsol mh)
+                public IActionResult AddDbMahsolSA (MahsolSa mh)
         {
             MahsolSa m = new MahsolSa();
             m.NameMahsol=mh.NameMahsol;
+            m.HSCode=mh.HSCode;
+            m.FirstOfName= m.NameMahsol[0];
             db.mahsolSas.Add(m);
             db.SaveChanges();
 
@@ -311,13 +416,13 @@ public class DocumentssController : Controller
         {
                             var kharidar = db.kharidarDolars
                .OrderBy(a => a.Id)
-               .GroupBy(a => a.Name)
+               .GroupBy(a => a.Id)
                .Select(g => g.FirstOrDefault())
                .ToList();
 
                        var mahsol = db.mahsolSas
                .OrderBy(a => a.Id)
-               .GroupBy(a => a.NameMahsol)
+               .GroupBy(a => a.Id)
                .Select(g => g.FirstOrDefault())
                .ToList();
 
@@ -374,7 +479,7 @@ public class DocumentssController : Controller
         doc.TarikhEtebar = d.TarikhEtebar;
         doc.SherkatId=d.SherkatId;
         List<KharidarDolar> l = new List<KharidarDolar>();
-        l=db.kharidarDolars.OrderByDescending(a=>a.Id).GroupBy(x=>x.Name).Select(e=>e.FirstOrDefault()).ToList();
+        l=db.kharidarDolars.OrderByDescending(a=>a.Id).GroupBy(x=>x.Id).Select(e=>e.FirstOrDefault()).ToList();
             foreach (var item in l)
             {
                 if (item.Id==Convert.ToInt32(doc.SherkatId))

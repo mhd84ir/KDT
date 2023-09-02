@@ -106,9 +106,9 @@
 
                     <tr style="background-color: whitesmoke;">
                         <th>ردیف</th>
-                        <th>نام شرکت</th>
+                        <th>نام خریدار</th>
                         <th>نام محصول</th>
-                        <th>مبدا حمل</th>
+                        <th>مقصد حمل</th>
                         <th>مقدار بارگیری</th>
                         <th>عملیات</th>
 
@@ -122,14 +122,14 @@
                             {
                             <tr>
                             <td>@i</td>
-                            <td>@item.NameSherkat</td>
+                            <td>@item.NameKharidar</td>
                              <td>@item.NameMahsol</td>
-                              <td>@item.MabdaHaml</td>
+                              <td>@item.MaghsadHaml</td>
                                <td>@item.MeghdarBargiri</td>
                            <td>
 
-                                <a href="/Documentss/StatusReject/@item.Id" onclick="return confirm('آیا از عدم تایید رکورد مورد نظر مطمئن هستید ؟')" class="btn btn-danger ">عدم تایید </a>
-                                <a href="/Documentss/StatusAcsept/@item.Id"   class="btn btn-success " onclick="return confirm('آیا از تایید رکورد مورد نظر مطمئن هستید ؟')">تایید </a>
+                                <a href="/Documentss/StatusRejectd/@item.Id" onclick="return confirm('آیا از عدم تایید رکورد مورد نظر مطمئن هستید ؟')" class="btn btn-danger ">عدم تایید </a>
+                                <a href="/Documentss/StatusAcseptd/@item.Id"   class="btn btn-success " onclick="return confirm('آیا از تایید رکورد مورد نظر مطمئن هستید ؟')">تایید </a>
                             <button class="btn btn-warning" >جزییات</button>
                             
 

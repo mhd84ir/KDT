@@ -13,7 +13,7 @@ public class Document
     public string NameSherkat { get; set; }
     public string NameVasete { get; set; }
     public string NameMahsol { get; set; }
-    public int Tedad { get; set; }
+    public int? Tedad { get; set; }
     public int FiGhablArzeshAfzode { get; set; }
     public string MabdaHaml { get; set; }
     public int Takhfif { get; set; }
@@ -27,6 +27,8 @@ public class Document
 
     public string SherkatId { get; set; }
         public string HesabId { get; set; }
+        public int? PishId { get; set; }
+        
         
     public string? ShomarePish { get; set; }
     
