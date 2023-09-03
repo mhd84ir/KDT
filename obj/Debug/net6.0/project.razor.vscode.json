@@ -23844,6 +23844,11 @@
       "FilePath": "/Users/mhd84.ir/Desktop/KDT/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mhd84.ir/Desktop/KDT/Views/MarkazAmar/EditDolar.cshtml",
+      "TargetPath": "Views\\MarkazAmar\\EditDolar.cshtml",
+      "FileKind": "mvc"
     }
   ]
 }

@@ -2,27 +2,33 @@
 
 <style>
     .btn-primary {
-  color: #fff;
-  background-color: #892e33;
-  border-color: #892e33;
+  color: #fff  !important;
+  background-color: #892e33  !important;
+  border-color: #892e33  !important;
 }
     td,
     tr {
 
-        border: 0.5px solid rgb(0, 0, 0);
-       
-        text-align: center;
+        border: 0.5px solid rgb(0, 0, 0)  !important;
+       white-space: nowrap !important;
+        text-align: center  !important;
+        
     }
 
+th{
+    white-space: nowrap !important;
+}
+ 
+
     tr:hover {
-        background-color: rgb(188, 189, 182);
-        color: rgb(1, 1, 1);
+        background-color: rgb(188, 189, 182)  !important;
+        color: rgb(1, 1, 1)  !important;
 
     }
 
     .selected {
-        background-color: rgb(170, 174, 164);
-        color: rgb(2, 2, 2);
+        background-color: rgb(170, 174, 164)  !important;
+        color: rgb(2, 2, 2)  !important;
     }
 
     .row>* {
@@ -51,16 +57,9 @@
 
 
 
-
-
-
-
-
-
-        <div class="col-12 card mt-5   " style="overflow-x: scroll;">
             <div class="row justify-content-center text-center">
-                <div class="col-4 mt-4  ">
-                    <div class="input-group">
+                <div class="col-4 mt-4  " >
+                    <div class="input-group" style="" >
                         <input type="text" class="form-control" placeholder="برای جستجو متن رو وارد کنید ..."
                             aria-label="Recipient's username" aria-describedby="button-addon2" name="childname" id="searchBox-3" >
                         <button class="btn btn-primary" type="submit" id="basic-text1">جستوجو</button>
@@ -68,6 +67,13 @@
                 </div>
 
             </div>
+
+
+
+
+
+        <div class="col-12 card mt-5   " style="overflow-x: scroll;overflow-y: scroll;">
+
 
 
 
@@ -81,7 +87,7 @@
 
                 <tr style="background-color: whitesmoke;">
                     <th>ردیف</th>
-                    <th>تاریخ صدور پیش فاکتور</th>
+                    <th >تاریخ صدور پیش فاکتور</th>
                     <th>تاریخ اعتبار پیش فاکتور</th>
                     <th>تاریخ ثبت پیش فاکتور</th>
                     <th>نام خریدار</th>
@@ -98,7 +104,7 @@
                     <th>مبلغ قابل اظهار</th>
                     <th>شرایط تحویل</th>
                     <th>محل تحویل دلار</th>
-                    <th>مبلغ کل</th>
+                    <th>مبلغ کل فاکتور</th>
                     <th>عملیات</th>
 
                 </tr>
@@ -141,19 +147,19 @@
                                 <td>@item.Tonazh</td>
                                 <td>@item.MeghdarBargiri</td>
                                 <td>@item.Tonazh</td>
-                                <td>@item.Fi</td> 
+                                <td>@item.Fi </td> 
                                 <td>@item.Tonazh</td>
 
                                 <td>@item.Komision</td>
                                 <td>@item.SharayetTahvil</td>
                                 <td>@item.Hesab</td>
-                                <td></td>
+                                <td>898</td>
 
                                  <td style="white-space: nowrap !important;">
-                            <a href="/MarkazAmar/Delete/@item.Id" class="btn btn-danger"
+                                <a href="/MarkazAmar/Delete/@item.Id" class="btn btn-danger"
                                 onclick="return confirm('آیا از حذف مطمن هستید؟')">حذف </a>
 
-                                 <a href="" class="btn btn-warning" >ویرایش </a>
+                                 <a href="/MarkazAmar/EditDolar/@item.Id" class="btn btn-warning" >ویرایش </a>
                                
 
 

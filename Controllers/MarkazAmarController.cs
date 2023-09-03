@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 public class MarkazAmarController : Controller
 {
     private readonly Context db;
@@ -225,5 +227,63 @@ public class MarkazAmarController : Controller
         db.mahsolSas.Update(k);
         db.SaveChanges();
         return RedirectToAction("ShowMahsolSa");
+    }
+
+            public IActionResult EditDolar(int id)
+    {
+
+                            var kharidar = db.kharidarDolars
+               .OrderBy(a => a.Id)
+               .GroupBy(a => a.Id)
+               .Select(g => g.FirstOrDefault())
+               .ToList();
+
+                       var mahsol = db.mahsolSas
+               .OrderBy(a => a.Id)
+               .GroupBy(a => a.Id)
+               .Select(g => g.FirstOrDefault())
+               .ToList();
+
+            var selectkharidarItems = kharidar.Select(g => new SelectListItem
+        {
+            Value = g.Id.ToString(),
+            Text = $"{g.Name } , {g.Country}"
+        });
+
+                var selectmahsolItems = mahsol.Select(g => new SelectListItem
+        {
+            Value = g.NameMahsol.ToString(),
+            Text = $"{g.NameMahsol} "
+        });
+
+        ViewBag.kharidar = new SelectList(selectkharidarItems, "Value", "Text");
+        ViewBag.Mahsol = new SelectList(selectmahsolItems, "Value", "Text");
+
+
+        var e=db.dolarDocs.Find(id);
+        VM_dolari vd = new VM_dolari();
+        vd.Fi=e.Fi;
+        vd.FiMablaghGhabelEzhar=e.FiMablaghGhabelEzhar;
+        vd.GheymatNahaei=e.GheymatNahaei;
+        vd.Hesab=e.Hesab;
+        vd.Id=e.Id;
+        vd.ImageName=e.ImageName;
+        vd.Komision=e.Komision;
+        vd.MablaghGhabelEzhar=e.MablaghGhabelEzhar;
+        vd.MaghsadHaml=e.MaghsadHaml;
+        vd.MeghdarBargiri=e.MeghdarBargiri;
+        vd.NameKharidar=e.NameKharidar;
+        vd.NameMahsol=e.NameMahsol;
+        vd.NameVasete=e.NameVasete;
+        vd.SharayetTahvil=e.SharayetTahvil;
+        vd.SherkatId=e.SherkatId;
+        vd.ShomarePish=e.ShomarePish;
+        vd.status=e.status;
+        vd.TarikhEtebar=e.TarikhEtebar;
+        vd.TarikhSabt=e.TarikhSabt;
+        vd.Tarikhsodor=e.Tarikhsodor;
+        vd.Tonazh=e.Tonazh;
+
+        return View(vd);
     }
 }
