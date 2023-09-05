@@ -15,31 +15,31 @@ public class VM_dolari
     public string MaghsadHaml { get; set; }
     public int GheymatNahaei { get; set; }
     public string? ImageName { get; set; }
-        public int Tonazh { get; set; }
+    public int Tonazh { get; set; }
     public string Hesab { get; set; }
 
     public int? MeghdarBargiri { get; set; }
 
     public string SherkatId { get; set; }
-        
+
     public string? ShomarePish { get; set; }
-    
+
     public string SharayetTahvil { get; set; }
-    
-    
-        public int FiMablaghGhabelEzhar { get; set; }
-        public int MablaghGhabelEzhar { get; set; }
-
-        public IFormFile Img { get; set; }
 
 
+    public int FiMablaghGhabelEzhar { get; set; }
+    public int MablaghGhabelEzhar { get; set; }
+
+    public IFormFile Img { get; set; }
 
 
-    
 
-    
-    
-    
-    
+
+
+
+
+
+
+
 }
 

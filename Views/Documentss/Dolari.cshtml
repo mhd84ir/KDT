@@ -11,6 +11,8 @@
     <title>سیستم ثبت سند فولاد خرمدشت تاکستان </title>
 
     <meta name="description" content="">
+    <link rel="stylesheet" href="https://unpkg.com/@@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
+<script type="text/javascript" src="https://unpkg.com/@@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="~/assets/img/icons/brands/KDTL">
@@ -278,7 +280,7 @@ th{
                     <i class='menu-icon tf-icons bx bxs-dashboard'></i>
                       <div >داشـبـورد </div>
                     </a>
-
+                   
                   </li>
 
                   <!-- Layouts -->
@@ -308,15 +310,28 @@ th{
                       </li>
 
                       <li class="menu-item">
+                        <a href="/Documentss/Lc" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-food-menu'></i>
+                          <div>ثبت سند جدید السی خرید</div>
+                        </a>
+                      </li>
+                     
+                      <li class="menu-item">
                         <a href="/Documentss/MeghdarBargiri" class="menu-link">
                          <i class='menu-icon tf-icons bx bxs-receipt'></i>
                           <div >ثبت مقدار بارگیری شده</div>
                         </a>
                       </li>
+                        <li class="menu-item">
+                        <a href="/Documentss/AcseptDolar" class="menu-link">
+                         <i class='menu-icon tf-icons bx bxs-receipt'></i>
+                          <div >سند های دلاری تایید نشده</div>
+                        </a>
+                      </li>
                       <li class="menu-item">
                         <a href="/Documentss/Acsept" class="menu-link">
                          <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
-                          <div>سند های تایید نشده</div>
+                          <div>سند های نقدی تایید نشده </div>
                         </a>
 
 
@@ -332,13 +347,13 @@ th{
                     <ul class="menu-sub">
                       <li class="menu-item">
                         <a href="/MarkazAmar/ShowDocument" class="menu-link">
-
+                        
                           <i class='menu-icon tf-icons bx bx-building'></i>
                           <div style="white-space: nowrap;" > نمایش اسناد</div>
                         </a>
                       </li>
 
-                                              <li class="menu-item">
+                        <li class="menu-item">
                         <a href="/MarkazAmar/Showdolar" class="menu-link">
                         
                           <i class='menu-icon tf-icons bx bx-building'></i>
@@ -361,7 +376,7 @@ th{
                       <div>اطلاعات پایه  </div>
                     </a>
                     <ul class="menu-sub">
-
+                    
                       <li class="menu-item">
                         <a href="/personel/add" class="menu-link">
                           <i class='menu-icon tf-icons bx bxs-user-detail'></i>
@@ -370,33 +385,33 @@ th{
                       </li>
                        <li class="menu-item">
                         <a href="/tamin/add" class="menu-link">
-
+                        
                           <i class='menu-icon tf-icons bx bxs-user-account'></i>
                           <div style="white-space: nowrap;" > تامین کنندگان و فروشندگان </div>
                         </a>
                       </li>
-
+                      
                       <li class="menu-item">
-                        <a href="/moshtarian/add" class="menu-link">
-
+                        <a href="/MarkazAmar/ShowBuyer" class="menu-link">
+                        
                           <i class='menu-icon tf-icons bx bx-user-check'></i>
-                          <div style="white-space: nowrap;" >مشتریان و طرف حساب ها </div>
+                          <div style="white-space: nowrap;" >خریداران دلاری</div>
                         </a>
                       </li>
 
-
+                         
                       <li class="menu-item">
                         <a href="/MarkazAmar/ShowBank" class="menu-link">
-
+                        
                           <i class='menu-icon tf-icons bx bxs-bank'></i>
                           <div style="white-space: nowrap;" >لیست بانک ها</div>
                         </a>
                       </li>
 
-
+                         
                       <li class="menu-item">
                         <a href="/MarkazAmar/ShowSherkat" class="menu-link">
-
+                        
                           <i class='menu-icon tf-icons bx bx-building'></i>
                           <div style="white-space: nowrap;" >  لیست شرکت ها  </div>
                         </a>
@@ -404,9 +419,17 @@ th{
 
                       <li class="menu-item">
                         <a href="/MarkazAmar/ShowMahsol" class="menu-link">
-
+                        
                           <i class='menu-icon tf-icons bx bxs-data'></i>
                           <div style="white-space: nowrap;" >  لیست محصول ها  </div>
+                        </a>
+                      </li>
+
+                      <li class="menu-item">
+                        <a href="/MarkazAmar/ShowMahsolSa" class="menu-link">
+                        
+                          <i class='menu-icon tf-icons bx bxs-data'></i>
+                          <div style="white-space: nowrap;" >  لیست محصول های صادراتی </div>
                         </a>
                       </li>
 
@@ -665,11 +688,14 @@ button.accept-policy {
                         </td>
                         <td>
                             <input dir="ltr" type="date" class="form-control text-center text-center " placeholder="0" asp-for="Tarikhsodor" id="date" required>
+    @* <input  data-jdp placeholder="لطفا یک تاریخ وارد نمایید" class="form-control text-center text-center"  />                          *@
 
 
 
                         </td>
                         <td>
+    @* <input  data-jdp placeholder="لطفا یک تاریخ وارد نمایید" class="form-control text-center text-center"  />                          *@
+
                             <input dir="ltr" type="date" class="form-control text-center text-center " placeholder="0" asp-for="TarikhEtebar" required>
                         </td>
 
@@ -1141,7 +1167,12 @@ dropArea.addEventListener("drop", function(e)
 
 
 
-
+<script>
+  jalaliDatepicker.startWatch({
+  minDate: "attr",
+  maxDate: "attr"
+}); 
+</script>
 
 
 

@@ -3,6 +3,7 @@
     "persian-date": "^1.1.0"
   },
   "dependencies": {
+    "@majidh1/jalalidatepicker": "^0.9.3",
     "persian-datepicker": "^1.2.0",
     "react-persian-datepicker": "^3.0.2",
     "vue-persian-datetime-picker": "^2.10.4"

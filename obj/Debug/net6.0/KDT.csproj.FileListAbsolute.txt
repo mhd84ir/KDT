@@ -75,3 +75,4 @@
 /Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/RedmentCore.Infrastructure.dll
 /Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/RedmentCore.Net.Http.dll
 /Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/PersianDate.Standard.dll
+/Users/mhd84.ir/Desktop/KDT/obj/Debug/net6.0/scopedcss/Views/Shared/_LcLayout.cshtml.rz.scp.css

@@ -12,35 +12,35 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger )
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
     }
 
     public IActionResult Index()
     {
-        
-		// WebRequest request = WebRequest.Create("http://ippanel.com/services.jspd");
-		// string[] rcpts = new string[] { "+989016250035" };
-		// string json = JsonConvert.SerializeObject(rcpts);
-		// request.Method = "POST";
-		// string postData = "op=send&uname=09123409965&pass=mh123321&message=hello Test&to="+json+"&from=+983000505";
-		// byte[] byteArray = Encoding.UTF8.GetBytes(postData);
-		// request.ContentType = "application/x-www-form-urlencoded";
-		// request.ContentLength = byteArray.Length;
-		// Stream dataStream = request.GetRequestStream();
-		// dataStream.Write(byteArray, 0, byteArray.Length);
-		// dataStream.Close();
-		// WebResponse response = request.GetResponse();
-		// Console.WriteLine(((HttpWebResponse)response).StatusDescription);
-		// dataStream = response.GetResponseStream();
-		// StreamReader reader = new StreamReader(dataStream);
-		// string responseFromServer = reader.ReadToEnd();
-		// Console.WriteLine(responseFromServer);
-		// reader.Close();
-		// dataStream.Close();
-		// response.Close();
-		// System.Diagnostics.Debug.WriteLine(responseFromServer);
+
+        // WebRequest request = WebRequest.Create("http://ippanel.com/services.jspd");
+        // string[] rcpts = new string[] { "+989016250035" };
+        // string json = JsonConvert.SerializeObject(rcpts);
+        // request.Method = "POST";
+        // string postData = "op=send&uname=09123409965&pass=mh123321&message=hello Test&to="+json+"&from=+983000505";
+        // byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+        // request.ContentType = "application/x-www-form-urlencoded";
+        // request.ContentLength = byteArray.Length;
+        // Stream dataStream = request.GetRequestStream();
+        // dataStream.Write(byteArray, 0, byteArray.Length);
+        // dataStream.Close();
+        // WebResponse response = request.GetResponse();
+        // Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+        // dataStream = response.GetResponseStream();
+        // StreamReader reader = new StreamReader(dataStream);
+        // string responseFromServer = reader.ReadToEnd();
+        // Console.WriteLine(responseFromServer);
+        // reader.Close();
+        // dataStream.Close();
+        // response.Close();
+        // System.Diagnostics.Debug.WriteLine(responseFromServer);
 
         return View();
     }

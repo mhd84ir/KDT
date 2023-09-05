@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "k9/6NaPRtzZAd4rCLvwb1dQENUnWhHM1KTJ78Ptt1Wk=",
+  "Hash": "7lAU0ugi45TiQ4a6eVPNhTv+8D52ZQaGUgkSvoF20Hw=",
   "Source": "KDT",
   "BasePath": "_content/KDT",
   "Mode": "Default",
@@ -170,6 +170,23 @@
       "OriginalItemSpec": "wwwroot/assets/FileUpload/3e80dd98-5d3e-424a-a62d-73f06fc997ef.png"
     },
     {
+      "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/53390029-9dec-47b3-aa19-0b754f6410c6.png",
+      "SourceId": "KDT",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mhd84.ir/Desktop/KDT/wwwroot/",
+      "BasePath": "_content/KDT",
+      "RelativePath": "assets/FileUpload/53390029-9dec-47b3-aa19-0b754f6410c6.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/FileUpload/53390029-9dec-47b3-aa19-0b754f6410c6.png"
+    },
+    {
       "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/6697ded4-a191-4839-bebe-cb83d0ccebf5.png",
       "SourceId": "KDT",
       "SourceType": "Discovered",
@@ -221,6 +238,23 @@
       "OriginalItemSpec": "wwwroot/assets/FileUpload/7474a0b1-579c-475e-8683-9e538bde14be.jpeg"
     },
     {
+      "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/8363f6b7-3876-4786-af31-48fd76c428e7.jpg",
+      "SourceId": "KDT",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mhd84.ir/Desktop/KDT/wwwroot/",
+      "BasePath": "_content/KDT",
+      "RelativePath": "assets/FileUpload/8363f6b7-3876-4786-af31-48fd76c428e7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/FileUpload/8363f6b7-3876-4786-af31-48fd76c428e7.jpg"
+    },
+    {
       "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/93b245ed-0fc1-4717-bbf8-b81a81474cda.png",
       "SourceId": "KDT",
       "SourceType": "Discovered",
@@ -255,6 +289,23 @@
       "OriginalItemSpec": "wwwroot/assets/FileUpload/b37c1abf-354b-48fc-a32b-c39f3b11c093.png"
     },
     {
+      "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/b485950d-7669-452f-9c17-29dd74bb8dd2.png",
+      "SourceId": "KDT",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mhd84.ir/Desktop/KDT/wwwroot/",
+      "BasePath": "_content/KDT",
+      "RelativePath": "assets/FileUpload/b485950d-7669-452f-9c17-29dd74bb8dd2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/FileUpload/b485950d-7669-452f-9c17-29dd74bb8dd2.png"
+    },
+    {
       "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/bce66557-1360-4c6b-abe6-be7bf2972ae4.jpeg",
       "SourceId": "KDT",
       "SourceType": "Discovered",
@@ -270,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/FileUpload/bce66557-1360-4c6b-abe6-be7bf2972ae4.jpeg"
+    },
+    {
+      "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/cb8e81fa-d208-44f0-8a52-172b5e2a7b35.png",
+      "SourceId": "KDT",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mhd84.ir/Desktop/KDT/wwwroot/",
+      "BasePath": "_content/KDT",
+      "RelativePath": "assets/FileUpload/cb8e81fa-d208-44f0-8a52-172b5e2a7b35.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/FileUpload/cb8e81fa-d208-44f0-8a52-172b5e2a7b35.png"
     },
     {
       "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/d2b1bf46-c2a9-4c07-bb27-7bb566e5e19c.jpeg",
@@ -338,6 +406,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/FileUpload/e9dd8759-d7e0-40df-9d89-95c054499d7a.png"
+    },
+    {
+      "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/fb6030cc-63ae-4076-afa1-a59bfc57ead6.jpg",
+      "SourceId": "KDT",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mhd84.ir/Desktop/KDT/wwwroot/",
+      "BasePath": "_content/KDT",
+      "RelativePath": "assets/FileUpload/fb6030cc-63ae-4076-afa1-a59bfc57ead6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/FileUpload/fb6030cc-63ae-4076-afa1-a59bfc57ead6.jpg"
     },
     {
       "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/img/.DS_Store",
@@ -746,6 +831,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/img/avatars/9.png"
+    },
+    {
+      "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/img/avatars/downloadicon717744.png",
+      "SourceId": "KDT",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mhd84.ir/Desktop/KDT/wwwroot/",
+      "BasePath": "_content/KDT",
+      "RelativePath": "assets/img/avatars/downloadicon717744.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/img/avatars/downloadicon717744.png"
     },
     {
       "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/img/backgrounds/1.jpg",
@@ -1953,6 +2055,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/img/icons/brands/KDTL.tif"
+    },
+    {
+      "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/img/icons/brands/kdtlo.png",
+      "SourceId": "KDT",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mhd84.ir/Desktop/KDT/wwwroot/",
+      "BasePath": "_content/KDT",
+      "RelativePath": "assets/img/icons/brands/kdtlo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/img/icons/brands/kdtlo.png"
     },
     {
       "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/img/icons/brands/KDTLogo.png",

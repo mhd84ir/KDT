@@ -24,8 +24,8 @@
                                                }
 
                                                @{
-                                                    string date = PersianDate(ViewBag.ts);
-                                                    string date2 = PersianDate(ViewBag.te);
+                                                    @* string date = PersianDate(ViewBag.ts); *@
+                                                    @* string date2 = PersianDate(ViewBag.te); *@
                                                }
 <div id="print_this"  >
         <style >
@@ -153,10 +153,10 @@ th{
                         شماره پیش فاکتور: <p style="display:inline;font-weight:bold;">@ViewBag.pishfack -402</p>
                         </td>
                         <td colspan="2">
-                        تاریخ صدور: <p style="display:inline;font-weight:bold;">@date</p>
+                        تاریخ صدور: <p style="display:inline;font-weight:bold;"></p>
                         </td>
                         <td colspan="2">
-                        تاریخ اعتبار: <p style="display:inline;font-weight:bold;">@date2</p>
+                        تاریخ اعتبار: <p style="display:inline;font-weight:bold;"></p>
 
                         </td>
                 </tr>

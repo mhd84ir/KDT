@@ -46,3 +46,15 @@ button.accept-policy[b-e8pbru5w7s] {
   white-space: nowrap;
   line-height: 60px;
 }
+td[b-e8pbru5w7s],
+tr[b-e8pbru5w7s] {
+
+    border: 0.5px solid rgb(0, 0, 0)  !important;
+   white-space: nowrap !important;
+    text-align: center  !important;
+    
+}
+
+th[b-e8pbru5w7s]{
+white-space: nowrap !important;
+}

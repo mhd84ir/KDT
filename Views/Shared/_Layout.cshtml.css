@@ -46,3 +46,15 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+td,
+tr {
+
+    border: 0.5px solid rgb(0, 0, 0)  !important;
+   white-space: nowrap !important;
+    text-align: center  !important;
+    
+}
+
+th{
+white-space: nowrap !important;
+}

@@ -7,6 +7,8 @@
     <title>سیستم ثبت سند فولاد خرمدشت تاکستان </title>
 
     <meta name="description" content="">
+    <link rel="stylesheet" href="https://unpkg.com/@@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
+<script type="text/javascript" src="https://unpkg.com/@@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"></script>
   <link rel="stylesheet" href="~/css/persian.datepicker.css"/>
   <script src="~/js/jquery.js"></script>
   <script src="~/js/persian.date.js"></script>
@@ -120,7 +122,18 @@ th{
  
 }
 
+    td,
+    tr {
 
+        border: 0.5px solid rgb(0, 0, 0)  !important;
+       white-space: nowrap !important;
+        text-align: center  !important;
+        
+    }
+
+th{
+    white-space: nowrap !important;
+}
 
 
 
@@ -311,6 +324,13 @@ th{
                           <div>ثبت سند جدید صادراتی</div>
                         </a>
                       </li>
+
+                      <li class="menu-item">
+                        <a href="/Documentss/Lc" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-food-menu'></i>
+                          <div>ثبت سند جدید السی خرید</div>
+                        </a>
+                      </li>
                      
                       <li class="menu-item">
                         <a href="/Documentss/MeghdarBargiri" class="menu-link">
@@ -357,6 +377,21 @@ th{
                         </a>
                       </li>
 
+                        <li class="menu-item">
+                        <a href="/MarkazAmar/showlckh" class="menu-link">
+                        
+                          <i class='menu-icon tf-icons bx bx-building'></i>
+                          <div style="white-space: nowrap;" > السی خرید</div>
+                        </a>
+                      </li>
+
+                        <li class="menu-item">
+                        <a href="/MarkazAmar/Showdolar" class="menu-link">
+                        
+                          <i class='menu-icon tf-icons bx bx-building'></i>
+                          <div style="white-space: nowrap;" > السی فروش</div>
+                        </a>
+                      </li>
 
 
 
@@ -518,7 +553,17 @@ th{
 
 
     </script>
+    <script>
+            $('.select2').select2();
+</script>
 
+
+<script>
+jalaliDatepicker.startWatch({
+  minDate: "attr",
+  maxDate: "attr"
+}); 
+</script>
 <script>
     var searchBox_3 = document.getElementById("searchBox-3");
 searchBox_3.addEventListener("keyup",function(){
