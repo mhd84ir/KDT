@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-public class LcRequest
+public class LcRequest 
 {
     [Key]
     public int Id { get; set; }
@@ -11,6 +11,8 @@ public class LcRequest
         public int? MablaghR { get; set; }
 
         public int SherkatId { get; set; }
+
+        public int Status { get; set; }
 
         public string NameSherkat { get; set; }
         public string Vaste { get; set; }

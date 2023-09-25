@@ -184,7 +184,7 @@ button.accept-policy {
 <link rel="stylesheet" href="css/persian.datepicker.css"/>
 </head>
 <body>
-    <form action="/Documentss/AddLCKhToDb" method="post" enctype="multipart/form-data">
+    <form action="/MarkazAmar/UpdateLcKh" method="post" enctype="multipart/form-data">
         <script src="js/jquery.js"></script>
         <script src="js/persian.date.js"></script>
         <script src="js/persian.datepicker.js"></script>
@@ -236,8 +236,9 @@ button.accept-policy {
                         <th>مدت السی (روز)</th>
                         <th>تناژ</th>
                         <th>سایز</th>
-                        <th>فی قبل از ارزش افزوده</th>
+                        <th>فی بعد از ارزش افزوده</th>
                         <th>تخفیف</th>
+                        <th>فی قبل از ارزش افزوده</th>
                         <th>مبلغ قبل ارزش افزوده</th>
                         <th>ارزش افزوده</th>
                         <th>مبلغ نهایی
@@ -256,6 +257,10 @@ button.accept-policy {
 
 
 
+TarikhSabt
+<input type="text" asp-for="Id" hidden readonly>
+<input type="text" asp-for="TarikhSabt" hidden readonly>
+<input type="text" asp-for="status" hidden readonly>
 
 
                     <tr>
@@ -306,31 +311,35 @@ button.accept-policy {
                             <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="LCDay" placeholder="0"  >
                         </td>
                         <td>
-                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="Tonazh" placeholder="0"  >
+                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="Tonazh" id="tonazh" placeholder="0"  >
                         </td>
                          <td>
                             <input    type="text" class="form-control text-center text-center"  asp-for="Size"   >
                         </td>
                         <td>
-                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center"  asp-for="FiGhablArzeshAfzode"  placeholder="0" >
+                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center"  asp-for="FiGhablArzeshAfzode" id="fi"  placeholder="0" >
                         </td>
                          <td>
-                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center"  asp-for="Takhfif"  placeholder="0" >
+                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center"  asp-for="Takhfif" id="takhfif"  placeholder="0" >
                         </td>
                         <td>
-
+                            <p id="fg"></p>
                         </td>
-
-
-
-                         <td>
+                        <td>
+                            <p id="mgha"></p>
                         </td>
 
                          <td>
+                            <p id="a"></p>
+                        </td>
+
+                         <td>
+                            <p id="mn"></p>
+
                         </td>
 
                         <td >
-                            <a class="btn btn-warning" onclick="main()" style="zoom: 90%;">محاسبه اولیه
+                            <a class="btn btn-warning" onclick="sum()" style="zoom: 90%;">محاسبه اولیه
                         </td> 
 
                         <td>
@@ -437,8 +446,27 @@ dropArea.addEventListener("drop", function(e)
     uploadImage();
 });
 
+        function  sum() {
+        
+        var fi = parseInt(document.getElementById("fi").value);
+        var nfg = 9 * (fi / 100);
+        var fg =  (fi / 1.09 );
+        var tonazh = parseInt(document.getElementById("tonazh").value);
+        var takhfif = parseInt(document.getElementById("takhfif").value);
+        var mgha =tonazh * fg;
+        document.getElementById("mgha").innerHTML=mgha;
+        var a = tonazh * nfg;
+        document.getElementById("a").innerHTML=a;
+        var mn = (fi * tonazh) - takhfif;
+        document.getElementById("mn").innerHTML=Math.floor(mn);
+        document.getElementById("fg").innerHTML=Math.floor(fg);
+
+}
+
 
 </script>
+
+
 
 
 

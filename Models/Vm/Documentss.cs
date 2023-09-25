@@ -20,16 +20,17 @@ public class Documentss
     public int ArzeshAfzode { get; set; }
     public int GheymatNahaei { get; set; }
     public string ImageName { get; set; }
-    public string Tonazh { get; set; }
+    public int Tonazh { get; set; }
     public string Hesab { get; set; }
 
-    public int MeghdarBargiri { get; set; }
+    public int? MeghdarBargiri { get; set; }
 
     public string SherkatId { get; set; }
     public string HesabId { get; set; }
 
     public string ShomarePish { get; set; }
 
+    public string? Tozih { get; set; }
 
 
 
@@ -44,6 +45,7 @@ public class Documentss
 
 
     public IFormFile Img { get; set; }
+
 
 
 

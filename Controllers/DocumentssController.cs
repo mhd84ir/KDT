@@ -47,8 +47,6 @@ public class DocumentssController : Controller
         ViewBag.Hesab = new SelectList(selecthesabItems, "Value", "Text");
 
         ViewBag.Mahsol = new SelectList(selectmahsolItems, "Value", "Text");
-
-
         return View();
     }
     //configur IwebHost
@@ -95,10 +93,10 @@ public class DocumentssController : Controller
         doc.MabdaHaml = d.MabdaHaml;
         doc.Takhfif = d.Takhfif;
         doc.status = 0;
-        int MablaghKol = (d.FiGhablArzeshAfzode * Convert.ToInt32(d.Tonazh)) - d.Takhfif;
+        int MablaghKol = (d.FiGhablArzeshAfzode * d.Tonazh) - d.Takhfif;
         //اضافه کردن ۹ درصد ارزش افزوده
-        doc.ArzeshAfzode = (MablaghKol * 9) / 100;
-        doc.GheymatNahaei = MablaghKol + doc.ArzeshAfzode;
+        doc.ArzeshAfzode = ((d.FiGhablArzeshAfzode /100) * 9) * d.Tonazh ;
+        doc.GheymatNahaei = MablaghKol ;
         doc.HesabId = d.HesabId;
         if (d.Img != null)
         {
@@ -132,7 +130,7 @@ public class DocumentssController : Controller
     {
         ViewBag.Doc = db.Documents
         .OrderBy(a => a.Id)
-        .GroupBy(a => a.NameSherkat)
+        .GroupBy(a => a.Id)
         .Select(g => g.FirstOrDefault())
         .ToList();
         return View();
@@ -147,7 +145,7 @@ public class DocumentssController : Controller
             if (item.Id == doc.Id)
             {
                 item.MeghdarBargiri = doc.MeghdarBargiri;
-                item.status = 1;
+                
                 db.Documents.Update(item);
             }
             db.SaveChanges();
@@ -169,6 +167,39 @@ public class DocumentssController : Controller
     public IActionResult Acsept()
     {
         ViewBag.Doc = db.Documents
+.OrderBy(a => a.Id)
+.GroupBy(a => a.Id)
+.Select(g => g.FirstOrDefault())
+.ToList();
+        return View();
+    }
+
+        public IActionResult LcKhAcsept()
+    {
+        ViewBag.Doc = db.lCKhs
+.OrderBy(a => a.Id)
+.GroupBy(a => a.Id)
+.Select(g => g.FirstOrDefault())
+.ToList();
+        return View();
+    }
+
+
+
+        public IActionResult LcFAcsept()
+    {
+        ViewBag.Doc = db.lcfs
+.OrderBy(a => a.Id)
+.GroupBy(a => a.Id)
+.Select(g => g.FirstOrDefault())
+.ToList();
+        return View();
+    }
+
+
+    public IActionResult LcRAcsept()
+    {
+        ViewBag.Doc = db.lcRequests
 .OrderBy(a => a.Id)
 .GroupBy(a => a.Id)
 .Select(g => g.FirstOrDefault())
@@ -313,9 +344,191 @@ public class DocumentssController : Controller
     }
 
 
+    public IActionResult StatusRejectLcKh(int ID)
+    {
+        List <LCKh> l = new List <LCKh> ();
+        
+        l = db.lCKhs.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == ID)
+            {
+
+                item.status = 2;
+                db.lCKhs.Update(item);
+            }
+            db.SaveChanges();
+        }
+        return RedirectToAction("LcKhAcsept");
+    }
+
+    public IActionResult StatusAcseptLcKh(int ID)
+    
+    {
+        
+        List<LCKh> l = new List<LCKh>();
+        l = db.lCKhs.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == ID)
+            {
+
+                item.status = 3;
+                db.lCKhs.Update(item);
+            }
+
+            db.SaveChanges();
+        }
+        return RedirectToAction("LcKhAcsept");
+    }
+
+    public IActionResult RecheckLcKh(int ID)
+    
+    {
+        
+        List<LCKh> l = new List<LCKh>();
+        l = db.lCKhs.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == ID)
+            {
+
+                item.status = 0;
+                db.lCKhs.Update(item);
+            }
+
+            db.SaveChanges();
+        }
+        return RedirectToAction( "ShowLcKh" ,"MarkazAmar");
+    }
+
+
+
+        public IActionResult RecheckLcF(int ID)
+    
+    {
+        
+        List<LCF> l = new List<LCF>();
+        l = db.lcfs.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == ID)
+            {
+
+                item.status = 0;
+                db.lcfs.Update(item);
+            }
+
+            db.SaveChanges();
+        }
+        return RedirectToAction( "ShowLcF" ,"MarkazAmar");
+    }
+
+
+            public IActionResult RecheckLcR(int ID)
+    
+    {
+        
+        List<LcRequest> l = new List<LcRequest>();
+        l = db.lcRequests.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == ID)
+            {
+
+                item.Status = 0;
+                db.lcRequests.Update(item);
+            }
+
+            db.SaveChanges();
+        }
+        return RedirectToAction( "ShowLcR" ,"MarkazAmar");
+    }
+
+
+
+
+    public IActionResult StatusRejectLcF(int ID)
+    {
+        List <LCF> l = new List <LCF> ();
+        
+        l = db.lcfs.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == ID)
+            {
+
+                item.status = 2;
+                db.lcfs.Update(item);
+            }
+            db.SaveChanges();
+        }
+        return RedirectToAction("LcFAcsept");
+    }
+
+    public IActionResult StatusAcseptLcF(int ID)
+    
+    {
+        
+        List<LCF> l = new List<LCF>();
+        l = db.lcfs.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == ID)
+            {
+
+                item.status = 3;
+                db.lcfs.Update(item);
+            }
+
+            db.SaveChanges();
+        }
+        return RedirectToAction("LcFAcsept");
+    }
+
+
+        public IActionResult StatusRejectLcR(int ID)
+    {
+        List <LcRequest> l = new List <LcRequest> ();
+        
+        l = db.lcRequests.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == ID)
+            {
+
+                item.Status = 2;
+                db.lcRequests.Update(item);
+            }
+            db.SaveChanges();
+        }
+        return RedirectToAction("LcRAcsept");
+    }
+
+    public IActionResult StatusAcseptLcR(int ID)
+    
+    {
+        
+        List<LcRequest> l = new List<LcRequest>();
+        l = db.lcRequests.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == ID)
+            {
+
+                item.Status = 3;
+                db.lcRequests.Update(item);
+            }
+
+            db.SaveChanges();
+        }
+        return RedirectToAction("LcRAcsept");
+    }
+
+
     public IActionResult print(int id)
     {
-        var l = db.Documents.OrderBy(a => a.Id).GroupBy(b => b.Id).Select(c => c.FirstOrDefault());
+        var l = db.lcfs.OrderBy(a => a.Id).GroupBy(b => b.Id).Select(c => c.FirstOrDefault());
         foreach (var item in l)
         {
             if (item.Id == id)
@@ -607,9 +820,9 @@ public class DocumentssController : Controller
         return RedirectToAction("Lc");
     }
 
-    public IActionResult RequestLcF ()
+    public IActionResult RequestLcF()
     {
-                var sherkat = db.sherkats
+        var sherkat = db.sherkats
 .OrderBy(a => a.Id)
 .GroupBy(a => a.Id)
 .Select(g => g.FirstOrDefault())
@@ -627,9 +840,18 @@ public class DocumentssController : Controller
     public IActionResult AddDbRequestLcF(Vm_RequestLcF vm)
     {
         LcRequest r = new LcRequest();
-        r.ImageName=UploadImage(vm.img);
-        r.MablaghR=vm.MablaghR;
-        r.SherkatId=vm.SherkatId;
+        if (vm.img!=null)
+        {
+            r.ImageName = UploadImage(vm.img);
+
+        }
+        else
+        {
+                    r.ImageName = null;
+
+        }
+        r.MablaghR = vm.MablaghR;
+        r.SherkatId = vm.SherkatId;
         List<Sherkat> l = new List<Sherkat>();
         l = db.sherkats.OrderBy(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
         foreach (var item in l)
@@ -639,13 +861,145 @@ public class DocumentssController : Controller
                 r.NameSherkat = item.NameSherkat;
             }
         }
-        r.TarikhR=vm.TarikhR;
-        r.Tonazh=vm.Tonazh;
-        r.Tozih=vm.Tozih;
-        r.Vaste=vm.Vaste;
+        r.Status=0;
+        r.TarikhR = vm.TarikhR;
+        r.Tonazh = vm.TonazhR;
+        r.Tozih = vm.Tozih;
+        r.Vaste = vm.NameVasete;
         db.lcRequests.Add(r);
         db.SaveChanges();
         return RedirectToAction("RequestLcF");
+    }
+
+    public IActionResult LcF(int id)
+    {
+        var sherkat = db.sherkats
+        .OrderBy(a => a.Id)
+    .GroupBy(a => a.Id)
+    .Select(g => g.FirstOrDefault())
+    .ToList();
+        var mahsol = db.mahsols
+               .OrderBy(a => a.Id)
+               .GroupBy(a => a.Id)
+               .Select(g => g.FirstOrDefault())
+               .ToList();
+        var selectsherkatItems = sherkat.Select(g => new SelectListItem
+        {
+            Value = g.Id.ToString(),
+            Text = $"{g.NameSherkat}"
+        });
+        var selectmahsolItems = mahsol.Select(g => new SelectListItem
+        {
+            Value = g.NameMahsol.ToString(),
+            Text = $"{g.NameMahsol} "
+        });
+        ViewBag.Sherkat = new SelectList(selectsherkatItems, "Value", "Text");
+
+        ViewBag.Mahsol = new SelectList(selectmahsolItems, "Value", "Text");
+
+
+
+        var edit = db.lcRequests.Find(id);
+        VM_LCKh lcc = new VM_LCKh();
+        lcc.TarikhR=edit.TarikhR;
+        lcc.TonazhR=edit.Tonazh;
+        lcc.MablaghR=edit.MablaghR;
+        lcc.RId=edit.Id;
+        lcc.NameVasete=edit.Vaste;
+        lcc.SherkatId=edit.SherkatId.ToString();
+        lcc.NameSherkat=edit.NameSherkat;
+
+
+
+
+
+
+
+
+
+        return View(lcc);
+    }
+
+        [HttpPost]
+    public IActionResult AddLCFToDb(VM_LCKh d)
+    {
+        LCF doc = new LCF();
+        doc.TarikhSabt = DateTime.Today;
+        doc.Tarikhsodor = d.Tarikhsodor;
+        doc.TarikhEtebar = d.TarikhEtebar;
+        doc.SherkatId = d.SherkatId;
+        List<Sherkat> l = new List<Sherkat>();
+        l = db.sherkats.OrderBy(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == Convert.ToInt32(doc.SherkatId))
+            {
+                doc.NameSherkat = item.NameSherkat;
+            }
+        }
+        doc.Tonazh = d.Tonazh;
+
+
+        doc.NameVasete = d.NameVasete;
+        doc.NameMahsol = d.NameMahsol;
+        // doc.Tedad = d.Tedad;
+        doc.FiGhablArzeshAfzode = d.FiGhablArzeshAfzode;
+        doc.MabdaHaml = d.MabdaHaml;
+        doc.Takhfif = d.Takhfif;
+        doc.status = 0;
+
+        int MablaghKol = (d.FiGhablArzeshAfzode * d.Tonazh) - d.Takhfif;
+        //اضافه کردن ۹ درصد ارزش افزوده
+        doc.ArzeshAfzode = (MablaghKol * 9) / 100;
+        doc.GheymatNahaei = MablaghKol + doc.ArzeshAfzode;
+        if (d.Img != null)
+        {
+            doc.ImageName = UploadImage(d.Img);
+        }
+        else
+        {
+            doc.ImageName = null;
+        }
+        doc.MabdaHaml = d.MabdaHaml;
+        doc.MaghsadHaml = d.MaghsadHaml;
+        doc.BankGoshayesh = d.BankGoshayesh;
+        doc.BankKargozari = d.BankKargozari;
+        doc.LCDay = d.LCDay;
+        doc.Size = d.Size;
+        doc.MeghdarBargiri = d.MeghdarBargiri;
+        doc.Tozih = d.Tozih;
+        doc.Sepam = d.Sepam;
+        doc.TarikhGoshayesh = d.TarikhGoshayesh;
+        doc.ShomarePish = d.ShomarePish;
+        doc.RId=d.RId;
+        List <LcRequest> laa = new List <LcRequest> ();
+        
+        laa = db.lcRequests.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in laa)
+        {
+            if (item.Id == d.RId)
+            {
+
+                item.Status = 4;
+                db.lcRequests.Update(item);
+            }
+        }
+        db.lcfs.Add(doc);
+        db.SaveChanges();
+
+
+        return RedirectToAction("readylcf");
+    }
+
+
+        public IActionResult ReadyLcF()
+    {
+        ViewBag.Doc = db.lcRequests
+        .OrderBy(a => a.Id)
+        .GroupBy(a => a.Id)
+        .Select(g => g.FirstOrDefault())
+        .ToList();
+        return View();
     }
 
 

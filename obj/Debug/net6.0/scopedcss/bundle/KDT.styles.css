@@ -120,3 +120,64 @@ a.navbar-brand[b-4ae1iv1jod] {
 th[b-4ae1iv1jod]{
   white-space: nowrap !important;
 }
+/* _content/KDT/Views/Shared/_SaderatLayout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-eq183sawao] {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+  }
+  
+  a[b-eq183sawao] {
+    color: #717744;
+  }
+  
+  .btn-primary[b-eq183sawao] {
+    color: #fff;
+    background-color: #00684A;
+    border-color: #00684A;
+  }
+  
+  .nav-pills .nav-link.active[b-eq183sawao], .nav-pills .show > .nav-link[b-eq183sawao] {
+    color: #fff;
+    background-color: #00684A;
+    border-color: #00684A;
+  }
+  
+  .border-top[b-eq183sawao] {
+    border-top: 1px solid #e5e5e5;
+  }
+  .border-bottom[b-eq183sawao] {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .box-shadow[b-eq183sawao] {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  }
+  
+  button.accept-policy[b-eq183sawao] {
+    font-size: 1rem;
+    line-height: inherit;
+  }
+  
+  .footer[b-eq183sawao] {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+  }
+  td[b-eq183sawao],
+  tr[b-eq183sawao] {
+
+      border: 0.5px solid rgb(0, 0, 0)  !important;
+     white-space: nowrap !important;
+      text-align: center  !important;
+      
+  }
+
+th[b-eq183sawao]{
+  white-space: nowrap !important;
+}

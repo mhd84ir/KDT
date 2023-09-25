@@ -1,596 +1,711 @@
 ﻿<!DOCTYPE html>
-<html lang="fa" class="light-style" dir="rtl" data-theme="theme-default" data-assets-path="~/assets/" data-template="horizontal-menu-template-no-customizer">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<html lang="fa" class="light-style" dir="rtl" data-theme="theme-default" data-assets-path="~/assets/"
+  data-template="horizontal-menu-template-no-customizer">
 
-    <title>سیستم ثبت سند فولاد خرمدشت تاکستان </title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-    <meta name="description" content="">
-    <link rel="stylesheet" href="https://unpkg.com/@@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
-<script type="text/javascript" src="https://unpkg.com/@@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"></script>
-  <link rel="stylesheet" href="~/css/persian.datepicker.css"/>
+  <title>سیستم ثبت سند فولاد خرمدشت تاکستان </title>
+
+  <meta name="description" content="">
+  <link rel="stylesheet" href="https://unpkg.com/@@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
+  <script type="text/javascript"
+    src="https://unpkg.com/@@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"></script>
+  <link rel="stylesheet" href="~/css/persian.datepicker.css" />
   <script src="~/js/jquery.js"></script>
   <script src="~/js/persian.date.js"></script>
   <script src="~/js/persian.datepicker.js"></script>
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="~/assets/img/icons/brands/KDTLogo.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="~/assets/img/icons/brands/KDTLogo.png">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="~/assets/vendor/fonts/boxicons.css">
-    <link rel="stylesheet" href="~/assets/vendor/fonts/fontawesome.css">
-    <link rel="stylesheet" href="~/assets/vendor/fonts/flag-icons.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="~/assets/vendor/fonts/boxicons.css">
+  <link rel="stylesheet" href="~/assets/vendor/fonts/fontawesome.css">
+  <link rel="stylesheet" href="~/assets/vendor/fonts/flag-icons.css">
 
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="~/assets/vendor/css/rtl/core.css">
-    <link rel="stylesheet" href="~/assets/vendor/css/rtl/theme-default.css">
-    <link rel="stylesheet" href="~/assets/css/demo.css">
-    <link rel="stylesheet" href="~/assets/vendor/css/rtl/rtl.css">
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="~/assets/vendor/css/rtl/core.css">
+  <link rel="stylesheet" href="~/assets/vendor/css/rtl/theme-default.css">
+  <link rel="stylesheet" href="~/assets/css/demo.css">
+  <link rel="stylesheet" href="~/assets/vendor/css/rtl/rtl.css">
 
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" href="~/assets/vendor/libs/typeahead-js/typeahead.css">
-    <link rel="stylesheet" href="~/assets/vendor/libs/apex-charts/apex-charts.css">
-     <link rel="stylesheet" href="~/assets/vendor/libs/bs-stepper/bs-stepper.css">
-    <link rel="stylesheet" href="~/assets/vendor/libs/select2/select2.css">
-    <link rel="stylesheet" href="~/assets/vendor/libs/tagify/tagify.css">
-    <link rel="stylesheet" href="~/assets/vendor/libs/flatpickr/flatpickr.css">
-    <link rel="stylesheet" href="~/assets/vendor/libs/formvalidation/dist/css/formValidation.min.css">
-    @* picker *@
-       <!-- Vendors CSS -->
-    <link rel="stylesheet" href="~/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="~/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css">
-    <link rel="stylesheet" href="~/assets/vendor/libs/jquery-timepicker/jquery-timepicker.css">
-    <link rel="stylesheet" href="~/assets/vendor/libs/pickr/pickr-themes.css">
+  <!-- Vendors CSS -->
+  <link rel="stylesheet" href="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+  <link rel="stylesheet" href="~/assets/vendor/libs/typeahead-js/typeahead.css">
+  <link rel="stylesheet" href="~/assets/vendor/libs/apex-charts/apex-charts.css">
+  <link rel="stylesheet" href="~/assets/vendor/libs/bs-stepper/bs-stepper.css">
+  <link rel="stylesheet" href="~/assets/vendor/libs/select2/select2.css">
+  <link rel="stylesheet" href="~/assets/vendor/libs/tagify/tagify.css">
+  <link rel="stylesheet" href="~/assets/vendor/libs/flatpickr/flatpickr.css">
+  <link rel="stylesheet" href="~/assets/vendor/libs/formvalidation/dist/css/formValidation.min.css">
+  @* picker *@
+  <!-- Vendors CSS -->
+  <link rel="stylesheet" href="~/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="~/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css">
+  <link rel="stylesheet" href="~/assets/vendor/libs/jquery-timepicker/jquery-timepicker.css">
+  <link rel="stylesheet" href="~/assets/vendor/libs/pickr/pickr-themes.css">
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    $(".example1").pDatepicker();
-  });
-</script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".example1").pDatepicker();
+    });
+  </script>
 
 
-    <!-- Page CSS -->
+  <!-- Page CSS -->
 
-    <!-- Helpers -->
-    <script src="~/assets/vendor/js/helpers.js"></script>
+  <!-- Helpers -->
+  <script src="~/assets/vendor/js/helpers.js"></script>
 
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="~/assets/js/config.js"></script>
-    <style>
+  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+  <script src="~/assets/js/config.js"></script>
+  <style>
     aside ul li a {
 
-       border: 1px solid #892e33;
-       margin-left:3px  !important;
-         margin-right:3px  !important;
-       font-weight: bolder;
-       color: #892e33  !important;
-      }
-      li:hover{
-        background-color: #cba2a5(191, 239, 133) !important;
-        color: black  !important;
-      }
-      option{
-        font-weight: bolder;
-      }
-      hr{
-        border-top: 1px solid #892e33 !important;
-      }
+      border: 1px solid #892e33;
+      margin-left: 3px !important;
+      margin-right: 3px !important;
+      font-weight: bolder;
+      color: #892e33 !important;
+    }
 
-      .form-select,input{
-        border: 1px solid rgb(62, 62, 64) !important;
-      }
-     
+    li:hover {
+      background-color: #cba2a5(191, 239, 133) !important;
+      color: black !important;
+    }
 
-  td > select{
-  min-width: 100px !important;
-}
+    option {
+      font-weight: bolder;
+    }
 
-td,tr{
-  padding: 2px !important;
-}
-th{
-  font-size: 15px !important;
-}
-      
-   .select2-container--open .select2-dropdown {
-    left: -17% !important;
-    margin-top: -50px;
-    
-}
+    hr {
+      border-top: 1px solid #892e33 !important;
+    }
+
+    .form-select,
+    input {
+      border: 1px solid rgb(62, 62, 64) !important;
+    }
 
 
+    td>select {
+      min-width: 100px !important;
+    }
 
-.select2-container--open .select2-dropdown--above {
-   
-    width: max-content !important;
-}
+    td,
+    tr {
+      padding: 2px !important;
+    }
 
-.select2-container--default .select2-results>.select2-results__options {
-    max-height: 100px !important;
-   
-    
-}
+    th {
+      font-size: 15px !important;
+    }
 
-.select2{
- width: max-content;}
+    .select2-container--open .select2-dropdown {
+      left: -17% !important;
+      margin-top: -50px;
+
+    }
 
 
- .select2-dropdown {
-  width: max-content !important;
- 
-}
+
+    .select2-container--open .select2-dropdown--above {
+
+      width: max-content !important;
+    }
+
+    .select2-container--default .select2-results>.select2-results__options {
+      max-height: 100px !important;
+
+
+    }
+
+    .select2 {
+      width: max-content;
+    }
+
+
+    .select2-dropdown {
+      width: max-content !important;
+
+    }
 
     td,
     tr {
 
-        border: 0.5px solid rgb(0, 0, 0)  !important;
-       white-space: nowrap !important;
-        text-align: center  !important;
-        
+      border: 0.5px solid rgb(0, 0, 0) !important;
+      white-space: nowrap !important;
+      text-align: center !important;
+
     }
 
-th{
-    white-space: nowrap !important;
-}
+    th {
+      white-space: nowrap !important;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
+    <div class="layout-container">
+      <!-- Navbar -->
+
+      <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
+        <div class="container-xxl">
+          <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
+            <a href="index.html" class="app-brand-link gap-2">
+
+              <img src="~/assets/img/icons/brands/KDTLogo.png" style="width: 175px;" alt="">
+
+              <span class=" demo menu-text fw-bolder " style="color:#892e33">سیستم ثبت سند فولاد خرمدشت تاکستان </span>
+            </a>
+
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
+              <i class="bx bx-x bx-sm align-middle"></i>
+            </a>
+          </div>
+
+          <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+            <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+              <i class="bx bx-menu bx-sm"></i>
+            </a>
+          </div>
+
+          <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+
+
+              <span id="t" style="direction: ltr;color: #892e33;font-weight: 500; " class="fw-bolder"></span>
+              <!-- Language -->
+
+              <!--/ Language -->
 
 
 
-                          </style>
+              <!-- Style Switcher -->
+              <li class="nav-item me-2 me-xl-0">
+                <a class="nav-link style-switcher-toggle hide-arrow" href="javascript:void(0);">
+                  <i class="bx bx-sm"></i>
+                </a>
+              </li>
+              <!--/ Style Switcher -->
 
 
-  </head>
 
-  <body>
-    <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
-      <div class="layout-container">
-        <!-- Navbar -->
 
-        <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
-          <div class="container-xxl">
-            <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
-              <a href="index.html" class="app-brand-link gap-2">
-               
-                 <img src="~/assets/img/icons/brands/KDTLogo.png" style="width: 175px;" alt="">
-               
-                <span class=" demo menu-text fw-bolder " style="color:#892e33">سیستم ثبت سند فولاد خرمدشت تاکستان </span>
-              </a>
 
-              <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
-                <i class="bx bx-x bx-sm align-middle"></i>
-              </a>
-            </div>
-
-            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-                <i class="bx bx-menu bx-sm"></i>
-              </a>
-            </div>
-
-            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <ul class="navbar-nav flex-row align-items-center ms-auto">
-               
-
-                 <span id="t" style="direction: ltr;color: #892e33;font-weight: 500; " class="fw-bolder"></span>
-                <!-- Language -->
-              
-                <!--/ Language -->
-
-              
-
-                <!-- Style Switcher -->
-                <li class="nav-item me-2 me-xl-0">
-                  <a class="nav-link style-switcher-toggle hide-arrow" href="javascript:void(0);">
-                    <i class="bx bx-sm"></i>
-                  </a>
-                </li>
-                <!--/ Style Switcher -->
-
-               
-
-               
-
-                <!-- User -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online" style="border: 1px solid #892e33 ; border-radius: 50%;">
-                      <img src="~/assets/img/avatars/5.png" alt class="rounded-circle">
-                    </div>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="pages-account-settings-account.html">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-3">
-                            <div class="avatar avatar-online">
-                              <img src="~/assets/img/avatars/1.png" alt class="rounded-circle">
-                            </div>
-                          </div>
-                          <div class="flex-grow-1">
-                            <span class="fw-semibold d-block lh-1">جان اسنو</span>
-                            <small>مدیر</small>
+              <!-- User -->
+              <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                  <div class="avatar avatar-online" style="border: 1px solid #892e33 ; border-radius: 50%;">
+                    <img src="~/assets/img/avatars/5.png" alt class="rounded-circle">
+                  </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="pages-account-settings-account.html">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0 me-3">
+                          <div class="avatar avatar-online">
+                            <img src="~/assets/img/avatars/1.png" alt class="rounded-circle">
                           </div>
                         </div>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="pages-profile-user.html">
-                        <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">پروفایل من</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="pages-account-settings-account.html">
-                        <i class="bx bx-cog me-2"></i>
-                        <span class="align-middle">تنظیمات</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="pages-account-settings-billing.html">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span class="flex-grow-1 align-middle">صورتحساب</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="pages-help-center-landing.html">
-                        <i class="bx bx-support me-2"></i>
-                        <span class="align-middle">راهنمایی</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="pages-faq.html">
-                        <i class="bx bx-help-circle me-2"></i>
-                        <span class="align-middle">سوالات متداول</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="pages-pricing.html">
-                        <i class="bx bx-dollar me-2"></i>
-                        <span class="align-middle">قیمت گذاری</span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="auth-login-cover.html" >
-                        <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">خروج</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <!--/ User -->
-              </ul>
-            </div>
-
-            <!-- Search Small Screens -->
-          
-          </div>
-        </nav>
-
-        <!-- / Navbar -->
-
-        <!-- Layout container -->
-        <div class="layout-page">
-          <!-- Content wrapper -->
-          <div class="content-wrapper">
-            <!-- Menu -->
-            <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
-              <div class="container-xxl d-flex h-100">
-                <ul class="menu-inner">
-                  <!-- Dashboards -->
-                  <li class="menu-item ">
-                    <a href="/home/index" class="menu-link ">
-                    <i class='menu-icon tf-icons bx bxs-dashboard'></i>
-                      <div >داشـبـورد </div>
+                        <div class="flex-grow-1">
+                          <span class="fw-semibold d-block lh-1">جان اسنو</span>
+                          <small>مدیر</small>
+                        </div>
+                      </div>
                     </a>
-                   
                   </li>
-
-                  <!-- Layouts -->
-                  <li class="menu-item">
-                    <a href="" class="menu-link menu-toggle">
-                     <i class=' menu-icon tf-icons bx bx-food-menu'></i>
-                      <div >سند ها</div>
-                    </a>
-
-                    <ul class="menu-sub">
-
-
-
-
-                      <li class="menu-item">
-                        <a href="/Documentss/DocumentRegistration" class="menu-link">
-                        <i class='menu-icon tf-icons bx bxs-food-menu'></i>
-                          <div>ثبت سند جدید</div>
-                        </a>
-                      </li>
-
-                      <li class="menu-item">
-                        <a href="/Documentss/Dolari" class="menu-link">
-                        <i class='menu-icon tf-icons bx bxs-food-menu'></i>
-                          <div>ثبت سند جدید صادراتی</div>
-                        </a>
-                      </li>
-
-                      <li class="menu-item">
-                        <a href="/Documentss/Lc" class="menu-link">
-                        <i class='menu-icon tf-icons bx bxs-food-menu'></i>
-                          <div>ثبت سند جدید السی خرید</div>
-                        </a>
-                      </li>
-                     
-                      <li class="menu-item">
-                        <a href="/Documentss/MeghdarBargiri" class="menu-link">
-                         <i class='menu-icon tf-icons bx bxs-receipt'></i>
-                          <div >ثبت مقدار بارگیری شده</div>
-                        </a>
-                      </li>
-                        <li class="menu-item">
-                        <a href="/Documentss/AcseptDolar" class="menu-link">
-                         <i class='menu-icon tf-icons bx bxs-receipt'></i>
-                          <div >سند های دلاری تایید نشده</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="/Documentss/Acsept" class="menu-link">
-                         <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
-                          <div>سند های نقدی تایید نشده </div>
-                        </a>
-
-
-                    </ul>
+                  <li>
+                    <div class="dropdown-divider"></div>
                   </li>
-
-                  <!-- Charts & Maps -->
-                  <li class="menu-item">
-                    <a href="" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons bx bxs-bank"></i>
-                      <div>مرکز آمار</div>
+                  <li>
+                    <a class="dropdown-item" href="pages-profile-user.html">
+                      <i class="bx bx-user me-2"></i>
+                      <span class="align-middle">پروفایل من</span>
                     </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="/MarkazAmar/ShowDocument" class="menu-link">
-                        
-                          <i class='menu-icon tf-icons bx bx-building'></i>
-                          <div style="white-space: nowrap;" > نمایش اسناد</div>
-                        </a>
-                      </li>
-
-                        <li class="menu-item">
-                        <a href="/MarkazAmar/Showdolar" class="menu-link">
-                        
-                          <i class='menu-icon tf-icons bx bx-building'></i>
-                          <div style="white-space: nowrap;" > مانده دلاری</div>
-                        </a>
-                      </li>
-
-                        <li class="menu-item">
-                        <a href="/MarkazAmar/showlckh" class="menu-link">
-                        
-                          <i class='menu-icon tf-icons bx bx-building'></i>
-                          <div style="white-space: nowrap;" > السی خرید</div>
-                        </a>
-                      </li>
-
-                        <li class="menu-item">
-                        <a href="/MarkazAmar/Showdolar" class="menu-link">
-                        
-                          <i class='menu-icon tf-icons bx bx-building'></i>
-                          <div style="white-space: nowrap;" > السی فروش</div>
-                        </a>
-                      </li>
-
-
-
-
-
-
-                    </ul>
                   </li>
-
-                                    <li class="menu-item">
-                    <a href="" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons bx bx-bar-chart-square"></i>
-                      <div>اطلاعات پایه  </div>
+                  <li>
+                    <a class="dropdown-item" href="pages-account-settings-account.html">
+                      <i class="bx bx-cog me-2"></i>
+                      <span class="align-middle">تنظیمات</span>
                     </a>
-                    <ul class="menu-sub">
-                    
-                      <li class="menu-item">
-                        <a href="/personel/add" class="menu-link">
-                          <i class='menu-icon tf-icons bx bxs-user-detail'></i>
-                          <div > لیست پرسنل</div>
-                        </a>
-                      </li>
-                       <li class="menu-item">
-                        <a href="/tamin/add" class="menu-link">
-                        
-                          <i class='menu-icon tf-icons bx bxs-user-account'></i>
-                          <div style="white-space: nowrap;" > تامین کنندگان و فروشندگان </div>
-                        </a>
-                      </li>
-                      
-                      <li class="menu-item">
-                        <a href="/MarkazAmar/ShowBuyer" class="menu-link">
-                        
-                          <i class='menu-icon tf-icons bx bx-user-check'></i>
-                          <div style="white-space: nowrap;" >خریداران دلاری</div>
-                        </a>
-                      </li>
-
-                         
-                      <li class="menu-item">
-                        <a href="/MarkazAmar/ShowBank" class="menu-link">
-                        
-                          <i class='menu-icon tf-icons bx bxs-bank'></i>
-                          <div style="white-space: nowrap;" >لیست بانک ها</div>
-                        </a>
-                      </li>
-
-                         
-                      <li class="menu-item">
-                        <a href="/MarkazAmar/ShowSherkat" class="menu-link">
-                        
-                          <i class='menu-icon tf-icons bx bx-building'></i>
-                          <div style="white-space: nowrap;" >  لیست شرکت ها  </div>
-                        </a>
-                      </li>
-
-                      <li class="menu-item">
-                        <a href="/MarkazAmar/ShowMahsol" class="menu-link">
-                        
-                          <i class='menu-icon tf-icons bx bxs-data'></i>
-                          <div style="white-space: nowrap;" >  لیست محصول ها  </div>
-                        </a>
-                      </li>
-
-                      <li class="menu-item">
-                        <a href="/MarkazAmar/ShowMahsolSa" class="menu-link">
-                        
-                          <i class='menu-icon tf-icons bx bxs-data'></i>
-                          <div style="white-space: nowrap;" >  لیست محصول های صادراتی </div>
-                        </a>
-                      </li>
-
-
-
-
-
-
-
-                    </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="pages-account-settings-billing.html">
+                      <span class="d-flex align-items-center align-middle">
+                        <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                        <span class="flex-grow-1 align-middle">صورتحساب</span>
+                        <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="dropdown-divider"></div>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="pages-help-center-landing.html">
+                      <i class="bx bx-support me-2"></i>
+                      <span class="align-middle">راهنمایی</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="pages-faq.html">
+                      <i class="bx bx-help-circle me-2"></i>
+                      <span class="align-middle">سوالات متداول</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="pages-pricing.html">
+                      <i class="bx bx-dollar me-2"></i>
+                      <span class="align-middle">قیمت گذاری</span>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="dropdown-divider"></div>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="auth-login-cover.html">
+                      <i class="bx bx-power-off me-2"></i>
+                      <span class="align-middle">خروج</span>
+                    </a>
                   </li>
                 </ul>
-              </div>
-            </aside>
-            <!-- / Menu -->
-
-            <!-- Content -->
-
-            <div class="container-xxl flex-grow-1 container-p-y">
-            @RenderBody()
-            </div>
-            <!--/ Content -->
-
-            <!-- Footer -->
-           
-            <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
+              </li>
+              <!--/ User -->
+            </ul>
           </div>
-          <!--/ Content wrapper -->
+
+          <!-- Search Small Screens -->
+
         </div>
+      </nav>
 
-        <!--/ Layout container -->
+      <!-- / Navbar -->
+
+      <!-- Layout container -->
+      <div class="layout-page">
+        <!-- Content wrapper -->
+        <div class="content-wrapper">
+          <!-- Menu -->
+          <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
+            <div class="container-xxl d-flex h-100">
+              <ul class="menu-inner">
+                <!-- Dashboards -->
+                <li class="menu-item ">
+                  <a href="/home/index" class="menu-link ">
+                    <i class='menu-icon tf-icons bx bxs-dashboard'></i>
+                    <div>داشـبـورد </div>
+                  </a>
+
+                </li>
+
+                <!-- Layouts -->
+                <li class="menu-item">
+                  <a href="" class="menu-link menu-toggle">
+                    <i class=' menu-icon tf-icons bx bx-food-menu'></i>
+                    <div>نقدی</div>
+                  </a>
+
+                  <ul class="menu-sub">
+
+
+
+
+                    <li class="menu-item">
+                      <a href="/Documentss/DocumentRegistration" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-food-menu'></i>
+                        <div>ثبت پیش فاکتور جدید</div>
+                      </a>
+                    </li>
+
+
+                    <li class="menu-item">
+                      <a href="/Documentss/MeghdarBargiri" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-receipt'></i>
+                        <div>ثبت مقدار بارگیری شده</div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/Documentss/Acsept" class="menu-link">
+                        <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
+                        <div>سند های نقدی تایید نشده </div>
+                      </a>
+
+
+                  </ul>
+                </li>
+
+
+                <li class="menu-item">
+                  <a href="" class="menu-link menu-toggle">
+                    <i class=' menu-icon tf-icons bx bx-food-menu'></i>
+                    <div>صادرات</div>
+                  </a>
+
+                  <ul class="menu-sub">
+
+
+
+
+                    <li class="menu-item">
+                      <a href="/Documentss/dolari" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-food-menu'></i>
+                        <div>ثبت پیش فاکتور جدید</div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/Documentss/MeghdarBargiri" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-receipt'></i>
+                        <div>ثبت مقدار بارگیری شده</div>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="/Documentss/AcseptDolar" class="menu-link">
+                        <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
+                        <div>سند های دلاری تایید نشده</div>
+                      </a>
+                    </li>
+
+
+                  </ul>
+                </li>
+
+
+                <li class="menu-item">
+                  <a href="" class="menu-link menu-toggle">
+                    <i class=' menu-icon tf-icons bx bx-food-menu'></i>
+                    <div>LC</div>
+                  </a>
+
+                  <ul class="menu-sub">
+
+
+
+
+                    <li class="menu-item">
+                      <a href="/Documentss/RequestLcF" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-food-menu'></i>
+                        <div>درخواست LC فروش جدید</div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/Documentss/readylcf" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-food-menu'></i>
+                        <div>ثبت پیش فاکتور فروش</div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/Documentss/Lc" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-food-menu'></i>
+                        <div>ثبت پیش فاکتور خرید</div>
+                      </a>
+                    </li>
+
+
+
+                    <li class="menu-item">
+                      <a href="/Documentss/MeghdarBargiri" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-receipt'></i>
+                        <div>ثبت مقدار بارگیری شده</div>
+                      </a>
+                    </li>
+
+
+                    <li class="menu-item">
+                      <a href="/Documentss/LcKhAcsept" class="menu-link">
+                        <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
+                        <div>تایید پیش فاکتور های خرید</div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/Documentss/LcFAcsept" class="menu-link">
+                        <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
+                        <div>تایید پیش فاکتور های فروش</div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/Documentss/LcRAcsept" class="menu-link">
+                        <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
+                        <div>تایید درخواست های فروش</div>
+                      </a>
+                    </li>
+
+
+                  </ul>
+                </li>
+
+
+
+
+                <!-- Charts & Maps -->
+                <li class="menu-item">
+                  <a href="" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bxs-bank"></i>
+                    <div>مرکز آمار</div>
+                  </a>
+                  <ul class="menu-sub">
+                    <li class="menu-item">
+                      <a href="/MarkazAmar/ShowDocument" class="menu-link">
+
+                        <i class='menu-icon tf-icons bx bx-building'></i>
+                        <div style="white-space: nowrap;"> نمایش اسناد</div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/MarkazAmar/Showdolar" class="menu-link">
+
+                        <i class='menu-icon tf-icons bx bx-building'></i>
+                        <div style="white-space: nowrap;"> مانده دلاری</div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/MarkazAmar/showlckh" class="menu-link">
+
+                        <i class='menu-icon tf-icons bx bx-building'></i>
+                        <div style="white-space: nowrap;"> السی خرید</div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/MarkazAmar/ShowLcF" class="menu-link">
+
+                        <i class='menu-icon tf-icons bx bx-building'></i>
+                        <div style="white-space: nowrap;"> السی فروش</div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/MarkazAmar/ShowLcR" class="menu-link">
+
+                        <i class='menu-icon tf-icons bx bx-building'></i>
+                        <div style="white-space: nowrap;">درخواست های السی فروش </div>
+                      </a>
+                    </li>
+
+
+
+
+
+
+                  </ul>
+                </li>
+
+                <li class="menu-item">
+                  <a href="" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-bar-chart-square"></i>
+                    <div>اطلاعات پایه </div>
+                  </a>
+                  <ul class="menu-sub">
+
+                    <li class="menu-item">
+                      <a href="/personel/add" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-user-detail'></i>
+                        <div> لیست پرسنل</div>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="/tamin/add" class="menu-link">
+
+                        <i class='menu-icon tf-icons bx bxs-user-account'></i>
+                        <div style="white-space: nowrap;"> تامین کنندگان و فروشندگان </div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/MarkazAmar/ShowBuyer" class="menu-link">
+
+                        <i class='menu-icon tf-icons bx bx-user-check'></i>
+                        <div style="white-space: nowrap;">خریداران دلاری</div>
+                      </a>
+                    </li>
+
+
+                    <li class="menu-item">
+                      <a href="/MarkazAmar/ShowBank" class="menu-link">
+
+                        <i class='menu-icon tf-icons bx bxs-bank'></i>
+                        <div style="white-space: nowrap;">لیست بانک ها</div>
+                      </a>
+                    </li>
+
+
+                    <li class="menu-item">
+                      <a href="/MarkazAmar/ShowSherkat" class="menu-link">
+
+                        <i class='menu-icon tf-icons bx bx-building'></i>
+                        <div style="white-space: nowrap;"> لیست شرکت ها </div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/MarkazAmar/ShowMahsol" class="menu-link">
+
+                        <i class='menu-icon tf-icons bx bxs-data'></i>
+                        <div style="white-space: nowrap;"> لیست محصول ها </div>
+                      </a>
+                    </li>
+
+                    <li class="menu-item">
+                      <a href="/MarkazAmar/ShowMahsolSa" class="menu-link">
+
+                        <i class='menu-icon tf-icons bx bxs-data'></i>
+                        <div style="white-space: nowrap;"> لیست محصول های صادراتی </div>
+                      </a>
+                    </li>
+
+
+
+
+
+
+
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          <!-- / Menu -->
+
+          <!-- Content -->
+
+          <div class="container-xxl flex-grow-1 container-p-y">
+            @RenderBody()
+          </div>
+          <!--/ Content -->
+
+          <!-- Footer -->
+
+          <!-- / Footer -->
+
+          <div class="content-backdrop fade"></div>
+        </div>
+        <!--/ Content wrapper -->
       </div>
+
+      <!--/ Layout container -->
     </div>
+  </div>
 
-    <!-- Overlay -->
-    <div class="layout-overlay layout-menu-toggle"></div>
+  <!-- Overlay -->
+  <div class="layout-overlay layout-menu-toggle"></div>
 
-    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-    <div class="drag-target"></div>
+  <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+  <div class="drag-target"></div>
 
-    <!--/ Layout wrapper -->
+  <!--/ Layout wrapper -->
 
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="~/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="~/assets/vendor/libs/popper/popper.js"></script>
-    <script src="~/assets/vendor/js/bootstrap.js"></script>
-    <script src="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <!-- Core JS -->
+  <!-- build:js assets/vendor/js/core.js -->
+  <script src="~/assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="~/assets/vendor/libs/popper/popper.js"></script>
+  <script src="~/assets/vendor/js/bootstrap.js"></script>
+  <script src="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="~/assets/vendor/libs/hammer/hammer.js"></script>
+  <script src="~/assets/vendor/libs/hammer/hammer.js"></script>
 
-    <script src="~/assets/vendor/libs/i18n/i18n.js"></script>
-    <script src="~/assets/vendor/libs/typeahead-js/typeahead.js"></script>
+  <script src="~/assets/vendor/libs/i18n/i18n.js"></script>
+  <script src="~/assets/vendor/libs/typeahead-js/typeahead.js"></script>
 
-    <script src="~/assets/vendor/js/menu.js"></script>
-    <!-- endbuild -->
+  <script src="~/assets/vendor/js/menu.js"></script>
+  <!-- endbuild -->
 
-    <!-- Vendors JS -->
-    <script src="~/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+  <!-- Vendors JS -->
+  <script src="~/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
-    <!-- Main JS -->
-    <script src="~/assets/js/main.js"></script>
+  <!-- Main JS -->
+  <script src="~/assets/js/main.js"></script>
 
-    <!-- Page JS -->
-    <script src="~/assets/js/dashboards-ecommerce.js"></script>
-     @* date picker *@
-        <!-- Vendors JS -->
-    <script src="~/assets/vendor/libs/moment/moment.js"></script>
-    <script src="~/assets/vendor/libs/jdate/jdate.js"></script>
-    <script src="~/assets/vendor/libs/flatpickr/flatpickr-jdate.js"></script>
-    <script src="~/assets/vendor/libs/flatpickr/l10n/fa-jdate.js"></script>
-    <script src="~/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js"></script>
-    <script src="~/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>
-    <script src="~/assets/vendor/libs/jquery-timepicker/jquery-timepicker.js"></script>
-    <script src="~/assets/vendor/libs/pickr/pickr.js"></script>
-      <!-- Page JS -->
-    <script src="~/assets/js/forms-pickers.js"></script>
-
-
-     <!-- date shamsi -->
-    <script src="~/assets/js/persian-date.js"></script>
-    <script>
-      var tarikh = new persianDate();
-      document.getElementById('t').innerText= tarikh.toLocale('fa').format("YYYY | dddd | DD MMMM")   //example => ۱۴۰۰-۰۴-۱۸ ۱۵:۳۲:۳۲ ب ظ
+  <!-- Page JS -->
+  <script src="~/assets/js/dashboards-ecommerce.js"></script>
+  @* date picker *@
+  <!-- Vendors JS -->
+  <script src="~/assets/vendor/libs/moment/moment.js"></script>
+  <script src="~/assets/vendor/libs/jdate/jdate.js"></script>
+  <script src="~/assets/vendor/libs/flatpickr/flatpickr-jdate.js"></script>
+  <script src="~/assets/vendor/libs/flatpickr/l10n/fa-jdate.js"></script>
+  <script src="~/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+  <script src="~/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>
+  <script src="~/assets/vendor/libs/jquery-timepicker/jquery-timepicker.js"></script>
+  <script src="~/assets/vendor/libs/pickr/pickr.js"></script>
+  <!-- Page JS -->
+  <script src="~/assets/js/forms-pickers.js"></script>
 
 
-       
+  <!-- date shamsi -->
+  <script src="~/assets/js/persian-date.js"></script>
+  <script>
+    var tarikh = new persianDate();
+    document.getElementById('t').innerText = tarikh.toLocale('fa').format("YYYY | dddd | DD MMMM")   //example => ۱۴۰۰-۰۴-۱۸ ۱۵:۳۲:۳۲ ب ظ
 
 
-    </script>
-    <script>
-            $('.select2').select2();
-</script>
 
 
-<script>
-jalaliDatepicker.startWatch({
-  minDate: "attr",
-  maxDate: "attr"
-}); 
-</script>
-<script>
+
+  </script>
+  <script>
+    $('.select2').select2();
+  </script>
+
+
+  <script>
+    jalaliDatepicker.startWatch({
+      minDate: "attr",
+      maxDate: "attr"
+    }); 
+  </script>
+  <script>
     var searchBox_3 = document.getElementById("searchBox-3");
-searchBox_3.addEventListener("keyup",function(){
-	var keyword = this.value;
-	keyword = keyword.toUpperCase();
-	var table_3 = document.getElementById("table-3");
-	var all_tr = table_3.getElementsByTagName("tr");
-	for(var i=0; i<all_tr.length; i++){
-			var all_columns = all_tr[i].getElementsByTagName("td");
-		  for(j=0;j<all_columns.length; j++){
-				if(all_columns[j]){
-					var column_value = all_columns[j].textContent || all_columns[j].innerText;
-					
-					column_value = column_value.toUpperCase();
-					if(column_value.indexOf(keyword) > -1){
-						all_tr[i].style.display = ""; // show
-						break;
-					}else{
-						all_tr[i].style.display = "none"; // hide
-					}
-				}
-			}
-		}
-})
-</script>
-   
+    searchBox_3.addEventListener("keyup", function () {
+      var keyword = this.value;
+      keyword = keyword.toUpperCase();
+      var table_3 = document.getElementById("table-3");
+      var all_tr = table_3.getElementsByTagName("tr");
+      for (var i = 0; i < all_tr.length; i++) {
+        var all_columns = all_tr[i].getElementsByTagName("td");
+        for (j = 0; j < all_columns.length; j++) {
+          if (all_columns[j]) {
+            var column_value = all_columns[j].textContent || all_columns[j].innerText;
+
+            column_value = column_value.toUpperCase();
+            if (column_value.indexOf(keyword) > -1) {
+              all_tr[i].style.display = ""; // show
+              break;
+            } else {
+              all_tr[i].style.display = "none"; // hide
+            }
+          }
+        }
+      }
+    })
+  </script>
 
 
-  </body>
+  @* @await RenderSectionAsync("script" , required:false); *@
+
+  @* <script>
+  var inputField = document.querySelector('input')
+  inputField.onkeyup = function()
+  {
+  var formatedNumber = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  this.value = formatedNumber
+  }
+  </script> *@
+</body>
+
 </html>

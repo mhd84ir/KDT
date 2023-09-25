@@ -108,8 +108,10 @@
                         <th>ردیف</th>
                         <th>نام شرکت</th>
                         <th>نام محصول</th>
-                        <th>مبدا حمل</th>
-                        <th>مقدار بارگیری</th>
+                        <th> تناژ</th>
+                        <th>فی بعد ارزش افزوده </th>
+                        <th>تخفیف</th>
+                        <th>مبلغ نهایی</th>
                         <th>عملیات</th>
 
                     </tr>
@@ -124,8 +126,10 @@
                             <td>@i</td>
                             <td>@item.NameSherkat</td>
                              <td>@item.NameMahsol</td>
-                              <td>@item.MabdaHaml</td>
-                               <td>@item.MeghdarBargiri</td>
+                              <td>@item.Tonazh.ToString("N0")</td>
+                               <td>@item.FiGhablArzeshAfzode.ToString("N0")</td>
+                               <td>@item.Takhfif.ToString("N0")</td>
+                               <td>@item.GheymatNahaei.ToString("N0")</td>
                            <td>
 
                                 <a href="/Documentss/StatusReject/@item.Id" onclick="return confirm('آیا از عدم تایید رکورد مورد نظر مطمئن هستید ؟')" class="btn btn-danger ">عدم تایید </a>

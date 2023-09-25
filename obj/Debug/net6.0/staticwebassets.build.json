@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7lAU0ugi45TiQ4a6eVPNhTv+8D52ZQaGUgkSvoF20Hw=",
+  "Hash": "ZN8j55v6WvXPXOlGNDLCHLr2ZUn59bdkx/TfM/mzUus=",
   "Source": "KDT",
   "BasePath": "_content/KDT",
   "Mode": "Default",
@@ -119,6 +119,23 @@
       "OriginalItemSpec": "wwwroot/assets/css/demo.css"
     },
     {
+      "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/1640dd28-eb0a-4821-9e9b-68953d236f13.jpg",
+      "SourceId": "KDT",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mhd84.ir/Desktop/KDT/wwwroot/",
+      "BasePath": "_content/KDT",
+      "RelativePath": "assets/FileUpload/1640dd28-eb0a-4821-9e9b-68953d236f13.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/FileUpload/1640dd28-eb0a-4821-9e9b-68953d236f13.jpg"
+    },
+    {
       "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/1e3bacae-d857-486f-9848-0d16350089d9.jpeg",
       "SourceId": "KDT",
       "SourceType": "Discovered",
@@ -170,6 +187,23 @@
       "OriginalItemSpec": "wwwroot/assets/FileUpload/3e80dd98-5d3e-424a-a62d-73f06fc997ef.png"
     },
     {
+      "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/436d659d-2bd8-4a2c-9df5-75410a173f65.png",
+      "SourceId": "KDT",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mhd84.ir/Desktop/KDT/wwwroot/",
+      "BasePath": "_content/KDT",
+      "RelativePath": "assets/FileUpload/436d659d-2bd8-4a2c-9df5-75410a173f65.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/FileUpload/436d659d-2bd8-4a2c-9df5-75410a173f65.png"
+    },
+    {
       "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/53390029-9dec-47b3-aa19-0b754f6410c6.png",
       "SourceId": "KDT",
       "SourceType": "Discovered",
@@ -185,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/FileUpload/53390029-9dec-47b3-aa19-0b754f6410c6.png"
+    },
+    {
+      "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/5e314d59-12a6-4987-8b2f-c3f7daeb5e4d.png",
+      "SourceId": "KDT",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mhd84.ir/Desktop/KDT/wwwroot/",
+      "BasePath": "_content/KDT",
+      "RelativePath": "assets/FileUpload/5e314d59-12a6-4987-8b2f-c3f7daeb5e4d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/FileUpload/5e314d59-12a6-4987-8b2f-c3f7daeb5e4d.png"
     },
     {
       "Identity": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/FileUpload/6697ded4-a191-4839-bebe-cb83d0ccebf5.png",

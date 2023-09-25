@@ -1,0 +1,559 @@
+@{
+    Layout= "~/Views/Shared/_LcLayout.cshtml";
+}
+
+@model VM_LCKh
+<html>
+<head>
+
+
+
+<style>
+
+  td,tr{
+
+    border:0.5px solid  rgb(0, 0, 0);
+    white-space: nowrap;
+    text-align: center;
+
+    }
+    tr:hover{
+      background-color: rgb(188, 189, 182);
+      color: rgb(1, 1, 1);
+
+    }
+    .selected {
+       background-color: rgb(170, 173, 163);
+      color: rgb(2, 2, 2);
+    }
+     .row > * {
+
+    padding-right: 0 !important;
+    padding-left: 2px !important;
+
+}
+
+option{
+    white-space: nowrap !important;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 200px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a {
+  color: #717744;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #717744;
+  border-color: #717744;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #717744;
+  border-color: #717744;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+
+#drop-area
+{
+    width: 500px;
+    height: 300px;
+    padding: 30px;
+    background: #fff;
+    text-align: center;
+    border-radius: 20px;
+
+}
+#img-view
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 2px dashed #bbb5ff;
+    background: #f7f8ff;
+    background-position: center;
+    background-size: cover;
+
+}
+
+#img-view img
+{
+    width: 100px;
+    margin-top: 25px;
+}
+
+#img-view span
+{
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-top: 15px;
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+</style>
+
+
+<script src="/wwwroot/js/drag&upload.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<link rel="stylesheet" href="css/persian.datepicker.css"/>
+</head>
+<body>
+    <form action="/Documentss/AddLCFToDb" method="post" enctype="multipart/form-data">
+        <script src="js/jquery.js"></script>
+        <script src="js/persian.date.js"></script>
+        <script src="js/persian.datepicker.js"></script>
+<div class="card p-3" style="zoom: 90%;">
+
+
+    <div class="row p-3">
+
+
+        <div class=" ">
+
+
+
+
+        <div class="col-12 card mt-1   " style="overflow-x: scroll;">
+                        @* <div class="row justify-content-center text-center">
+                <div class="col-4 mt-3  ">
+                    <div class="input-group">
+                        <input type="text" class="form-control text-center"
+                            placeholder="برای جستجو متن رو وارد کنید ..."
+                            aria-label="Recipient's username"
+                            aria-describedby="button-addon2">
+                        <button class="btn btn-primary" type="button"
+                            id="button-addon2">جستوجو</button>
+                    </div>
+                </div>
+
+            </div> *@
+                <div >
+                 <p class="text-center btn btn-primary form-control text-center p-1 "  >سند السی - فروش  </p>
+                </div>
+
+            <div class="card-body " style="overflow-x: scroll;overflow-y: scroll;">
+                <table class="table table-bordered " id="myTable">
+
+                    <tr style="background-color: whitesmoke;">
+                        <th>ردیف</th>
+                        @* <th>شماره پیش فاکتور</th> *@
+                        <th>تاریخ درخواست مشتری</th>
+                        <th>تاریخ صدور پیش فاکتور</th>
+                        
+                        <th>تاریخ اعتبار پیش فاکتور</th>
+                        <th>نام شرکت <a href="/Documentss/Sherkat">+</a></th>
+                        <th>واسطه</th>
+                        <th>نام محصول <a href="/Documentss/mahsol">+</a></th>
+                        <th>مبدا حمل</th>
+                        <th>مقصد حمل</th>
+                        <th>بانک گشایش کننده</th>
+                        <th>بانک کارگذاری</th>
+                        <th>مدت السی (روز)</th>
+                        <th>سایز</th>
+                        <th>قیمت درخواستی</th>
+                        <th>تناژ درخواستی</th>
+                        <th>تناژ</th>
+                        <th>فی بعد از ارزش افزوده</th>
+                        <th>تخفیف</th>
+                        <th>فی قبل از ارزش افزوده</th>
+                        <th>مبلغ قبل ارزش افزوده</th>
+                        <th>ارزش افزوده</th>
+                        <th>مبلغ نهایی
+
+                        </th>
+                        <th>عملیات</th>
+
+                        <th>تناژ بارگیری شده</th>
+
+                        <th>توضیحات</th>
+                        <th>شماره سپام</th>
+                        <th>تاریخ گشایش</th>
+
+
+                    </tr>
+
+
+<input type="text" asp-for="RId" hidden>
+
+
+                    <tr>
+
+                        <td>
+                           -
+                        </td>
+                        @* <td>    
+                                <input  type="text" class="form-control text-center text-center" asp-for="ShomarePish"  >
+                        </td> *@
+                        <td>
+                                <input  class="form-control text-center text-center" asp-for="TarikhR" readonly />                         
+                        </td>
+                        <td>
+                                <input  data-jdp placeholder="لطفا یک تاریخ وارد نمایید" class="form-control text-center text-center" asp-for="Tarikhsodor" required />                         
+                        </td>
+                        <td>
+                                <input  data-jdp placeholder="لطفا یک تاریخ وارد نمایید" class="form-control text-center text-center"  asp-for="TarikhEtebar"/>                         
+                        </td>
+
+
+                        <td>
+                            <select  class="form-select select2" placeholder="انتخاب" asp-for="SherkatId" asp-items="@ViewBag.Sherkat" required>
+                                <option value="">انتخاب</option>
+
+
+                            </select>
+                        </td>
+                        <td>
+                            <input  type="text" class="form-control text-center text-center" asp-for="NameVasete" required >
+                        </td>
+                        <td>
+                            <select  class="form-select select2" placeholder="انتخاب" asp-for="NameMahsol" asp-items="@ViewBag.Mahsol" required>
+                                <option value="">انتخاب</option>
+
+
+                            </select>
+                        </td>
+                         <td>
+                            <input type="text" class="form-control text-center text-center" asp-for="MabdaHaml" required >
+                        </td>
+                        <td>
+                            <input type="text" class="form-control text-center text-center" asp-for="MaghsadHaml" required >
+                        </td>
+                         <td>
+                            <input dir="ltr"   type="text"   class="form-control text-center text-center" asp-for="BankGoshayesh"  >
+                        </td>
+                        <td>
+                            <input dir="ltr"   type="text"   class="form-control text-center text-center" asp-for="BankKargozari"  >
+                        </td>
+                        <td>
+                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="LCDay" placeholder="0"  >
+                        </td>
+                         <td>
+                            <input    type="text" class="form-control text-center text-center"  asp-for="Size"   >
+                        </td>
+                        <td>
+                            <input dir="ltr"   type="text"  class="form-control text-center text-center" asp-for="MablaghR" readonly >
+                        </td>
+                        <td>
+                            <input dir="ltr"   type="text"  class="form-control text-center text-center" asp-for="TonazhR" readonly >
+                        </td>
+                        <td>
+                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="Tonazh" id="tonazh" placeholder="0"  >
+                        </td>
+                        <td>
+                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center"  asp-for="FiGhablArzeshAfzode" id="fi"  placeholder="0" >
+                        </td>
+                         <td>
+                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center"  asp-for="Takhfif" id="takhfif" value="0">
+                        </td>
+                        <td>
+                            <p id="fg"></p>
+                        </td>
+                        <td>
+                            <p id="mgha"></p>
+                        </td>
+
+                         <td>
+                            <p id="a"></p>
+                        </td>
+
+                         <td>
+                            <p id="mn"></p>
+
+                        </td>
+
+                        <td >
+                            <a class="btn btn-warning" onclick="sum()" style="zoom: 90%;">محاسبه اولیه
+                        </td> 
+
+                        <td>
+                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center"  asp-for="MeghdarBargiri"  placeholder="0" >
+                        </td>
+                        <td>
+                            <input    type="text" class="form-control text-center text-center"  asp-for="Tozih"   >
+                        </td>
+
+                        <td>
+                            <input    type="text" class="form-control text-center text-center"  asp-for="Sepam"   >
+                        </td>
+                        <td>
+                                <input  data-jdp placeholder="لطفا یک تاریخ وارد نمایید" class="form-control text-center text-center" asp-for="TarikhGoshayesh"  />                         
+                        </td>
+
+
+
+
+
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+
+
+         <div class="col-12 card mt-3 " style="zoom: 110%;">
+
+            <div class=" text-center  row text-center justify-content-center mb-3 ">
+                <p class="text-center btn btn-primary form-control text-center p-1">تایید و پیوست عکس پیش فاکتور </p>
+
+
+
+
+            </div>
+            <div>
+
+            </div>
+
+
+
+
+
+            <div class="card-body">
+                <div class=" text-center">
+
+                    <div class="hero">
+
+                        @* <label for="input-file" id="drop-area">
+                            <input class="upload" type="file"  accept="image/*"    id="input-file" asp-for="Img" hidden multiple>
+                            <div id="img-view">
+                            <img src="../../assets/img/avatars/downloadicon717744.png" >
+                            <p style="margin: 10px;">برای بارگذاری عکس کلیک کنید یا عکس را اینجا بکشید</p>
+                            <span style="margin-bottom: 15px;">بارگذاری پیوست</span>
+                            </div>
+                        </label> *@
+                        @if(ViewBag.ImageName!=null){
+                        <label for="input-file" id="drop-area">
+                            <input class="upload" type="file"  accept="image/*"    id="input-file" asp-for="Img" hidden multiple>
+                            <div id="img-view"  >
+                                
+                            <img src="~/assets/FileUpload/@ViewBag.ImageName" style="width: 400px; height: 200px;">
+                            </div>
+                        </label>
+                        }
+
+                        else{
+                        <label for="input-file" id="drop-area">
+                            <input class="upload" type="file"  accept="image/*"    id="input-file" asp-for="Img" hidden multiple>
+                            <div id="img-view">
+                            <img src="../../assets/img/avatars/downloadicon717744.png" >
+                            <p style="margin: 10px;">برای بارگذاری عکس کلیک کنید یا عکس را اینجا بکشید</p>
+                            <span style="margin-bottom: 15px;">بارگذاری پیوست</span>
+                            </div>
+                        </label>
+                        }
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-success">تایید</button>
+
+</form>
+                </div>
+
+
+            </div>
+
+
+</div>
+
+    <script>
+            $('.select2').select2();
+</script>
+
+<script>
+
+        function  sum() {
+
+        var fi = parseInt(document.getElementById("fi").value);
+        var nfg = 9 * (fi / 100);
+        var fg =  (fi / 1.09 );
+        var tonazh = parseInt(document.getElementById("tonazh").value);
+        var takhfif = parseInt(document.getElementById("takhfif").value);
+        var mgha =tonazh * fg;
+        document.getElementById("mgha").innerHTML=mgha;
+        var a = tonazh * nfg;
+        document.getElementById("a").innerHTML=a;
+        var mn = (fi * tonazh) - takhfif;
+        document.getElementById("mn").innerHTML=Math.floor(mn);
+        document.getElementById("fg").innerHTML=Math.floor(fg);
+
+}
+</script>
+
+<script>
+
+
+
+const dropArea = document.getElementById("drop-area");
+const inputFile = document.getElementById("input-file");
+const imageView = document.getElementById("img-view");
+inputFile.addEventListener("change", uploadImage);
+function uploadImage()
+{
+
+    let imgLink = URL.createObjectURL(inputFile.files[0]);
+    imageView.style.backgroundImage = `url(${imgLink})`;
+    imageView.textContent="";
+    imageView.style.border=0;
+
+
+
+}
+
+dropArea.addEventListener("dragover", function(e)
+{
+    e.preventDefault();
+});
+dropArea.addEventListener("drop", function(e)
+{
+    e.preventDefault();
+    inputFile.files= e.dataTransfer.files;
+    uploadImage();
+});
+
+
+</script>
+
+
+
+
+</div>
+
+</body>
+
+
+</html>
+
+
+<script>
+        // Get all table rows
+    const rows = document.querySelectorAll("#myTable tr");
+
+    // Add click event listener to each row
+    rows.forEach(row => {
+      row.addEventListener("click", function() {
+        // Remove the 'selected' class from all rows
+        rows.forEach(row => {
+          row.classList.remove("selected");
+        });
+
+        // Add the 'selected' class to the clicked row
+        this.classList.add("selected");
+      });
+    });
+
+
+
+
+        // Get all table rows
+    const rows = document.querySelectorAll("#myTable tr");
+
+    // Add click event listener to each row
+    rows.forEach(row => {
+        row.addEventListener("click", function () {
+            // Remove the 'selected' class from all rows
+            rows.forEach(row => {
+                row.classList.remove("selected");
+            });
+
+            // Add the 'selected' class to the clicked row
+            this.classList.add("selected");
+        });
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+

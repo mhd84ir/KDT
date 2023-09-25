@@ -2,6 +2,7 @@
 <html>
 <head>
 <style>
+    
 
   td,tr{
 
@@ -225,16 +226,18 @@ button.accept-policy {
                         <th>نام محصول <a href="/Documentss/mahsol">+</a></th>
                         <th>مبدا حمل</th>
                         <th>تناژ</th>
-                        <th>فی قبل از ارزش افزوده</th>
+                        <th>فی بعد از ارزش افزوده</th>
                         <th>تخفیف</th>
                         <th>نوع فروش</th>
                         <th>حساب <a href="/Documentss/hesab">+</a></th>
+                        <th>فی قبل از ارزش افزوده</th>
                         <th>مبلغ قبل ارزش افزوده</th>
                         <th>ارزش افزوده</th>
                         <th>مبلغ نهایی
 
                         </th>
                         <th>عملیات</th>
+                        <th>توضیحات</th>
 
 
 
@@ -283,13 +286,13 @@ button.accept-policy {
                             <input type="text" class="form-control text-center text-center" asp-for="MabdaHaml" required >
                         </td>
                          <td>
-                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="Tonazh" placeholder="0"  >
+                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="Tonazh" id="tonazh" placeholder="0"  >
                         </td>
                          <td>
-                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center"  name="FiGhablArzeshAfzode" asp-for="FiGhablArzeshAfzode" placeholder="0" id="FiGhablArzeshAfzode" required >
+                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center"   asp-for="FiGhablArzeshAfzode" placeholder="0" id="fi" required  >
                         </td>
                          <td>
-                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center" name="Takhfif" asp-for="Takhfif" id="Takhfif" placeholder="0" >
+                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center" asp-for="Takhfif" id="takhfif" value="0" >
                         </td>
                         <td>
                             <select  class="form-select select2" placeholder="انتخاب" asp-for="NoeForosh" required>
@@ -311,22 +314,28 @@ button.accept-policy {
                             </select>
                         </td>
                         <td>
-                            <p id="ghablarzesh"></p>
+                            <p id="fg"></p>
+                        </td>
+                        <td>
+                            <p id="mgha"></p>
                         </td>
 
                          <td>
-                            <p id="arzeshafzode"></p>
+                            <p id="a"></p>
                         </td>
 
                          <td>
-                            <p id="nahaie"></p>
+                            <p id="mn"></p>
 
                         </td>
 
                         <td >
-                            <a class="btn btn-warning" onclick="main()" style="zoom: 90%;">محاسبه اولیه
+                            <a class="btn btn-warning" onclick="sum()" style="zoom: 90%;">محاسبه اولیه
                         </td> 
 
+                        <td>
+                            <input    type="text"  class="form-control text-center text-center" asp-for="Tozih"  >
+                        </td>
 
 
 
@@ -381,6 +390,27 @@ button.accept-policy {
 
 
 </div>
+
+
+<script>
+
+        function  sum() {
+        
+        var fi = parseInt(document.getElementById("fi").value);
+        var nfg = 9 * (fi / 100);
+        var fg =  (fi / 1.09 );
+        var tonazh = parseInt(document.getElementById("tonazh").value);
+        var takhfif = parseInt(document.getElementById("takhfif").value);
+        var mgha =tonazh * fg;
+        document.getElementById("mgha").innerHTML=mgha;
+        var a = tonazh * nfg;
+        document.getElementById("a").innerHTML=a;
+        var mn = (fi * tonazh) - takhfif;
+        document.getElementById("mn").innerHTML=Math.floor(mn);
+        document.getElementById("fg").innerHTML=Math.floor(fg);
+
+}
+</script>
 
 <script>
 
@@ -467,6 +497,7 @@ dropArea.addEventListener("drop", function(e)
     });
 
 </script>
+
 
 
 

@@ -42,6 +42,14 @@ public class VM_LCKh
 
     public IFormFile Img { get; set; }
 
+    public string TarikhR { get; set; }
+
+    public int? TonazhR { get; set; }
+
+        public int? MablaghR { get; set; }
+        public int RId { get; set; }
+
+
 
 
 }

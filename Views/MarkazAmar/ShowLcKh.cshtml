@@ -56,7 +56,7 @@ th{
 
         <div class=" ">
             <div class="row alert alert-primary p-4 " >
-                <p class="text-center alert alert-success fs-large text-black"  > مانده دلاری</p>
+                <p class="text-center alert alert-success fs-large text-black"  > پیش فاکتور های LC خرید </p>
 
 
 
@@ -139,11 +139,13 @@ th{
 
                     @foreach (var item in ViewBag.Doc)
                     {
+                        if(item.status==0)
+                        {
 
                             string date2 = PersianDate(item.TarikhSabt);
                             
 
-                            <tr>
+                            <tr style="background-color: rgba(255, 255, 0, 0.306);">
                             <td>@i</td>
                             <td>@item.Tarikhsodor</td>
                              <td>@item.TarikhEtebar</td>
@@ -157,14 +159,14 @@ th{
                                 <td>@item.MaghsadHaml</td>
                                 <td>@item.NameMahsol</td>
                                 <td>@item.Size</td>
-                                <td>@item.Tonazh</td>
-                                <td>@item.FiGhablArzeshAfzode </td> 
+                                <td>@item.Tonazh.ToString("N0")</td>
+                                <td>@item.FiGhablArzeshAfzode.ToString("N0") </td> 
                                 <td></td>
-                                <td>@item.Takhfif</td>
+                                <td>@item.Takhfif.ToString("N0")</td>
                                 <td></td>
 
-                                <td>@item.ArzeshAfzode</td>
-                                <td>@item.GheymatNahaei</td>
+                                <td>@item.ArzeshAfzode.ToString("N0")</td>
+                                <td>@item.GheymatNahaei.ToString("N0")</td>
                                 <td>@item.MeghdarBargiri</td>
                                 <td>@item.Tozih</td>
                                 <td>@item.BankGoshayesh</td>
@@ -175,10 +177,10 @@ th{
 
 
                                  <td style="white-space: nowrap !important;">
-                                <a href="/MarkazAmar/Delete/@item.Id" class="btn btn-danger"
+                                <a href="/MarkazAmar/DeleteLcKh/@item.Id" class="btn btn-danger"
                                 onclick="return confirm('آیا از حذف مطمن هستید؟')">حذف </a>
 
-                                 <a href="/MarkazAmar/EditDolar/@item.Id" class="btn btn-warning" >ویرایش </a>
+                                 <a href="/MarkazAmar/EditLcKh/@item.Id" class="btn btn-warning" >ویرایش </a>
                                
 
 
@@ -186,6 +188,110 @@ th{
 
 
                                  </tr>
+                        }
+                        if(item.status==3)
+                        {
+
+                            string date2 = PersianDate(item.TarikhSabt);
+                            
+
+                            <tr style="background-color: rgba(0, 128, 0, 0.23);">
+                            <td>@i</td>
+                            <td>@item.Tarikhsodor</td>
+                             <td>@item.TarikhEtebar</td>
+                              <td>@date2</td>
+                               <td>@item.ShomarePish</td>
+
+                               <td>@item.LCDay</td>
+                               <td>@item.NameSherkat</td>
+                               <td>@item.NameVasete</td>
+                                <td>@item.MabdaHaml</td>
+                                <td>@item.MaghsadHaml</td>
+                                <td>@item.NameMahsol</td>
+                                <td>@item.Size</td>
+                                <td>@item.Tonazh.ToString("N0")</td>
+                                <td>@item.FiGhablArzeshAfzode.ToString("N0") </td> 
+                                <td></td>
+                                <td>@item.Takhfif.ToString("N0")</td>
+                                <td></td>
+
+                                <td>@item.ArzeshAfzode.ToString("N0")</td>
+                                <td>@item.GheymatNahaei.ToString("N0")</td>
+                                <td>@item.MeghdarBargiri</td>
+                                <td>@item.Tozih</td>
+                                <td>@item.BankGoshayesh</td>
+                                <td>@item.BankKargozari</td>
+                                <td>@item.Sepam</td>
+                                <td>@item.TarikhGoshayesh</td>
+                                <td></td>
+
+
+                                 <td style="white-space: nowrap !important;">
+                                <a href="/MarkazAmar/DeleteLcKh/@item.Id" class="btn btn-danger"
+                                onclick="return confirm('آیا از حذف مطمن هستید؟')">حذف </a>
+
+                                 <a href="/MarkazAmar/EditLcKh/@item.Id" class="btn btn-warning" >ویرایش </a>
+                               
+
+
+                                </td>
+
+
+                                 </tr>
+                        }
+                        
+                        if(item.status==2)
+                        {
+
+                            string date2 = PersianDate(item.TarikhSabt);
+                            
+
+                            <tr style="background-color: rgba(255, 0, 0, 0.303);">
+                            <td>@i</td>
+                            <td>@item.Tarikhsodor</td>
+                             <td>@item.TarikhEtebar</td>
+                              <td>@date2</td>
+                               <td>@item.ShomarePish</td>
+
+                               <td>@item.LCDay</td>
+                               <td>@item.NameSherkat</td>
+                               <td>@item.NameVasete</td>
+                                <td>@item.MabdaHaml</td>
+                                <td>@item.MaghsadHaml</td>
+                                <td>@item.NameMahsol</td>
+                                <td>@item.Size</td>
+                                <td>@item.Tonazh.ToString("N0")</td>
+                                <td>@item.FiGhablArzeshAfzode.ToString("N0") </td> 
+                                <td></td>
+                                <td>@item.Takhfif.ToString("N0")</td>
+                                <td></td>
+
+                                <td>@item.ArzeshAfzode.ToString("N0")</td>
+                                <td>@item.GheymatNahaei.ToString("N0")</td>
+                                <td>@item.MeghdarBargiri</td>
+                                <td>@item.Tozih</td>
+                                <td>@item.BankGoshayesh</td>
+                                <td>@item.BankKargozari</td>
+                                <td>@item.Sepam</td>
+                                <td>@item.TarikhGoshayesh</td>
+                                <td></td>
+
+
+                                 <td style="white-space: nowrap !important;">
+                                <a href="/Documentss/RecheckLcKh/@item.Id" class="btn btn-primary" >درخواست برسی مجدد </a>
+                                <a href="/MarkazAmar/DeleteLcKh/@item.Id" class="btn btn-danger"
+                                onclick="return confirm('آیا از حذف مطمن هستید؟')">حذف </a>
+
+                                 <a href="/MarkazAmar/EditLcKh/@item.Id" class="btn btn-warning" >ویرایش </a>
+                               
+
+
+                                </td>
+
+
+                                 </tr>
+                        }
+
                         i++;
 
 

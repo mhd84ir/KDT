@@ -14,7 +14,10 @@ public class Context : DbContext
     public DbSet<DolarDoc> dolarDocs { get; set; }
 
     public DbSet<LCKh> lCKhs { get; set; }
+    public DbSet<LCF> lcfs { get; set; }
         public DbSet<LcRequest> lcRequests { get; set; }
+        
+        public DbSet<user> users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder db)
     {

@@ -53,7 +53,7 @@ namespace KDT.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MeghdarBargiri")
+                    b.Property<int?>("MeghdarBargiri")
                         .HasColumnType("int");
 
                     b.Property<string>("NameMahsol")
@@ -97,8 +97,10 @@ namespace KDT.Migrations
                     b.Property<int?>("Tedad")
                         .HasColumnType("int");
 
-                    b.Property<string>("Tonazh")
-                        .IsRequired()
+                    b.Property<int>("Tonazh")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Tozih")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("status")
@@ -242,6 +244,106 @@ namespace KDT.Migrations
                     b.ToTable("kharidarDolars");
                 });
 
+            modelBuilder.Entity("LCF", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ArzeshAfzode")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BankGoshayesh")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BankKargozari")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FiGhablArzeshAfzode")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GheymatNahaei")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("KomisionVasete")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LCDay")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MabdaHaml")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaghsadHaml")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MeghdarBargiri")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameMahsol")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameSherkat")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameVasete")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Sepam")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SherkatId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShomarePish")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Size")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Takhfif")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TarikhEtebar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TarikhGoshayesh")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("TarikhSabt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Tarikhsodor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Tonazh")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Tozih")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("lcfs");
+                });
+
             modelBuilder.Entity("LCKh", b =>
                 {
                     b.Property<int>("Id")
@@ -360,6 +462,9 @@ namespace KDT.Migrations
                     b.Property<int>("SherkatId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<string>("TarikhR")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -452,6 +557,37 @@ namespace KDT.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("sherkats");
+                });
+
+            modelBuilder.Entity("user", b =>
+                {
+                    b.Property<Guid>("IdUser")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Family")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserPassword")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserRole")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdUser");
+
+                    b.ToTable("users");
                 });
 #pragma warning restore 612, 618
         }

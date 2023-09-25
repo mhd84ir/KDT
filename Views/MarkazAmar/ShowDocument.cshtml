@@ -9,9 +9,10 @@
     tr {
 
         border: 0.5px solid rgb(0, 0, 0);
-       
+       width: 200px !important;
         text-align: center;
     }
+
 
     tr:hover {
         background-color: rgb(188, 189, 182);
@@ -29,6 +30,10 @@
         padding-right: 0 !important;
         padding-left: 2px !important;
 
+    }
+
+    th{
+        width: 200px;
     }
 
 
@@ -56,7 +61,7 @@
 
 
 
-        <div class="col-12 card mt-5   " style="overflow-x: scroll;overflow-y: scroll;">
+        <div class="col-12 card mt-5   " >
             <div class="row justify-content-center text-center" >
                 <div class="col-4 mt-4  " >
                     <div class="input-group">
@@ -72,20 +77,26 @@
 
 
 
-        <div class="card-body " style="zoom: 90%;">
+        <div class="card-body "  style="overflow-x: scroll;overflow-y: scroll;width: 100%;white-space: nowrap;">
 
-            <table class="table table-bordered " id="table-3">
+            <table class="table table-bordered " id="table-3" style="table-layout: auto; width: 100%;">
 
                 <tr style="background-color: whitesmoke;">
                     <th>ردیف</th>
                     <th>نام شرکت</th>
+                    <th>نام واسطه</th>
                     <th>نام محصول</th>
                     <th>مبدا حمل</th>
-                    <th>مقدار بارگیری (KG)</th>
-                    <th>تعداد</th>
+                    <th>تناژ</th>
+                    <th>فی بعد از ارزش افزوده</th>
                     <th>فی قبل از ارزش افزوده</th>
+                    <th>مبلغ قبل از ارزش افزوده</th>
                     <th>تخفیف</th>
+                    <th style="width: 200px !important;">عوارض</th>
+                    <th>مالیات</th>
                     <th>مبلغ کل</th>
+                    <th>توضیحات</th>
+                    <th>مقدار بارگیری (KG)</th>
                     <th>عملیات</th>
 
                 </tr>
@@ -97,18 +108,34 @@
 
                     @foreach (var item in ViewBag.Doc)
                     {
+                        int nfg = 9 * (item.FiGhablArzeshAfzode / 100);
+                        int fg = item.FiGhablArzeshAfzode - nfg;
+                        int mgha = fg * item.Tonazh;
+                        int sa = 3 * (item.FiGhablArzeshAfzode / 100);
+                        int fa = item.FiGhablArzeshAfzode - sa;
+                        int a = fa * item.Tonazh; 
+                        int shm = 6 * (item.FiGhablArzeshAfzode / 100);
+                        int fm = item.FiGhablArzeshAfzode - shm;
+                        int m = fm * item.Tonazh; 
+
                             <tr>
                             <td>@i</td>
                             <td>@item.NameSherkat</td>
+                            <td>@item.NameVasete</td>
                              <td>@item.NameMahsol</td>
                               <td>@item.MabdaHaml</td>
+                              <td>@item.Tonazh.ToString("N0")</td>
+                               <td>@item.FiGhablArzeshAfzode.ToString("N0")</td>
+                               <td>@fg.ToString("N0")</td>
+                               <td>@mgha.ToString("N0")</td>
+                                <td>@item.Takhfif.ToString("N0")</td>
+                                <td>@a.ToString("N0")</td>
+                                <td>@m.ToString("N0")</td>
+                                <td>@item.GheymatNahaei.ToString("N0")</td>
+                                <td>@item.Tozih</td>
                                <td>@item.MeghdarBargiri</td>
 
-                               <td>@item.Tedad</td>
-                               <td>@item.FiGhablArzeshAfzode</td>
 
-                                <td>@item.Takhfif</td>
-                                <td>@item.GheymatNahaei</td>
 
 
                                  <td style="white-space: nowrap !important;">
@@ -116,7 +143,7 @@
                                 onclick="return confirm('آیا از حذف مطمن هستید؟')">حذف </a>
 
                                  <a href="/MarkazAmar/EditNaghdi/@item.Id" class="btn btn-warning" >ویرایش </a>
-                               
+                                
 
 
                                 </td>
