@@ -184,7 +184,7 @@ button.accept-policy {
 <link rel="stylesheet" href="css/persian.datepicker.css"/>
 </head>
 <body>
-    <form action="/Documentss/AddLCFToDb" method="post" enctype="multipart/form-data">
+    <form action="/Lc/AddLCKhToDb" method="post" enctype="multipart/form-data">
         <script src="js/jquery.js"></script>
         <script src="js/persian.date.js"></script>
         <script src="js/persian.datepicker.js"></script>
@@ -214,7 +214,7 @@ button.accept-policy {
 
             </div> *@
                 <div >
-                 <p class="text-center btn btn-primary form-control text-center p-1 "  >سند السی - فروش  </p>
+                 <p class="text-center btn btn-primary form-control text-center p-1 "  >سند السی - خرید  </p>
                 </div>
 
             <div class="card-body " style="overflow-x: scroll;overflow-y: scroll;">
@@ -222,8 +222,7 @@ button.accept-policy {
 
                     <tr style="background-color: whitesmoke;">
                         <th>ردیف</th>
-                        @* <th>شماره پیش فاکتور</th> *@
-                        <th>تاریخ درخواست مشتری</th>
+                        <th>شماره پیش فاکتور</th>
                         <th>تاریخ صدور پیش فاکتور</th>
                         
                         <th>تاریخ اعتبار پیش فاکتور</th>
@@ -235,10 +234,8 @@ button.accept-policy {
                         <th>بانک گشایش کننده</th>
                         <th>بانک کارگذاری</th>
                         <th>مدت السی (روز)</th>
-                        <th>سایز</th>
-                        <th>قیمت درخواستی</th>
-                        <th>تناژ درخواستی</th>
                         <th>تناژ</th>
+                        <th>سایز</th>
                         <th>فی بعد از ارزش افزوده</th>
                         <th>تخفیف</th>
                         <th>فی قبل از ارزش افزوده</th>
@@ -259,19 +256,15 @@ button.accept-policy {
                     </tr>
 
 
-<input type="text" asp-for="RId" hidden>
+
 
 
                     <tr>
-
                         <td>
                            -
                         </td>
-                        @* <td>    
+                        <td>    
                                 <input  type="text" class="form-control text-center text-center" asp-for="ShomarePish"  >
-                        </td> *@
-                        <td>
-                                <input  class="form-control text-center text-center" asp-for="TarikhR" readonly />                         
                         </td>
                         <td>
                                 <input  data-jdp placeholder="لطفا یک تاریخ وارد نمایید" class="form-control text-center text-center" asp-for="Tarikhsodor" required />                         
@@ -313,17 +306,11 @@ button.accept-policy {
                         <td>
                             <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="LCDay" placeholder="0"  >
                         </td>
-                         <td>
-                            <input    type="text" class="form-control text-center text-center"  asp-for="Size"   >
-                        </td>
-                        <td>
-                            <input dir="ltr"   type="text"  class="form-control text-center text-center" asp-for="MablaghR" readonly >
-                        </td>
-                        <td>
-                            <input dir="ltr"   type="text"  class="form-control text-center text-center" asp-for="TonazhR" readonly >
-                        </td>
                         <td>
                             <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="Tonazh" id="tonazh" placeholder="0"  >
+                        </td>
+                         <td>
+                            <input    type="text" class="form-control text-center text-center"  asp-for="Size"   >
                         </td>
                         <td>
                             <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center"  asp-for="FiGhablArzeshAfzode" id="fi"  placeholder="0" >
@@ -399,25 +386,6 @@ button.accept-policy {
 
                     <div class="hero">
 
-                        @* <label for="input-file" id="drop-area">
-                            <input class="upload" type="file"  accept="image/*"    id="input-file" asp-for="Img" hidden multiple>
-                            <div id="img-view">
-                            <img src="../../assets/img/avatars/downloadicon717744.png" >
-                            <p style="margin: 10px;">برای بارگذاری عکس کلیک کنید یا عکس را اینجا بکشید</p>
-                            <span style="margin-bottom: 15px;">بارگذاری پیوست</span>
-                            </div>
-                        </label> *@
-                        @if(ViewBag.ImageName!=null){
-                        <label for="input-file" id="drop-area">
-                            <input class="upload" type="file"  accept="image/*"    id="input-file" asp-for="Img" hidden multiple>
-                            <div id="img-view"  >
-                                
-                            <img src="~/assets/FileUpload/@ViewBag.ImageName" style="width: 400px; height: 200px;">
-                            </div>
-                        </label>
-                        }
-
-                        else{
                         <label for="input-file" id="drop-area">
                             <input class="upload" type="file"  accept="image/*"    id="input-file" asp-for="Img" hidden multiple>
                             <div id="img-view">
@@ -426,7 +394,6 @@ button.accept-policy {
                             <span style="margin-bottom: 15px;">بارگذاری پیوست</span>
                             </div>
                         </label>
-                        }
                     </div>
                     <br>
                     <button type="submit" class="btn btn-success">تایید</button>
@@ -448,13 +415,14 @@ button.accept-policy {
 
         function  sum() {
 
+        
         var fi = parseInt(document.getElementById("fi").value);
         var nfg = 9 * (fi / 100);
         var fg =  (fi / 1.09 );
         var tonazh = parseInt(document.getElementById("tonazh").value);
         var takhfif = parseInt(document.getElementById("takhfif").value);
         var mgha =tonazh * fg;
-        document.getElementById("mgha").innerHTML=mgha;
+        document.getElementById("mgha").innerHTML=Math.floor(mgha);
         var a = tonazh * nfg;
         document.getElementById("a").innerHTML=a;
         var mn = (fi * tonazh) - takhfif;

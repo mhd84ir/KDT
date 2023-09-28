@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-public class user
+public class VM_User
 {
 [Key]
   public int Id {get; set;}
@@ -16,6 +16,8 @@ public class user
   public bool LcStatus { get; set; }
   public bool AdminStatus { get; set; }
 
-  public string? ImageName { get; set; }
+  public string ImageName { get; set; }
+
+  public IFormFile? img { get; set; }
 
 }

@@ -1,8 +1,14 @@
-@model Documentss
+@{
+    Layout= "~/Views/Shared/_LcLayout.cshtml";
+}
+
+@model VM_LCKh
 <html>
 <head>
+
+
+
 <style>
-    
 
   td,tr{
 
@@ -80,19 +86,19 @@ a.navbar-brand {
 }
 
 a {
-  color: #892e33;
+  color: #717744;
 }
 
 .btn-primary {
   color: #fff;
-  background-color: #892e33;
-  border-color: #892e33;
+  background-color: #717744;
+  border-color: #717744;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #892e33;
-  border-color: #892e33;
+  background-color: #717744;
+  border-color: #717744;
 }
 
 .border-top {
@@ -164,24 +170,21 @@ button.accept-policy {
 
 
 
-
 </style>
+
+
 <script src="/wwwroot/js/drag&upload.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<script>
-    $('.observer-example').persianDatepicker({
-    observer: true,
-    format: 'YYYY/MM/DD',
-    altField: '.observer-example-alt'
-});
-</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <link rel="stylesheet" href="css/persian.datepicker.css"/>
 </head>
 <body>
-    <form action="/Documentss/AddDocumentToDb" method="post" enctype="multipart/form-data">
+    <form action="/Lc/AddLCFToDb" method="post" enctype="multipart/form-data">
         <script src="js/jquery.js"></script>
         <script src="js/persian.date.js"></script>
         <script src="js/persian.datepicker.js"></script>
@@ -211,7 +214,7 @@ button.accept-policy {
 
             </div> *@
                 <div >
-                 <p class="text-center btn btn-primary form-control text-center p-1 "  >سند نقدی </p>
+                 <p class="text-center btn btn-primary form-control text-center p-1 "  >سند السی - فروش  </p>
                 </div>
 
             <div class="card-body " style="overflow-x: scroll;overflow-y: scroll;">
@@ -219,17 +222,25 @@ button.accept-policy {
 
                     <tr style="background-color: whitesmoke;">
                         <th>ردیف</th>
+                        @* <th>شماره پیش فاکتور</th> *@
+                        <th>تاریخ درخواست مشتری</th>
                         <th>تاریخ صدور پیش فاکتور</th>
+                        
                         <th>تاریخ اعتبار پیش فاکتور</th>
                         <th>نام شرکت <a href="/Documentss/Sherkat">+</a></th>
                         <th>واسطه</th>
                         <th>نام محصول <a href="/Documentss/mahsol">+</a></th>
                         <th>مبدا حمل</th>
+                        <th>مقصد حمل</th>
+                        <th>بانک گشایش کننده</th>
+                        <th>بانک کارگذاری</th>
+                        <th>مدت السی (روز)</th>
+                        <th>سایز</th>
+                        <th>قیمت درخواستی</th>
+                        <th>تناژ درخواستی</th>
                         <th>تناژ</th>
                         <th>فی بعد از ارزش افزوده</th>
                         <th>تخفیف</th>
-                        <th>نوع فروش</th>
-                        <th>حساب <a href="/Documentss/hesab">+</a></th>
                         <th>فی قبل از ارزش افزوده</th>
                         <th>مبلغ قبل ارزش افزوده</th>
                         <th>ارزش افزوده</th>
@@ -237,33 +248,38 @@ button.accept-policy {
 
                         </th>
                         <th>عملیات</th>
-                        <th>توضیحات</th>
 
+                        <th>تناژ بارگیری شده</th>
+
+                        <th>توضیحات</th>
+                        <th>شماره سپام</th>
+                        <th>تاریخ گشایش</th>
 
 
                     </tr>
 
 
-
+<input type="text" asp-for="RId" hidden>
 
 
                     <tr>
+
                         <td>
                            -
                         </td>
+                        @* <td>    
+                                <input  type="text" class="form-control text-center text-center" asp-for="ShomarePish"  >
+                        </td> *@
                         <td>
-
-                                        @* <input dir="ltr" type="date" class=" form-control text-center text-center " placeholder="0" asp-for="Tarikhsodor" id="date" required> *@
-    <input  data-jdp placeholder="لطفا یک تاریخ وارد نمایید" class="form-control text-center text-center"  />                         
-
-
-
+                                <input  class="form-control text-center text-center" asp-for="TarikhR" readonly />                         
                         </td>
                         <td>
-    <input  data-jdp placeholder="لطفا یک تاریخ وارد نمایید" class="form-control text-center text-center"  />                         
-
-                                        @* <input dir="ltr" type="date" class="form-control text-center text-center " placeholder="0" asp-for="TarikhEtebar" required> *@
+                                <input  data-jdp placeholder="لطفا یک تاریخ وارد نمایید" class="form-control text-center text-center" asp-for="Tarikhsodor" required />                         
                         </td>
+                        <td>
+                                <input  data-jdp placeholder="لطفا یک تاریخ وارد نمایید" class="form-control text-center text-center"  asp-for="TarikhEtebar"/>                         
+                        </td>
+
 
                         <td>
                             <select  class="form-select select2" placeholder="انتخاب" asp-for="SherkatId" asp-items="@ViewBag.Sherkat" required>
@@ -285,33 +301,35 @@ button.accept-policy {
                          <td>
                             <input type="text" class="form-control text-center text-center" asp-for="MabdaHaml" required >
                         </td>
+                        <td>
+                            <input type="text" class="form-control text-center text-center" asp-for="MaghsadHaml" required >
+                        </td>
                          <td>
+                            <input dir="ltr"   type="text"   class="form-control text-center text-center" asp-for="BankGoshayesh"  >
+                        </td>
+                        <td>
+                            <input dir="ltr"   type="text"   class="form-control text-center text-center" asp-for="BankKargozari"  >
+                        </td>
+                        <td>
+                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="LCDay" placeholder="0"  >
+                        </td>
+                         <td>
+                            <input    type="text" class="form-control text-center text-center"  asp-for="Size"   >
+                        </td>
+                        <td>
+                            <input dir="ltr"   type="text"  class="form-control text-center text-center" asp-for="MablaghR" readonly >
+                        </td>
+                        <td>
+                            <input dir="ltr"   type="text"  class="form-control text-center text-center" asp-for="TonazhR" readonly >
+                        </td>
+                        <td>
                             <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center" asp-for="Tonazh" id="tonazh" placeholder="0"  >
                         </td>
-                         <td>
-                            <input dir="ltr"   type="number" min="0"  class="form-control text-center text-center"   asp-for="FiGhablArzeshAfzode" placeholder="0" id="fi" required  >
-                        </td>
-                         <td>
-                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center" asp-for="Takhfif" id="takhfif" value="0" >
-                        </td>
                         <td>
-                            <select  class="form-select select2" placeholder="انتخاب" asp-for="NoeForosh" required>
-                                <option value="">انتخاب</option>
-                                <option value="صادرات">صادرات</option>
-                                <option value="نقدی">نقدی</option>
-                                <option value="بورس">بورس</option>
-                                <option value="السی">السی</option>
-                                <option value="السی">ضمانت نامه</option>
-                                <option value="السی">بورسی - نقدی</option>
-                                <option value="السی">بورسی - السی</option>
-
-                            </select>
+                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center"  asp-for="FiGhablArzeshAfzode" id="fi"  placeholder="0" >
                         </td>
-                        <td>
-                            <select  class="form-select select2" placeholder="انتخاب" asp-for="HesabId" asp-items="@ViewBag.Hesab" required>
-                                <option value="">انتخاب</option>
-
-                            </select>
+                         <td>
+                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center"  asp-for="Takhfif" id="takhfif" value="0">
                         </td>
                         <td>
                             <p id="fg"></p>
@@ -334,8 +352,19 @@ button.accept-policy {
                         </td> 
 
                         <td>
-                            <input    type="text"  class="form-control text-center text-center" asp-for="Tozih"  >
+                            <input  dir="ltr"  type="number" min="0"   class="form-control text-center text-center"  asp-for="MeghdarBargiri"  placeholder="0" >
                         </td>
+                        <td>
+                            <input    type="text" class="form-control text-center text-center"  asp-for="Tozih"   >
+                        </td>
+
+                        <td>
+                            <input    type="text" class="form-control text-center text-center"  asp-for="Sepam"   >
+                        </td>
+                        <td>
+                                <input  data-jdp placeholder="لطفا یک تاریخ وارد نمایید" class="form-control text-center text-center" asp-for="TarikhGoshayesh"  />                         
+                        </td>
+
 
 
 
@@ -370,14 +399,34 @@ button.accept-policy {
 
                     <div class="hero">
 
+                        @* <label for="input-file" id="drop-area">
+                            <input class="upload" type="file"  accept="image/*"    id="input-file" asp-for="Img" hidden multiple>
+                            <div id="img-view">
+                            <img src="../../assets/img/avatars/downloadicon717744.png" >
+                            <p style="margin: 10px;">برای بارگذاری عکس کلیک کنید یا عکس را اینجا بکشید</p>
+                            <span style="margin-bottom: 15px;">بارگذاری پیوست</span>
+                            </div>
+                        </label> *@
+                        @if(ViewBag.ImageName!=null){
+                        <label for="input-file" id="drop-area">
+                            <input class="upload" type="file"  accept="image/*"    id="input-file" asp-for="Img" hidden multiple>
+                            <div id="img-view"  >
+                                
+                            <img src="~/assets/FileUpload/@ViewBag.ImageName" style="width: 400px; height: 200px;">
+                            </div>
+                        </label>
+                        }
+
+                        else{
                         <label for="input-file" id="drop-area">
                             <input class="upload" type="file"  accept="image/*"    id="input-file" asp-for="Img" hidden multiple>
                             <div id="img-view">
-                            <img src="../../assets/img/avatars/508-icon.png" >
+                            <img src="../../assets/img/avatars/downloadicon717744.png" >
                             <p style="margin: 10px;">برای بارگذاری عکس کلیک کنید یا عکس را اینجا بکشید</p>
                             <span style="margin-bottom: 15px;">بارگذاری پیوست</span>
                             </div>
                         </label>
+                        }
                     </div>
                     <br>
                     <button type="submit" class="btn btn-success">تایید</button>
@@ -391,11 +440,14 @@ button.accept-policy {
 
 </div>
 
+    <script>
+            $('.select2').select2();
+</script>
 
 <script>
 
         function  sum() {
-        
+
         var fi = parseInt(document.getElementById("fi").value);
         var nfg = 9 * (fi / 100);
         var fg =  (fi / 1.09 );
@@ -453,10 +505,7 @@ dropArea.addEventListener("drop", function(e)
 
 </body>
 
-<script>
-            $('.select2').select2();
-    $("#date").persianDatepicker();
-</script>
+
 </html>
 
 
@@ -497,6 +546,7 @@ dropArea.addEventListener("drop", function(e)
     });
 
 </script>
+
 
 
 

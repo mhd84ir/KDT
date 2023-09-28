@@ -72,7 +72,7 @@
 
         <div class=" ">
             <div class="row alert alert-primary p-4 ">
-                <p class="text-center alert alert-success fs-large text-black">لیست تایید نشده ها</p>
+                <p class="text-center alert alert-info fs-large text-black">ثبت مقدار بارگیری شده</p>
 
 
 
@@ -81,17 +81,19 @@
 
 
 
+    <form asp-action="Search">
         <div class="col-12 card mt-5   " style="overflow-x: scroll;">
             <div class="row justify-content-center text-center">
                 <div class="col-4 mt-4  ">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="برای جستجو متن رو وارد کنید ..."
-                            aria-label="Recipient's username" aria-describedby="button-addon2" name="childname" id="searchBox-3">
+                            aria-label="Recipient's username" aria-describedby="button-addon2" name="childname">
                         <button class="btn btn-primary" type="button" id="basic-text1">جستوجو</button>
                     </div>
                 </div>
 
             </div>
+</form>
             <script>
                 $(function ()
                 {
@@ -102,16 +104,14 @@
             </script>
             <div class="card-body ">
 
-                <table class="table table-bordered " id="table-3">
+                <table class="table table-bordered " id="myTable">
 
                     <tr style="background-color: whitesmoke;">
                         <th>ردیف</th>
                         <th>نام شرکت</th>
                         <th>نام محصول</th>
-                        <th> تناژ</th>
-                        <th>فی بعد ارزش افزوده </th>
-                        <th>تخفیف</th>
-                        <th>مبلغ نهایی</th>
+                        <th>مبدا حمل</th>
+                        <th>مقدار بارگیری</th>
                         <th>عملیات</th>
 
                     </tr>
@@ -120,23 +120,30 @@
                        @{int i = 1;}
 @foreach (var item in ViewBag.Doc)
 {
-                            @if (item.status==0)
+                                if (item.MeghdarBargiri==null || item.MeghdarBargiri==0)
                             {
+                            <form method="post" action="/Naghdi/UpdateMeghdarBargiri">
                             <tr>
                             <td>@i</td>
+                            <input type="text" hidden id="Id" asp-for="Id" value="@item.Id">
                             <td>@item.NameSherkat</td>
                              <td>@item.NameMahsol</td>
-                              <td>@item.Tonazh.ToString("N0")</td>
-                               <td>@item.FiGhablArzeshAfzode.ToString("N0")</td>
-                               <td>@item.Takhfif.ToString("N0")</td>
-                               <td>@item.GheymatNahaei.ToString("N0")</td>
+                              <td>@item.MabdaHaml</td>
+                               <td><input class="" type="number" asp-for="MeghdarBargiri" id="MB" ></td>
                            <td>
 
-                                <a href="/Documentss/StatusReject/@item.Id" onclick="return confirm('آیا از عدم تایید رکورد مورد نظر مطمئن هستید ؟')" class="btn btn-danger ">عدم تایید </a>
-                                <a href="/Documentss/StatusAcsept/@item.Id"   class="btn btn-success " onclick="return confirm('آیا از تایید رکورد مورد نظر مطمئن هستید ؟')">تایید </a>
-                            <button class="btn btn-warning" >جزییات</button>
-                            
-
+                                <a href="/Naghdi/Delete/@item.Id" onclick="return confirm('آیا از حذف رکورد مورد نظر مطمئن هستید ؟')" class="btn btn-danger ">حذف </a>
+                                <button type="submit" class="btn btn-success ">ثبت </button>
+                            <a class="btn btn-warning" href="/Naghdi/EditNaghdi/@item.Id" id="open-popup">جزییات</a>
+                            @* <div class="popup" id="popup">
+                                <div class="popup-content">
+                                    <h2>جزییات</h2>
+                                    <p>مبدا حمل : @item.MabdaHaml</p>
+                                    <p>نام محصول : @item.NameMahsol</p>
+                                    <p>نام شرکت : @item.NameSherkat</p>
+                                    <p>مقدار بارگیری : @item.MeghdarBargiri</p>
+                                </div>
+                            </div> *@
 
 
 
@@ -145,6 +152,7 @@
 
                                </tr> 
                             
+                            </form>
                             
                             i++;
                             }
@@ -155,8 +163,17 @@
                        
                         
 
+@* <script>
+    document.getElementById('open-popup').addEventListener('click', function() {
+  document.getElementById('popup').style.display = 'block';
+});
 
-                      
+document.getElementById('close-popup').addEventListener('click', function() {
+  document.getElementById('popup').style.display = 'none';
+});
+
+</script>
+                       *@
 
 
 

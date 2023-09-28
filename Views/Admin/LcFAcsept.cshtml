@@ -1,4 +1,9 @@
 @model Document
+@{
+    Layout= "~/Views/Shared/_LcLayout.cshtml";
+}
+
+
 <style>
     td,
     tr {
@@ -26,19 +31,19 @@
     }
 
     a {
-  color: #892e33;
+  color: #717744;
 }
 
 .btn-primary {
   color: #fff;
-  background-color: #892e33;
-  border-color: #892e33;
+  background-color: #717744;
+  border-color: #717744;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #892e33;
-  border-color: #892e33;
+  background-color: #717744;
+  border-color: #717744;
 }
 .popup {
   display: none;
@@ -72,7 +77,7 @@
 
         <div class=" ">
             <div class="row alert alert-primary p-4 ">
-                <p class="text-center alert alert-info fs-large text-black">ثبت مقدار بارگیری شده</p>
+                <p class="text-center alert alert-success fs-large text-black">لیست پیش فاکتور های تایید نشده فروش</p>
 
 
 
@@ -81,19 +86,17 @@
 
 
 
-    <form asp-action="Search">
-        <div class="col-12 card mt-5   " style="overflow-x: scroll;">
+        <div class="col-12 card mt-5   " >
             <div class="row justify-content-center text-center">
                 <div class="col-4 mt-4  ">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="برای جستجو متن رو وارد کنید ..."
-                            aria-label="Recipient's username" aria-describedby="button-addon2" name="childname">
+                            aria-label="Recipient's username" aria-describedby="button-addon2" name="childname" id="searchBox-3">
                         <button class="btn btn-primary" type="button" id="basic-text1">جستوجو</button>
                     </div>
                 </div>
 
             </div>
-</form>
             <script>
                 $(function ()
                 {
@@ -102,16 +105,23 @@
                     })
                 })
             </script>
-            <div class="card-body ">
+            <div class="card-body " style="overflow-x: scroll; overflow-y: scroll;">
 
-                <table class="table table-bordered " id="myTable">
+                <table class="table table-bordered " id="table-3">
 
                     <tr style="background-color: whitesmoke;">
                         <th>ردیف</th>
                         <th>نام شرکت</th>
+                        <th>نام واسطه</th>
                         <th>نام محصول</th>
                         <th>مبدا حمل</th>
-                        <th>مقدار بارگیری</th>
+                        <th>مقصد حمل</th>
+                        <th> تناژ</th>
+                        <th>فی بعد ارزش افزوده </th>
+                        <th>تخفیف</th>
+                        <th>مبلغ نهایی</th>
+                        <th>مدت LC</th>
+                        <th>توضیحات</th>
                         <th>عملیات</th>
 
                     </tr>
@@ -120,30 +130,30 @@
                        @{int i = 1;}
 @foreach (var item in ViewBag.Doc)
 {
-                                if (item.MeghdarBargiri==null || item.MeghdarBargiri==0)
+                            @if (item.status==0)
                             {
-                            <form method="post" action="/Documentss/UpdateMeghdarBargiri">
                             <tr>
                             <td>@i</td>
-                            <input type="text" hidden id="Id" asp-for="Id" value="@item.Id">
+                            
+                            
                             <td>@item.NameSherkat</td>
+                            <td>@item.NameVasete</td>
                              <td>@item.NameMahsol</td>
-                              <td>@item.MabdaHaml</td>
-                               <td><input class="" type="number" asp-for="MeghdarBargiri" id="MB" ></td>
+                             <td>@item.MabdaHaml</td>
+                             <td>@item.MaghsadHaml</td>
+                              <td>@item.Tonazh.ToString("N0")</td>
+                               <td>@item.FiGhablArzeshAfzode.ToString("N0")</td>
+                               <td>@item.Takhfif.ToString("N0")</td>
+                               <td>@item.GheymatNahaei.ToString("N0")</td>
+                               <td>@item.LCDay</td>
+                               <td>@item.Tozih</td>
                            <td>
 
-                                <a href="/Documentss/Delete/@item.Id" onclick="return confirm('آیا از حذف رکورد مورد نظر مطمئن هستید ؟')" class="btn btn-danger ">حذف </a>
-                                <button type="submit" class="btn btn-success ">ثبت </button>
-                            <a class="btn btn-warning" href="/MarkazAmar/EditNaghdi/@item.Id" id="open-popup">جزییات</a>
-                            @* <div class="popup" id="popup">
-                                <div class="popup-content">
-                                    <h2>جزییات</h2>
-                                    <p>مبدا حمل : @item.MabdaHaml</p>
-                                    <p>نام محصول : @item.NameMahsol</p>
-                                    <p>نام شرکت : @item.NameSherkat</p>
-                                    <p>مقدار بارگیری : @item.MeghdarBargiri</p>
-                                </div>
-                            </div> *@
+                                <a href="/Admin/StatusRejectLcF/@item.Id" onclick="return confirm('آیا از عدم تایید رکورد مورد نظر مطمئن هستید ؟')" class="btn btn-danger ">عدم تایید </a>
+                                <a href="/Admin/StatusAcseptLcF/@item.Id"   class="btn btn-success " onclick="return confirm('آیا از تایید رکورد مورد نظر مطمئن هستید ؟')">تایید </a>
+                            <button class="btn btn-warning" >جزییات</button>
+                            
+
 
 
 
@@ -152,7 +162,6 @@
 
                                </tr> 
                             
-                            </form>
                             
                             i++;
                             }
@@ -163,17 +172,8 @@
                        
                         
 
-@* <script>
-    document.getElementById('open-popup').addEventListener('click', function() {
-  document.getElementById('popup').style.display = 'block';
-});
 
-document.getElementById('close-popup').addEventListener('click', function() {
-  document.getElementById('popup').style.display = 'none';
-});
-
-</script>
-                       *@
+                      
 
 
 

@@ -1,7 +1,9 @@
 @model Document
 @{
-    Layout= "~/Views/Shared/_SaderatLayout.cshtml";
+    Layout= "~/Views/Shared/_LcLayout.cshtml";
 }
+
+
 <style>
     td,
     tr {
@@ -29,19 +31,19 @@
     }
 
     a {
-  color: #892e33;
+  color: #717744;
 }
 
 .btn-primary {
   color: #fff;
-  background-color: #892e33;
-  border-color: #892e33;
+  background-color: #717744;
+  border-color: #717744;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #892e33;
-  border-color: #892e33;
+  background-color: #717744;
+  border-color: #717744;
 }
 .popup {
   display: none;
@@ -75,7 +77,7 @@
 
         <div class=" ">
             <div class="row alert alert-primary p-4 ">
-                <p class="text-center alert alert-success fs-large text-black">لیست تایید نشده ها</p>
+                <p class="text-center alert alert-success fs-large text-black">لیست پیش فاکتور های تایید نشده خرید</p>
 
 
 
@@ -84,7 +86,7 @@
 
 
 
-        <div class="col-12 card mt-5   " style="overflow-x: scroll;">
+        <div class="col-12 card mt-5   " >
             <div class="row justify-content-center text-center">
                 <div class="col-4 mt-4  ">
                     <div class="input-group">
@@ -103,16 +105,23 @@
                     })
                 })
             </script>
-            <div class="card-body ">
+            <div class="card-body " style="overflow-x: scroll; overflow-y: scroll;">
 
                 <table class="table table-bordered " id="table-3">
 
                     <tr style="background-color: whitesmoke;">
                         <th>ردیف</th>
-                        <th>نام خریدار</th>
+                        <th>نام شرکت</th>
+                        <th>نام واسطه</th>
                         <th>نام محصول</th>
+                        <th>مبدا حمل</th>
                         <th>مقصد حمل</th>
-                        <th>مقدار بارگیری</th>
+                        <th> تناژ</th>
+                        <th>فی بعد ارزش افزوده </th>
+                        <th>تخفیف</th>
+                        <th>مبلغ نهایی</th>
+                        <th>مدت LC</th>
+                        <th>توضیحات</th>
                         <th>عملیات</th>
 
                     </tr>
@@ -125,14 +134,23 @@
                             {
                             <tr>
                             <td>@i</td>
-                            <td>@item.NameKharidar</td>
+                            
+                            
+                            <td>@item.NameSherkat</td>
+                            <td>@item.NameVasete</td>
                              <td>@item.NameMahsol</td>
-                              <td>@item.MaghsadHaml</td>
-                               <td>@item.MeghdarBargiri</td>
+                             <td>@item.MabdaHaml</td>
+                             <td>@item.MaghsadHaml</td>
+                              <td>@item.Tonazh.ToString("N0")</td>
+                               <td>@item.FiGhablArzeshAfzode.ToString("N0")</td>
+                               <td>@item.Takhfif.ToString("N0")</td>
+                               <td>@item.GheymatNahaei.ToString("N0")</td>
+                               <td>@item.LCDay</td>
+                               <td>@item.Tozih</td>
                            <td>
 
-                                <a href="/Documentss/StatusRejectd/@item.Id" onclick="return confirm('آیا از عدم تایید رکورد مورد نظر مطمئن هستید ؟')" class="btn btn-danger ">عدم تایید </a>
-                                <a href="/Documentss/StatusAcseptd/@item.Id"   class="btn btn-success " onclick="return confirm('آیا از تایید رکورد مورد نظر مطمئن هستید ؟')">تایید </a>
+                                <a href="/Admin/StatusRejectLcKh/@item.Id" onclick="return confirm('آیا از عدم تایید رکورد مورد نظر مطمئن هستید ؟')" class="btn btn-danger ">عدم تایید </a>
+                                <a href="/Admin/StatusAcseptLcKh/@item.Id"   class="btn btn-success " onclick="return confirm('آیا از تایید رکورد مورد نظر مطمئن هستید ؟')">تایید </a>
                             <button class="btn btn-warning" >جزییات</button>
                             
 

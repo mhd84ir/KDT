@@ -1,65 +1,64 @@
-﻿using System.Diagnostics;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Mvc;
-
-
-namespace Dammon.Controllers;
-
-public class LoginController : Controller
-{
-    private readonly Context _db;
-
-    public LoginController(Context db)
-    {
-        _db = db;
-    }
-
-    public IActionResult Index()
-    {
-        return View();
-    }
+﻿// using System.Diagnostics;
+// using System.Security.Claims;
+// using Microsoft.AspNetCore.Authentication;
+// using Microsoft.AspNetCore.Authentication.Cookies;
+// using Microsoft.AspNetCore.Mvc;
 
 
 
-    public IActionResult Check(string UserName, string Password)
-    {
+// public class LoginController : Controller
+// {
+//     private readonly Context _db;
 
-        var ExistUser = _db.users.Where(x => x.UserName == UserName && x.UserPassword == Password).FirstOrDefault();
+//     public LoginController(Context db)
+//     {
+//         _db = db;
+//     }
 
-        if (ExistUser != null)
-        {
-            //use cliaim add  id and name and Role to the claim
-            var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.Name, ExistUser.Name+""+ExistUser.Family),
-            new Claim(ClaimTypes.Role,ExistUser.UserRole),
-            new Claim(ClaimTypes.NameIdentifier, ExistUser.IdUser.ToString())
-        };
+//     public IActionResult Index()
+//     {
+//         return View();
+//     }
 
-            //create identity
-            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
-            //create principal
-            var principal = new ClaimsPrincipal(identity);
 
-            //sign in
+//     public IActionResult Check(string UserName, string Password)
+//     {
 
-            HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-            return RedirectToAction("index", "home");
-        }
-        else
-        {
-            TempData["error"] = "نام کاربری یا رمز عبور اشتباه است ";
-            return RedirectToAction("index");
-        }
+//         var ExistUser = _db.users.Where(x => x.UserName == UserName && x.PassWord == Password).FirstOrDefault();
 
-        //TODO: Implement Realistic Implementation
+//         if (ExistUser != null)
+//         {
+//             //use cliaim add  id and name and Role to the claim
+//             var claims = new List<Claim>
+//         {
+//             new Claim(ClaimTypes.Name, ExistUser.Name),
+//             new Claim(ClaimTypes.Role,ExistUser.UserRole),
+//             new Claim(ClaimTypes.NameIdentifier, ExistUser.Id.ToString())
+//         };
+
+//             //create identity
+//             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+//             //create principal
+//             var principal = new ClaimsPrincipal(identity);
+
+//             //sign in
+
+//             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+//             return RedirectToAction("index", "home");
+//         }
+//         else
+//         {
+//             TempData["error"] = "نام کاربری یا رمز عبور اشتباه است ";
+//             return RedirectToAction("index");
+//         }
+
+//         //TODO: Implement Realistic Implementation
         
-    }
+//     }
 
 
 
 
-}
+// }
