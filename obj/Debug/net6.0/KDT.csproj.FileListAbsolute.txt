@@ -77,3 +77,8 @@
 /Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/PersianDate.Standard.dll
 /Users/mhd84.ir/Desktop/KDT/obj/Debug/net6.0/scopedcss/Views/Shared/_LcLayout.cshtml.rz.scp.css
 /Users/mhd84.ir/Desktop/KDT/obj/Debug/net6.0/scopedcss/Views/Shared/_SaderatLayout.cshtml.rz.scp.css
+/Users/mhd84.ir/Desktop/KDT/obj/Debug/net6.0/staticwebassets/msbuild.KDT.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/mhd84.ir/Desktop/KDT/obj/Debug/net6.0/staticwebassets/msbuild.build.KDT.props
+/Users/mhd84.ir/Desktop/KDT/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.KDT.props
+/Users/mhd84.ir/Desktop/KDT/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.KDT.props
+/Users/mhd84.ir/Desktop/KDT/obj/Debug/net6.0/staticwebassets.pack.json
