@@ -1,0 +1,214 @@
+@{ Layout=null; }
+
+<!DOCTYPE html>
+<html
+  lang="fa"
+  class="light-style customizer-hide"
+  dir="rtl"
+  data-theme="theme-default"
+  data-assets-path="../../assets/"
+  data-template="horizontal-menu-template-no-customizer"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>سیستم یکپارچه دامون</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../assets/img/icons/brands/kdtlo.png"
+    />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/core.css" />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/css/rtl/theme-default.css"
+    />
+    <link rel="stylesheet" href="../../assets/css/demo.css" />
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/rtl.css" />
+
+    <!-- Vendors CSS -->
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/typeahead-js/typeahead.css"
+    />
+    <!-- Vendor -->
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/formvalidation/dist/css/formValidation.min.css"
+    />
+
+    <!-- Page CSS -->
+    <!-- Page -->
+    <link rel="stylesheet" href="../../assets/vendor/css/pages/page-auth.css" />
+    <!-- Helpers -->
+    <script src="../../assets/vendor/js/helpers.js"></script>
+
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../../assets/js/config.js"></script>
+    <style>
+      .input-group,
+      input {
+        border: 1px solid  #892e33 !important;
+      }
+      body {
+        background: url(../assets/img/icons/brands/19.jpg) no-repeat center
+          center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      .card {
+        background-color: #ffffffc4 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Content -->
+
+  
+
+    <div class="container-xxl">
+      <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner py-4">
+          <!-- Register -->
+          <div class="card">
+            <div class="card-body">
+              <!-- Logo -->
+              <div class="justify-content-center">
+                <div class="text-center">
+                  <img
+                    src="../assets/img/icons/brands/KDT_Logo Fa_CMYK.png"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="text-center mt-3 mb-3">
+                  <span class="demo h4 mb-0 fw-bolder"
+                    >سیستم فولاد خرمدشت تاکستان</span
+                  >
+
+                    @if( TempData["error"] !=null) {
+    <p class="alert alert-danger p-3">@TempData["error"]</p>
+    }
+                </div>
+                <div class="text-center mt-3 mb-3" style="direction: ltr">
+                  <span
+                    id="t"
+                    style="direction: ltr; color:  #892e33; font-weight: 500"
+                    class="fw-bolder"
+                  ></span>
+                </div>
+              </div>
+              <!-- /Logo -->
+              <br />
+
+              <form class="mb-3" action="/Login/CheckLogin" method="POST">
+                <div class="mb-3">
+                  <input
+                  required
+                    name="UserName"
+                    type="text"
+                    class="form-control text-start"
+                    dir="ltr"
+                    placeholder=" نام کاربری خود را وارد کنید"
+                    autofocus
+                  />
+                </div>
+                <div class="mb-3 form-password-toggle">
+                  <div class="input-group input-group-merge">
+                    <input
+                      type="password"
+                      class="form-control text-start"
+                      dir="ltr"
+                      name="Password"
+                      placeholder="رمز عبور خود را وارد کنید"
+                      aria-describedby="password"
+                    />
+                    <span class="input-group-text cursor-pointer"
+                      ><i class="bx bx-hide"></i
+                    ></span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                     
+                    />
+                    <label class="form-check-label" for="remember-me">
+                      به خاطر سپاری
+                    </label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-info d-grid w-100" type="submit">
+                    ورود
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- /Register -->
+        </div>
+      </div>
+    </div>
+
+    <!-- / Content -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../assets/vendor/js/bootstrap.js"></script>
+    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+
+    <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+    <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+
+    <script src="../../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script>
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="../../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="../../assets/js/pages-auth.js"></script>
+    <!-- date shamsi -->
+    <script src="../../assets/js/persian-date.js"></script>
+    <script>
+      var tarikh = new persianDate();
+      document.getElementById("t").innerText = tarikh
+        .toLocale("fa")
+        .format("YYYY | dddd | DD MMMM"); //example => ۱۴۰۰-۰۴-۱۸ ۱۵:۳۲:۳۲ ب ظ
+    </script>
+  </body>
+</html>

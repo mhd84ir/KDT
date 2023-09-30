@@ -1,6 +1,7 @@
 //create class
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
+[Authorize (Roles = "Admin")]
 public class AdminController : Controller
 {
     //create object of database

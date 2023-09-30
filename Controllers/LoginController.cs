@@ -1,64 +1,83 @@
-﻿// using System.Diagnostics;
-// using System.Security.Claims;
-// using Microsoft.AspNetCore.Authentication;
-// using Microsoft.AspNetCore.Authentication.Cookies;
-// using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
+
+public class LoginController : Controller
+{
+
+    private readonly Context db;
+    public LoginController(Context _db)
+    {
+        db = _db;
+    }
+
+        //login
 
 
+    public IActionResult Login()
+    {
+        return View();
+    }
+    //logout
+    public IActionResult Logout()
+    {
+        HttpContext.SignOutAsync();
+        return RedirectToAction("Login");
+    }
+    //access denied
+    public IActionResult AccessDenied()
+    {
+        return View();
+    }
 
-// public class LoginController : Controller
-// {
-//     private readonly Context _db;
+    //check login
+    [HttpPost]
+    public IActionResult CheckLogin(string username, string password)
+    {
+        if (username == "admin" && password == "123")
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, username),
+                new Claim(ClaimTypes.Role, "Admin")
+            };
+            var claimsIdentity = new ClaimsIdentity(
+                claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+            var authProperties = new AuthenticationProperties
+            {
+                //AllowRefresh = <bool>,
+                // Refreshing the authentication session should be allowed.
 
-//     public LoginController(Context db)
-//     {
-//         _db = db;
-//     }
+                //ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
+                // The time at which the authentication ticket expires. A 
+                // value set here overrides the ExpireTimeSpan option of 
+                // CookieAuthenticationOptions set with AddCookie.
 
-//     public IActionResult Index()
-//     {
-//         return View();
-//     }
+                //IsPersistent = true,
+                // Whether the authentication session is persisted across 
+                // multiple requests. When used with cookies, controls
+                // whether the cookie's lifetime is absolute (matching the
+                // lifetime of the authentication ticket) or session-based.
 
+                //IssuedUtc = <DateTimeOffset>,
+                // The time at which the authentication ticket was issued.
 
+                //RedirectUri = <string>
+                // The full path or absolute URI to be used as an http 
+                // redirect response value.
+            };
 
-//     public IActionResult Check(string UserName, string Password)
-//     {
-
-//         var ExistUser = _db.users.Where(x => x.UserName == UserName && x.PassWord == Password).FirstOrDefault();
-
-//         if (ExistUser != null)
-//         {
-//             //use cliaim add  id and name and Role to the claim
-//             var claims = new List<Claim>
-//         {
-//             new Claim(ClaimTypes.Name, ExistUser.Name),
-//             new Claim(ClaimTypes.Role,ExistUser.UserRole),
-//             new Claim(ClaimTypes.NameIdentifier, ExistUser.Id.ToString())
-//         };
-
-//             //create identity
-//             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
-//             //create principal
-//             var principal = new ClaimsPrincipal(identity);
-
-//             //sign in
-
-//             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-//             return RedirectToAction("index", "home");
-//         }
-//         else
-//         {
-//             TempData["error"] = "نام کاربری یا رمز عبور اشتباه است ";
-//             return RedirectToAction("index");
-//         }
-
-//         //TODO: Implement Realistic Implementation
-        
-//     }
+            HttpContext.SignInAsync(claimsPrincipal);
+            return RedirectToAction("Index", "Home");
+        }
+        else
+        {
+            ViewBag.Error = "نام کاربری یا رمز عبور اشتباه است";
+            return View();
+        }
+    }
 
 
-
-
-// }
+}
