@@ -108,6 +108,12 @@
 
                     @foreach (var item in ViewBag.Doc)
                     {
+                        if(item.status==0)
+                        {
+
+                            
+
+
                         int nfg = 9 * (item.FiGhablArzeshAfzode / 100);
                         int fg = item.FiGhablArzeshAfzode - nfg;
                         int mgha = fg * item.Tonazh;
@@ -118,7 +124,7 @@
                         int fm = item.FiGhablArzeshAfzode - shm;
                         int m = fm * item.Tonazh; 
 
-                            <tr>
+                            <tr style="background-color: rgba(255, 255, 0, 0.306);">
                             <td>@i</td>
                             <td>@item.NameSherkat</td>
                             <td>@item.NameVasete</td>
@@ -150,8 +156,113 @@
 
 
                                  </tr>
-                        i++;
+                        }
 
+                                                if(item.status==3)
+                        {
+
+                            
+
+
+                        int nfg = 9 * (item.FiGhablArzeshAfzode / 100);
+                        int fg = item.FiGhablArzeshAfzode - nfg;
+                        int mgha = fg * item.Tonazh;
+                        int sa = 3 * (item.FiGhablArzeshAfzode / 100);
+                        int fa = item.FiGhablArzeshAfzode - sa;
+                        int a = fa * item.Tonazh; 
+                        int shm = 6 * (item.FiGhablArzeshAfzode / 100);
+                        int fm = item.FiGhablArzeshAfzode - shm;
+                        int m = fm * item.Tonazh; 
+
+                            <tr style="background-color: rgba(0, 128, 0, 0.23);">
+                            <td>@i</td>
+                            <td>@item.NameSherkat</td>
+                            <td>@item.NameVasete</td>
+                             <td>@item.NameMahsol</td>
+                              <td>@item.MabdaHaml</td>
+                              <td>@item.Tonazh.ToString("N0")</td>
+                               <td>@item.FiGhablArzeshAfzode.ToString("N0")</td>
+                               <td>@fg.ToString("N0")</td>
+                               <td>@mgha.ToString("N0")</td>
+                                <td>@item.Takhfif.ToString("N0")</td>
+                                <td>@a.ToString("N0")</td>
+                                <td>@m.ToString("N0")</td>
+                                <td>@item.GheymatNahaei.ToString("N0")</td>
+                                <td>@item.Tozih</td>
+                               <td>@item.MeghdarBargiri</td>
+
+
+
+
+                                 <td style="white-space: nowrap !important;">
+                            <a href="/MarkazAmar/Delete/@item.Id" class="btn btn-danger"
+                                onclick="return confirm('آیا از حذف مطمن هستید؟')">حذف </a>
+
+                                 <a href="/MarkazAmar/EditNaghdi/@item.Id" class="btn btn-warning" >ویرایش </a>
+                                
+
+
+                                </td>
+
+
+                                 </tr>
+                        }
+
+
+                                                if(item.status==2)
+                        {
+
+                            
+
+
+                        int nfg = 9 * (item.FiGhablArzeshAfzode / 100);
+                        int fg = item.FiGhablArzeshAfzode - nfg;
+                        int mgha = fg * item.Tonazh;
+                        int sa = 3 * (item.FiGhablArzeshAfzode / 100);
+                        int fa = item.FiGhablArzeshAfzode - sa;
+                        int a = fa * item.Tonazh; 
+                        int shm = 6 * (item.FiGhablArzeshAfzode / 100);
+                        int fm = item.FiGhablArzeshAfzode - shm;
+                        int m = fm * item.Tonazh; 
+
+                            <tr style="background-color: rgba(255, 0, 0, 0.303);">
+                            <td>@i</td>
+                            <td>@item.NameSherkat</td>
+                            <td>@item.NameVasete</td>
+                             <td>@item.NameMahsol</td>
+                              <td>@item.MabdaHaml</td>
+                              <td>@item.Tonazh.ToString("N0")</td>
+                               <td>@item.FiGhablArzeshAfzode.ToString("N0")</td>
+                               <td>@fg.ToString("N0")</td>
+                               <td>@mgha.ToString("N0")</td>
+                                <td>@item.Takhfif.ToString("N0")</td>
+                                <td>@a.ToString("N0")</td>
+                                <td>@m.ToString("N0")</td>
+                                <td>@item.GheymatNahaei.ToString("N0")</td>
+                                <td>@item.Tozih</td>
+                               <td>@item.MeghdarBargiri</td>
+
+
+
+
+                                 <td style="white-space: nowrap !important;">
+                                <a href="/Naghdi/RecheckNaghdi/@item.Id" class="btn btn-primary" >درخواست برسی مجدد </a>
+
+                            <a href="/MarkazAmar/Delete/@item.Id" class="btn btn-danger"
+                            
+                                onclick="return confirm('آیا از حذف مطمن هستید؟')">حذف </a>
+
+                                 <a href="/MarkazAmar/EditNaghdi/@item.Id" class="btn btn-warning" >ویرایش </a>
+                                
+
+
+                                </td>
+
+
+                                 </tr>
+                        }
+
+                        i++;
 
                     }
 

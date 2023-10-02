@@ -10,8 +10,11 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 
 namespace KDT.Controllers;
+//authorize Admin or Naghdi or Saderat or Lc roles
+//or in another way authorize all roles except User
+[Authorize (Roles = "Admin, Naghdi, Saderat, Lc")]
 
-[Authorize (Roles = "Admin")]
+
 
 public class HomeController : Controller
 {

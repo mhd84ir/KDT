@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-[Authorize (Roles = "Admin")]
+[Authorize (Roles = "Admin, Naghdi, Saderat, Lc")]
 
 public class MarkazAmarController : Controller
 {

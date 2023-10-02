@@ -217,8 +217,8 @@
                           </div>
                         </div>
                         <div class="flex-grow-1">
-                          <span class="fw-semibold d-block lh-1">جان اسنو</span>
-                          <small>مدیر</small>
+                          @* user name by claim *@
+                          <span class="text-bold"> @User.Identity.Name</span>
                         </div>
                       </div>
                     </a>
@@ -236,36 +236,6 @@
                     <a class="dropdown-item" href="pages-account-settings-account.html">
                       <i class="bx bx-cog me-2"></i>
                       <span class="align-middle">تنظیمات</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="pages-account-settings-billing.html">
-                      <span class="d-flex align-items-center align-middle">
-                        <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                        <span class="flex-grow-1 align-middle">صورتحساب</span>
-                        <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="pages-help-center-landing.html">
-                      <i class="bx bx-support me-2"></i>
-                      <span class="align-middle">راهنمایی</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="pages-faq.html">
-                      <i class="bx bx-help-circle me-2"></i>
-                      <span class="align-middle">سوالات متداول</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="pages-pricing.html">
-                      <i class="bx bx-dollar me-2"></i>
-                      <span class="align-middle">قیمت گذاری</span>
                     </a>
                   </li>
                   <li>
@@ -306,7 +276,10 @@
                   </a>
 
                 </li>
-
+                @* if claim rouls admin  *@
+                @if (User.IsInRole("Lc")|| User.IsInRole("Admin"))
+                
+                {
                 <!-- Layouts -->
                 <li class="menu-item">
                   <a href="" class="menu-link menu-toggle">
@@ -318,7 +291,8 @@
 
 
 
-
+                    @if(User.IsInRole("Lc"))
+                    {
                     <li class="menu-item">
                       <a href="/Naghdi/DocumentRegistration" class="menu-link">
                         <i class='menu-icon tf-icons bx bxs-food-menu'></i>
@@ -333,18 +307,21 @@
                         <div>ثبت مقدار بارگیری شده</div>
                       </a>
                     </li>
-
+                    }
+                    @if(User.IsInRole("Admin"))
+                    {
                     <li class="menu-item">
                       <a href="/Admin/Acsept" class="menu-link">
                         <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
                         <div>سند های نقدی تایید نشده </div>
                       </a>
-
-
+                    </li>
+                    }
                   </ul>
                 </li>
-
-
+                }
+                @if (User.IsInRole("Saderat")|| User.IsInRole("Admin"))
+                {
                 <li class="menu-item">
                   <a href="" class="menu-link menu-toggle">
                     <i class=' menu-icon tf-icons bx bx-food-menu'></i>
@@ -355,7 +332,8 @@
 
 
 
-
+                    @if(User.IsInRole("Saderat"))
+                    {
                     <li class="menu-item">
                       <a href="/Saderat/dolari" class="menu-link">
                         <i class='menu-icon tf-icons bx bxs-food-menu'></i>
@@ -369,18 +347,22 @@
                         <div>ثبت مقدار بارگیری شده</div>
                       </a>
                     </li>
+                    }
+                    @if(User.IsInRole("Admin"))
+                    {
                     <li class="menu-item">
                       <a href="/Admin/AcseptDolar" class="menu-link">
                         <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
                         <div>سند های دلاری تایید نشده</div>
                       </a>
                     </li>
-
+                    }
 
                   </ul>
                 </li>
-
-
+                }
+                @if (User.IsInRole("Lc")|| User.IsInRole("Admin"))
+                {
                 <li class="menu-item">
                   <a href="" class="menu-link menu-toggle">
                     <i class=' menu-icon tf-icons bx bx-food-menu'></i>
@@ -391,7 +373,8 @@
 
 
 
-
+                    @if(User.IsInRole("Lc"))
+                    {
                     <li class="menu-item">
                       <a href="/Lc/RequestLcF" class="menu-link">
                         <i class='menu-icon tf-icons bx bxs-food-menu'></i>
@@ -421,8 +404,9 @@
                         <div>ثبت مقدار بارگیری شده</div>
                       </a>
                     </li>
-
-
+                    }
+                @if(User.IsInRole("Admin"))
+                {
                     <li class="menu-item">
                       <a href="/Admin/LcKhAcsept" class="menu-link">
                         <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
@@ -443,11 +427,11 @@
                         <div>تایید درخواست های فروش</div>
                       </a>
                     </li>
-
+                }
 
                   </ul>
                 </li>
-
+                }
 
 
 
@@ -512,7 +496,8 @@
                     <div>اطلاعات پایه </div>
                   </a>
                   <ul class="menu-sub">
-
+                    @if(User.IsInRole("Admin"))
+                    {
                     <li class="menu-item">
                       <a href="/User/showuser" class="menu-link">
                         <i class='menu-icon tf-icons bx bxs-user-detail'></i>
@@ -526,7 +511,7 @@
                         <div style="white-space: nowrap;"> اضافه کردن کاربر</div>
                       </a>
                     </li>
-
+                    }
                     <li class="menu-item">
                       <a href="/MarkazAmar/ShowBuyer" class="menu-link">
 

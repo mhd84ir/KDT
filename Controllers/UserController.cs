@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
-[Authorize (Roles = "Adminn")]
+//tow roles authorize
+[Authorize (Roles = "Admin")]
 
 
 public class UserController : Controller

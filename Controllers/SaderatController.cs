@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-[Authorize (Roles = "Admin")]
+[Authorize (Roles = "Saderat")]
 
 public class SaderatController : Controller
 {
@@ -113,4 +113,23 @@ public class SaderatController : Controller
         return View();
     }
 
+        public IActionResult RecheckSaderat(int ID)
+    
+    {
+        
+        List<DolarDoc> l = new List<DolarDoc>();
+        l = db.dolarDocs.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == ID)
+            {
+
+                item.status = 0;
+                db.dolarDocs.Update(item);
+            }
+
+            db.SaveChanges();
+        }
+        return RedirectToAction( "ShowDolar" ,"MarkazAmar");
+    }
 }

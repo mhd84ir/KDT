@@ -72,11 +72,61 @@ public class LoginController : Controller
             HttpContext.SignInAsync(claimsPrincipal);
             return RedirectToAction("Index", "Home");
         }
+//go in db and check 
+
+
+        if (db.users.Any(u => u.UserName == username && u.PassWord == password))
+        {
+            var user = db.users.Where(u => u.UserName == username && u.PassWord == password).FirstOrDefault();
+
+
+
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, user.Name)
+
+
+            };
+
+            if (user.AdminStatus == true)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "Admin"));
+                ViewBag.Admin=true;
+            }
+            if (user.LcStatus == true)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "Lc"));
+                ViewBag.Lc=true;
+            }
+            if (user.NaghdiStatus == true)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "Naghdi"));
+                ViewBag.Naghdi=true;
+            }
+            if (user.SaderatStatus == true)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "Saderat"));
+                ViewBag.Saderat=true;
+            }
+
+
+
+            var claimsIdentity = new ClaimsIdentity(
+                claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+            var authProperties = new AuthenticationProperties
+            {
+            };
+
+            HttpContext.SignInAsync(claimsPrincipal);
+            return RedirectToAction("Index", "Home");
+        }
         else
         {
             ViewBag.Error = "نام کاربری یا رمز عبور اشتباه است";
-            return View();
+            return RedirectToAction("Login");
         }
+
     }
 
 

@@ -208,10 +208,10 @@ th{
                               <img src="~/assets/img/avatars/1.png" alt class="rounded-circle">
                             </div>
                           </div>
-                          <div class="flex-grow-1">
-                            <span class="fw-semibold d-block lh-1">جان اسنو</span>
-                            <small>مدیر</small>
-                          </div>
+                        <div class="flex-grow-1">
+                          @* user name by claim *@
+                          <span class="text-bold"> @User.Identity.Name</span>
+                        </div>
                         </div>
                       </a>
                     </li>
@@ -298,7 +298,10 @@ th{
                   </a>
 
                 </li>
-
+                @* if claim rouls admin  *@
+                @if (User.IsInRole("Lc")|| User.IsInRole("Admin"))
+                
+                {
                 <!-- Layouts -->
                 <li class="menu-item">
                   <a href="" class="menu-link menu-toggle">
@@ -310,7 +313,8 @@ th{
 
 
 
-
+                    @if(User.IsInRole("Lc"))
+                    {
                     <li class="menu-item">
                       <a href="/Naghdi/DocumentRegistration" class="menu-link">
                         <i class='menu-icon tf-icons bx bxs-food-menu'></i>
@@ -325,18 +329,21 @@ th{
                         <div>ثبت مقدار بارگیری شده</div>
                       </a>
                     </li>
-
+                    }
+                    @if(User.IsInRole("Admin"))
+                    {
                     <li class="menu-item">
                       <a href="/Admin/Acsept" class="menu-link">
                         <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
                         <div>سند های نقدی تایید نشده </div>
                       </a>
-
-
+                    </li>
+                    }
                   </ul>
                 </li>
-
-
+                }
+                @if (User.IsInRole("Saderat")|| User.IsInRole("Admin"))
+                {
                 <li class="menu-item">
                   <a href="" class="menu-link menu-toggle">
                     <i class=' menu-icon tf-icons bx bx-food-menu'></i>
@@ -347,7 +354,8 @@ th{
 
 
 
-
+                    @if(User.IsInRole("Saderat"))
+                    {
                     <li class="menu-item">
                       <a href="/Saderat/dolari" class="menu-link">
                         <i class='menu-icon tf-icons bx bxs-food-menu'></i>
@@ -361,18 +369,22 @@ th{
                         <div>ثبت مقدار بارگیری شده</div>
                       </a>
                     </li>
+                    }
+                    @if(User.IsInRole("Admin"))
+                    {
                     <li class="menu-item">
                       <a href="/Admin/AcseptDolar" class="menu-link">
                         <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
                         <div>سند های دلاری تایید نشده</div>
                       </a>
                     </li>
-
+                    }
 
                   </ul>
                 </li>
-
-
+                }
+                @if (User.IsInRole("Lc")|| User.IsInRole("Admin"))
+                {
                 <li class="menu-item">
                   <a href="" class="menu-link menu-toggle">
                     <i class=' menu-icon tf-icons bx bx-food-menu'></i>
@@ -383,7 +395,8 @@ th{
 
 
 
-
+                    @if(User.IsInRole("Lc"))
+                    {
                     <li class="menu-item">
                       <a href="/Lc/RequestLcF" class="menu-link">
                         <i class='menu-icon tf-icons bx bxs-food-menu'></i>
@@ -413,8 +426,9 @@ th{
                         <div>ثبت مقدار بارگیری شده</div>
                       </a>
                     </li>
-
-
+                    }
+                @if(User.IsInRole("Admin"))
+                {
                     <li class="menu-item">
                       <a href="/Admin/LcKhAcsept" class="menu-link">
                         <i class='menu-icon tf-icons bx bx-spreadsheet'></i>
@@ -435,11 +449,11 @@ th{
                         <div>تایید درخواست های فروش</div>
                       </a>
                     </li>
-
+                }
 
                   </ul>
                 </li>
-
+                }
 
 
 
@@ -504,7 +518,8 @@ th{
                     <div>اطلاعات پایه </div>
                   </a>
                   <ul class="menu-sub">
-
+                    @if(User.IsInRole("Admin"))
+                    {
                     <li class="menu-item">
                       <a href="/User/showuser" class="menu-link">
                         <i class='menu-icon tf-icons bx bxs-user-detail'></i>
@@ -518,7 +533,7 @@ th{
                         <div style="white-space: nowrap;"> اضافه کردن کاربر</div>
                       </a>
                     </li>
-
+                    }
                     <li class="menu-item">
                       <a href="/MarkazAmar/ShowBuyer" class="menu-link">
 

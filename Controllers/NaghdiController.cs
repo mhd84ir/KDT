@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-[Authorize (Roles = "Admin")]
+[Authorize (Roles = "Naghdi")]
 
 public class NaghdiController: Controller
 {
@@ -269,5 +269,24 @@ public class NaghdiController: Controller
         return View();
     }
 
+        public IActionResult RecheckNaghdi(int ID)
+    
+    {
+        
+        List<Document> l = new List<Document>();
+        l = db.Documents.OrderByDescending(a => a.Id).GroupBy(x => x.Id).Select(e => e.FirstOrDefault()).ToList();
+        foreach (var item in l)
+        {
+            if (item.Id == ID)
+            {
+
+                item.status = 0;
+                db.Documents.Update(item);
+            }
+
+            db.SaveChanges();
+        }
+        return RedirectToAction( "ShowDocument" ,"MarkazAmar");
+    }
 
 }
