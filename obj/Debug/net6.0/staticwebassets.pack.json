@@ -169,6 +169,10 @@
       "PackagePath": "staticwebassets/assets/img/icons/brands/KDT.jpg"
     },
     {
+      "Id": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/img/icons/brands/KDTHeaderA4-Fa.jpg",
+      "PackagePath": "staticwebassets/assets/img/icons/brands/KDTHeaderA4-Fa.jpg"
+    },
+    {
       "Id": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/img/icons/brands/KDTL.png",
       "PackagePath": "staticwebassets/assets/img/icons/brands/KDTL.png"
     },
@@ -263,6 +267,10 @@
     {
       "Id": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/img/icons/brands/kdtdown.jpg",
       "PackagePath": "staticwebassets/assets/img/icons/brands/kdtdown.jpg"
+    },
+    {
+      "Id": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/img/icons/brands/kdtheader.png",
+      "PackagePath": "staticwebassets/assets/img/icons/brands/kdtheader.png"
     },
     {
       "Id": "/Users/mhd84.ir/Desktop/KDT/wwwroot/assets/img/icons/brands/kdtlo.png",

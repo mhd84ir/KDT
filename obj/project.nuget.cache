@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ow912xqmPcCo8JrX6PD0vlJUFu9lJk0y0t3g2d5kivXdfv29FlARQ6CoIyAAeU6zFezu+RoarP+UiZgLOmOwAw==",
+  "dgSpecHash": "0KPLXUqmIcIaZ8/tzpvcVs7OvxlqYKyY2e+xrrufCMHYPQOh9UdqzoLiyJlByMI1/7MqN3sxhlTLdlYq4fWatg==",
   "success": true,
   "projectFilePath": "/Users/mhd84.ir/Desktop/KDT/KDT.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "/Users/mhd84.ir/.nuget/packages/microsoft.aspnetcore.http.extensions/2.2.0/microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/microsoft.aspnetcore.webutilities/2.2.0/microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.0/microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/microsoft.data.sqlclient/2.1.4/microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/microsoft.data.sqlclient.sni.runtime/2.1.1/microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
@@ -61,13 +62,15 @@
     "/Users/mhd84.ir/.nuget/packages/redmentcore.infrastructure/6.1.0.7/redmentcore.infrastructure.6.1.0.7.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/redmentcore.net.http/6.1.2.1/redmentcore.net.http.6.1.2.1.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/restsharp/110.2.0/restsharp.110.2.0.nupkg.sha512",
-    "/Users/mhd84.ir/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/select.htmltopdf.netcore/23.1.0/select.htmltopdf.netcore.23.1.0.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.configuration.configurationmanager/4.7.0/system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.drawing.common/4.7.0/system.drawing.common.4.7.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.identitymodel.tokens.jwt/6.8.0/system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.net.primitives/4.3.1/system.net.primitives.4.3.1.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.runtime/4.3.1/system.runtime.4.3.1.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.runtime.caching/4.7.0/system.runtime.caching.4.7.0.nupkg.sha512",
@@ -81,6 +84,7 @@
     "/Users/mhd84.ir/.nuget/packages/system.text.encoding.codepages/4.7.0/system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.text.json/7.0.2/system.text.json.7.0.2.nupkg.sha512",
+    "/Users/mhd84.ir/.nuget/packages/system.threading.tasks.extensions/4.5.2/system.threading.tasks.extensions.4.5.2.nupkg.sha512",
     "/Users/mhd84.ir/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []

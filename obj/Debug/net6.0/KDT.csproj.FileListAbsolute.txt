@@ -82,3 +82,6 @@
 /Users/mhd84.ir/Desktop/KDT/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.KDT.props
 /Users/mhd84.ir/Desktop/KDT/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.KDT.props
 /Users/mhd84.ir/Desktop/KDT/obj/Debug/net6.0/staticwebassets.pack.json
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/Select.Html.dep
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
+/Users/mhd84.ir/Desktop/KDT/bin/Debug/net6.0/Select.HtmlToPdf.dll

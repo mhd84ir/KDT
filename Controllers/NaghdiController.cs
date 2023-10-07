@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using SelectPdf;
 [Authorize (Roles = "Naghdi")]
 
 public class NaghdiController: Controller
@@ -288,5 +289,9 @@ public class NaghdiController: Controller
         }
         return RedirectToAction( "ShowDocument" ,"MarkazAmar");
     }
+
+    //create pdf
+
+
 
 }
